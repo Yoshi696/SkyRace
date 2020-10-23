@@ -23,6 +23,7 @@ public class PlayerContllore : MonoBehaviour
     {
         if (other.gameObject.tag == "Buns")
         {
+            transform.Rotate(new Vector3(0, 180, 0));
             StartCoroutine("WaitKeyInput");
         }
     }
