@@ -25,42 +25,43 @@ public class PlayerMove : MonoBehaviour
 
         Vector3 pos = this.gameObject.transform.position;
         this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + zen);
-       // float den = pos.y;
 
+        //GetComponent<Rigidbody>().velocity = new Vector3(pos.x, pos.y, pos.z + zen);
 
         //if (pos.y < den)
         //{
         //rb.AddForce(velox, nox, 0f);
-        if (gen < 0) {
-            GetComponent<Rigidbody>().velocity = new Vector3(velox, nox, 0f);
+        if (gen < 0)
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3(velox, nox, 0f + zen);
         }
         else
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(velox, 0f, 0f);
+            GetComponent<Rigidbody>().velocity = new Vector3(velox, 0f, 0f + zen);
         }
     }
 
-    private void FixedUpdate()
-    {
-        //下にだけ反応するようにする
+    //private void FixedUpdate()
+    //{
+    //    //下にだけ反応するようにする
 
 
-        //コントローラ
-        //var luck = speed * Input.GetAxisRaw("Controler1RL");
-        //GetComponent<Rigidbody>().velocity = new Vector3(luck, 0f, 0f);
+    //    //コントローラ
+    //    //var luck = speed * Input.GetAxisRaw("Controler1RL");
+    //    //GetComponent<Rigidbody>().velocity = new Vector3(luck, 0f, 0f);
 
-        //Vector3 tmp = GameObject.Find("Player").transform.position;
-        //float y = tmp.y;
+    //    //Vector3 tmp = GameObject.Find("Player").transform.position;
+    //    //float y = tmp.y;
 
 
-        //if (/*Input.GetKey("down")*/ /*||*/ Input.GetButton("Vertical"))
-        //{
+    //    //if (/*Input.GetKey("down")*/ /*||*/ Input.GetButton("Vertical"))
+    //    //{
 
-        //velox = speed * Input.GetAxisRaw("Vertical");
-        //GetComponent<Rigidbody>().velocity = new Vector3(0f, velox, 0f);
-        //velox = speed * Input.GetAxisRaw("Controler1D");
-        //GetComponent<Rigidbody>().velocity = new Vector3(0f, velox, 0f);
-        //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
-        //}
-    }
+    //    //velox = speed * Input.GetAxisRaw("Vertical");
+    //    //GetComponent<Rigidbody>().velocity = new Vector3(0f, velox, 0f);
+    //    //velox = speed * Input.GetAxisRaw("Controler1D");
+    //    //GetComponent<Rigidbody>().velocity = new Vector3(0f, velox, 0f);
+    //    //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+    //    //}
+    //}
 }
