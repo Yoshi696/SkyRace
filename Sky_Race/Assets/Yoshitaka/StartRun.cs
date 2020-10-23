@@ -5,7 +5,8 @@ using UnityEngine;
 public class StartRun : MonoBehaviour
 {
     public float run = 0f;
-
+    public float plus = 0.0001f;
+    private bool Button = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,15 @@ public class StartRun : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            run = run + 0.01f;
+            Button = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            Button = false;
+        }
+        if(Button == true)
+        {
+            run = run + plus;
         }
     }
 }
