@@ -9,31 +9,46 @@ public class PlayerMove : MonoBehaviour
     public float zen = 0.05f;
     //private Vector3 playerpos;
 
-    //private void Start()
-    //{
-    ////    playerpos = transform.position;
-    //rb = GetComponent<Rigidbody>();
+    private void Start()
+    {
+        //    playerpos = transform.position;
+        //rb = GetComponent<Rigidbody>();
 
-    //}
+    }
 
     private void Update()
     {
         //キーボード
         float velox = speed * Input.GetAxisRaw("Horizontal");
         float nox = speed * Input.GetAxisRaw("Vertical");
+
+        float ang = 0.005f * Input.GetAxisRaw("Horizontal");
+
         float gen = Input.GetAxisRaw("Vertical");
+        float rot = Input.GetAxisRaw("Horizontal");
 
         Vector3 pos = this.gameObject.transform.position;
-        this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + zen);
+        this.gameObject.transform.position = new Vector3(0,pos.y/*pos.x, pos.y*/, pos.z + zen);
+
+        if(rot == 1)
+        {
+            //transform.Rotate(-50 * Time.deltaTime, 0, 0);
+            transform.Rotate(0, -50 * -ang, 0);
+            Vector3 yes = this.gameObject.transform.position;
+            this.gameObject.transform.position = new Vector3(0, yes.y/*pos.x, pos.y*/, yes.z + zen);
+        }
+        else if (rot < 0)
+        {
+            transform.Rotate(0, -50 * -ang, 0);
+
+        }
+
 
         //GetComponent<Rigidbody>().velocity = new Vector3(pos.x, pos.y, pos.z + zen);
 
-        //if (pos.y < den)
-        //{
-        //rb.AddForce(velox, nox, 0f);
         if (gen < 0)
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(velox, nox, 0f + zen);
+           GetComponent<Rigidbody>().velocity = new Vector3(velox, nox, 0f + zen);
         }
         else
         {
