@@ -6,11 +6,22 @@ public class StartRun : MonoBehaviour
 {
     public float run = 0f;
     public float plus = 0.0001f;
+    public float jumpForce = 5f;
     private bool Button = false;
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Vector3 _this = this.gameObject.transform.position;
+
+        if (other.gameObject.tag=="jump" && Input.GetKeyUp(KeyCode.Z))
+        {
+            this.gameObject.transform.position = new Vector3(_this.x, _this.y+jumpForce, _this.z);
+        }
     }
 
     // Update is called once per frame
