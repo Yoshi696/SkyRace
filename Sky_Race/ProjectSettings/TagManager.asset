@@ -6,7 +6,12 @@ TagManager:
   tags:
   - Buns
   - jump
+<<<<<<< HEAD
   - JosouJ
+=======
+  - Jump
+  - Turbo
+>>>>>>> 998297ccff18172aabaa118fd168e28a7ddfc680
   layers:
   - Default
   - TransparentFX
