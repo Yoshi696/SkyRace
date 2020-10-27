@@ -4,14 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Buns
-  - jump
-<<<<<<< HEAD
+  - Play
+  - Undefined
   - JosouJ
-=======
-  - Jump
+  - Buns
   - Turbo
->>>>>>> 998297ccff18172aabaa118fd168e28a7ddfc680
+  - jump
+  - Jump
   layers:
   - Default
   - TransparentFX

@@ -10,7 +10,6 @@ public class StartRun : MonoBehaviour
     public float plus = 0.0001f;
     public float jumpForce = 40f;
     private bool Button = false;
-    private bool JumpK = false;
 
 
     // Start is called before the first frame update
@@ -20,24 +19,24 @@ public class StartRun : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         Vector3 _this = this.gameObject.transform.position;
-
-        if (other.gameObject.tag == "JosouJ" /*&& Input.GetKeyUp(KeyCode.Z)*/)
+        if (Input.GetKeyUp(KeyCode.Z))
         {
-            //this.gameObject.transform.position = new Vector3(_this.x, _this.y+jumpForce, _this.z);
-            //rb.AddForce(force, ForceMode.Force);    //ジャンプ
-            rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-
-            JumpK = true;
+            if (other.gameObject.tag == "JosouJ")
+            {
+                //this.gameObject.transform.position = new Vector3(_this.x, _this.y+jumpForce, _this.z);
+                //rb.AddForce(force, ForceMode.Force);    //ジャンプ
+                rb.velocity = Vector3.up * jumpForce;
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(JumpK);
+        Debug.Log(run);
 
         Vector3 pos = this.gameObject.transform.position;//
         Vector3 force = new Vector3(0.0f, 0.0f, jumpForce);
@@ -55,11 +54,5 @@ public class StartRun : MonoBehaviour
         {
             run = run + plus;
         }
-
-        //if (JumpK == true && Input.GetKeyUp(KeyCode.Z))
-        //{
-        //    rb.AddForce(pos.x, pos.y+jumpForce, pos.z,ForceMode.Impulse);
-        //    //rb.AddForce(force, ForceMode.Force);    //ジャンプ
-        //}
     }
 }
