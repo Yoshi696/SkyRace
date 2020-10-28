@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    //public Rigidbody rb;
+    private Rigidbody rb;
     public float speed = 15f;
+    public float yoko = 0.5f;
     public float zen = 0.05f;
     //private Vector3 playerpos;
 
     private void Start()
     {
         //    playerpos = transform.position;
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
     }
 
@@ -27,15 +28,22 @@ public class PlayerMove : MonoBehaviour
         float gen = Input.GetAxisRaw("Vertical");
         float rot = Input.GetAxisRaw("Horizontal");
 
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
+
+        float jin = 0f;
+
         Vector3 pos = this.gameObject.transform.position;
-        this.gameObject.transform.position = new Vector3(0,pos.y/*pos.x, pos.y*/, pos.z + zen);
+        this.gameObject.transform.position = new Vector3(pos.x,pos.y, pos.z + zen);
+
+        rb.AddForce(x * speed, 0, jin+zen, ForceMode.Impulse);
 
         if(rot == 1)
         {
             //transform.Rotate(-50 * Time.deltaTime, 0, 0);
             transform.Rotate(0, -50 * -ang, 0);
-            Vector3 yes = this.gameObject.transform.position;
-            this.gameObject.transform.position = new Vector3(0, yes.y/*pos.x, pos.y*/, yes.z + zen);
+            //Vector3 yes = this.gameObject.transform.position;
+            //this.gameObject.transform.position = new Vector3(ang*yoko, yes.y/*pos.x, pos.y*/, yes.z + zen);
         }
         else if (rot < 0)
         {

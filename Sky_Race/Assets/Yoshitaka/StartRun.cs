@@ -6,7 +6,7 @@ public class StartRun : MonoBehaviour
 {
     private Rigidbody rb;
 
-    public float run = 0f;
+    private float run = 0;
     public float plus = 0.0001f;
     public float jumpForce = 40f;
     private bool Button = false;
@@ -33,11 +33,14 @@ public class StartRun : MonoBehaviour
         }
     }
 
+    public float GetRunValue()
+    {
+        return run;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(run);
-
         Vector3 pos = this.gameObject.transform.position;//
         Vector3 force = new Vector3(0.0f, 0.0f, jumpForce);
         this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + run);//助走（前進）
