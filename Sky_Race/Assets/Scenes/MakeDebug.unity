@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 123472344}
   m_Layer: 0
   m_Name: Turbo
-  m_TagString: Turbo
+  m_TagString: Jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1290,6 +1290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  yoko: 0.5
   zen: 0.05
 --- !u!54 &277750430
 Rigidbody:
@@ -1410,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168a186f656b5164aba6c97f607cba99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 2000
+  jumpForce: 500
 --- !u!114 &277750437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5277,6 +5278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  yoko: 0.5
   zen: 0.05
 --- !u!54 &1833468485
 Rigidbody:

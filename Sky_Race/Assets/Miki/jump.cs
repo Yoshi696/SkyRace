@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class jump : MonoBehaviour { 
+public class jump : MonoBehaviour
+{
 
-     private Rigidbody rB;
+    private Rigidbody rB;
     private Vector3 rbVelo;
 
     public float jumpForce = 20.0f;
@@ -12,20 +13,20 @@ public class jump : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-    rB = GetComponent<Rigidbody>();
-}
+        rB = GetComponent<Rigidbody>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Jump")
         {
-            rB.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-            
+            rB.AddForce(0, jumpForce, 0, ForceMode.Force);
+            //Debug.Log(jumpForce);
         }
     }
 }
