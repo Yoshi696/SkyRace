@@ -63,6 +63,22 @@ public class PlayerMove : MonoBehaviour
             GetComponent<Rigidbody>().velocity = new Vector3(velox, 0f, 0f + zen);
         }
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Buns")
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            StartCoroutine("WaitKeyInput");
+        }
+    }
+    IEnumerator WaitKeyInput()
+    {
+        this.gameObject.GetComponent<PlayerMove>().enabled = false;
+        {
+            yield return new WaitForSeconds(1.0f);
+        }
+        this.gameObject.GetComponent<PlayerMove>().enabled = true;
+    }
 
     //private void FixedUpdate()
     //{
