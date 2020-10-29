@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class StartRun : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class StartRun : MonoBehaviour
     public float plus = 0.0001f;
     public float jumpForce = 40f;
     private bool Button = false;
+    private bool JumoB = false;
+    Vector3 jump1;
+    Vector3 jump2;
 
 
     // Start is called before the first frame update
@@ -29,13 +33,16 @@ public class StartRun : MonoBehaviour
                 //this.gameObject.transform.position = new Vector3(_this.x, _this.y+jumpForce, _this.z);
                 //rb.AddForce(force, ForceMode.Force);    //ジャンプ
                 rb.velocity = Vector3.up * jumpForce;
+                //jump1 = rb.velocity;
+                //jump2 = rb.velocity;
+                JumoB = true;
             }
         }
     }
 
-    public float GetRunValue()
+    public Vector3 GetJumpValue()
     {
-        return run;
+        return rb.velocity;
     }
 
     // Update is called once per frame
@@ -57,5 +64,21 @@ public class StartRun : MonoBehaviour
         {
             run = run + plus;
         }
+        
+        //if(JumoB == true)
+        //{
+        //    jump1 = this.gameObject.transform.position;
+        //}
+
+        //if (jump1.y < jump2.y)
+        //{
+        //    GetComponent<StartRun>().enabled = false;
+        //    GetComponent<PlayerMove>().enabled = true;
+        //}
+
+        //if(JumoB == true)
+        //{
+        //    jump2 = this.gameObject.transform.position;
+        //}
     }
 }

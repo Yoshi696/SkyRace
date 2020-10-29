@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class ScriptKey : MonoBehaviour
 {
-    public PlayerMove playermove;
-    float Agility;
+    private StartRun StartRun;
+    Vector3 Agility1;
+    Vector3 Agility2;
 
     // Start is called before the first frame update
     void Start()
     {
-        playermove = GetComponent<PlayerMove>();
-        
+        StartRun = GetComponent<StartRun>();
+        Agility1 = StartRun.GetJumpValue();
+        Agility2 = StartRun.GetJumpValue();
     }
 
     // Update is called once per frame
@@ -20,6 +22,7 @@ public class ScriptKey : MonoBehaviour
         if (Input.GetKey(KeyCode.X))
         {
             GetComponent<StartRun>().enabled = false;
+            
             GetComponent<PlayerMove>().enabled = true;
         }
     }
