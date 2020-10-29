@@ -288,7 +288,7 @@ SphereCollider:
   m_GameObject: {fileID: 217627224}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -376,7 +376,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 217627224}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 5
   m_Height: 20
   m_Direction: 1
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  yoko: 0.5
   zen: 0.05
 --- !u!54 &613488926
 Rigidbody:
