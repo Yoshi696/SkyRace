@@ -25,6 +25,7 @@ public class jump : MonoBehaviour {
         if (other.gameObject.tag == "Jump")
         {
             rB.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            
         }
     }
 }
