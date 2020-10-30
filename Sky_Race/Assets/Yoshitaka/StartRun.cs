@@ -12,8 +12,8 @@ public class StartRun : MonoBehaviour
     public float jumpForce = 40f;
     private bool Button = false;
     private bool JumoB = false;
-    Vector3 jump1;
-    Vector3 jump2;
+    Vector3 jump1 = new Vector3(0, 0, 0);
+    Vector3 jump2 = new Vector3(0, 0, 0);
 
 
     // Start is called before the first frame update
@@ -25,16 +25,13 @@ public class StartRun : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        //↓ジャンプ
         Vector3 _this = this.gameObject.transform.position;
         if (Input.GetKeyUp(KeyCode.Z))
         {
             if (other.gameObject.tag == "JosouJ")
             {
-                //this.gameObject.transform.position = new Vector3(_this.x, _this.y+jumpForce, _this.z);
-                //rb.AddForce(force, ForceMode.Force);    //ジャンプ
                 rb.velocity = Vector3.up * jumpForce;
-                //jump1 = rb.velocity;
-                //jump2 = rb.velocity;
                 JumoB = true;
             }
         }
@@ -48,10 +45,10 @@ public class StartRun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = this.gameObject.transform.position;//
-        Vector3 force = new Vector3(0.0f, 0.0f, jumpForce);
+        Vector3 pos = this.gameObject.transform.position;//座標取得
         this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + run);//助走（前進）
 
+        //↓助走中
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Button = true;
@@ -64,21 +61,22 @@ public class StartRun : MonoBehaviour
         {
             run = run + plus;
         }
-        
-        //if(JumoB == true)
-        //{
-        //    jump1 = this.gameObject.transform.position;
-        //}
 
-        //if (jump1.y < jump2.y)
-        //{
-        //    GetComponent<StartRun>().enabled = false;
-        //    GetComponent<PlayerMove>().enabled = true;
-        //}
+        //↓ジャンプの最高地点に到達したらスクリプトを切り替える
+        if (JumoB == true)
+        {
+            jump1 = this.gameObject.transform.position;
+        }
 
-        //if(JumoB == true)
-        //{
-        //    jump2 = this.gameObject.transform.position;
-        //}
+        if (jump1.y < jump2.y)
+        {
+            GetComponent<StartRun>().enabled = false;
+            GetComponent<PlayerMove>().enabled = true;
+        }
+
+        if (JumoB == true)
+        {
+            jump2 = this.gameObject.transform.position;
+        }
     }
 }
