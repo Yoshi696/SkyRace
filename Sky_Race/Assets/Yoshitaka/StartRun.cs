@@ -23,18 +23,20 @@ public class StartRun : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        //↓ジャンプ
-        Vector3 _this = this.gameObject.transform.position;
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
+        ////↓ジャンプ
+        //Vector3 _this = this.gameObject.transform.position;
+        //if (Input.GetKeyUp(KeyCode.Z))
+        //{
             if (other.gameObject.tag == "JosouJ")
             {
-                rb.velocity = Vector3.up * jumpForce;
-                JumoB = true;
+            //rb.velocity = Vector3.up * jumpForce;
+            //JumoB = true;
+            GetComponent<StartRun>().enabled = false;
+            GetComponent<PlayerMove>().enabled = true;
             }
-        }
+        //}
     }
 
     public Vector3 GetJumpValue()
@@ -62,21 +64,21 @@ public class StartRun : MonoBehaviour
             run = run + plus;
         }
 
-        //↓ジャンプの最高地点に到達したらスクリプトを切り替える
-        if (JumoB == true)
-        {
-            jump1 = this.gameObject.transform.position;
-        }
+        ////↓ジャンプの最高地点に到達したらスクリプトを切り替える
+        //if (JumoB == true)
+        //{
+        //    jump1 = this.gameObject.transform.position;
+        //}
 
-        if (jump1.y < jump2.y)
-        {
-            GetComponent<StartRun>().enabled = false;
-            GetComponent<PlayerMove>().enabled = true;
-        }
+        //if (jump1.y < jump2.y)
+        //{
+        //    GetComponent<StartRun>().enabled = false;
+        //    GetComponent<PlayerMove>().enabled = true;
+        //}
 
-        if (JumoB == true)
-        {
-            jump2 = this.gameObject.transform.position;
-        }
+        //if (JumoB == true)
+        //{
+        //    jump2 = this.gameObject.transform.position;
+        //}
     }
 }
