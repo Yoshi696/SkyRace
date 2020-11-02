@@ -39,9 +39,9 @@ public class StartRun : MonoBehaviour
         //}
     }
 
-    public Vector3 GetJumpValue()
+    public float GetSpeedValue()
     {
-        return rb.velocity;
+        return run;
     }
 
     // Update is called once per frame

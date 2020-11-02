@@ -10,10 +10,14 @@ public class PlayerMove : MonoBehaviour
     public float zen = 0.05f;
     //private Vector3 playerpos;
 
+   // public StartRun startrun;
+
     private void Start()
     {
         //    playerpos = transform.position;
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+
+
 
     }
 
@@ -28,28 +32,21 @@ public class PlayerMove : MonoBehaviour
         float gen = Input.GetAxisRaw("Vertical");
         float rot = Input.GetAxisRaw("Horizontal");
 
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
 
-        float jin = 0f;
-
-
-        Vector3 pos = this.gameObject.transform.position;
+        Vector3 pos = this.gameObject.transform.localPosition;
+        this.transform.localPosition = new Vector3(pos.x, pos.y, pos.z+zen);
 
         //↓前進
-        Rigidbody rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
+        //Rigidbody rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
         Vector3 go = rb.position;
-        go += new Vector3(0, 0, 0.05f);
-        rb.position = go;
+        //go += new Vector3(0, 0, 0.05f);
+        //rb.position = go;
 
         //↓左右キーで回転
         if (rot == 1)
         {
             transform.Rotate(0, -50 * -ang, 0);
-            Vector3 no = GetComponent<Rigidbody>().velocity;
-            Vector3 cros = Vector3.Cross(go, no);
-            rb.AddForce(cros);
-            Debug.Log(cros);
+            this.transform.localPosition = new Vector3(pos.x+zen, pos.y, pos.z+zen);
         }
         else if (rot < 0)
         {
