@@ -32,13 +32,13 @@ public class PlayerMove : MonoBehaviour
         float gen = Input.GetAxisRaw("Vertical");
         float rot = Input.GetAxisRaw("Horizontal");
 
-
+        //↓前進
         Vector3 pos = this.gameObject.transform.localPosition;
         this.transform.localPosition = new Vector3(pos.x, pos.y, pos.z+zen);
 
         //↓前進
         //Rigidbody rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
-        Vector3 go = rb.position;
+        //Vector3 go = rb.position;
         //go += new Vector3(0, 0, 0.05f);
         //rb.position = go;
 
