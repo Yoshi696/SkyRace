@@ -26,6 +26,7 @@ public class jump : MonoBehaviour
         if (other.gameObject.tag == "Jump")
         {
             rB.AddForce(0, jumpForce, 0, ForceMode.Force);
+           // this.gameObject.GetComponent<PlayerMove>().enabled = false;
             //Debug.Log(jumpForce);
         }
     }

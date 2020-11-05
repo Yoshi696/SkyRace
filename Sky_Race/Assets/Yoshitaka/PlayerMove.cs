@@ -283,4 +283,16 @@ public class PlayerMove : MonoBehaviour
         }
         this.gameObject.GetComponent<PlayerMove>().enabled = true;
     }
+
+	private void OnCollisionStay(Collision other)
+	{//ゴールに接触している間徐々にスピードを下げる
+		if (other.gameObject.tag == "Goal")
+		{
+			if (MovementSpeed >= 0)
+			{
+				MovementSpeed -= 5f;
+				Debug.Log(MovementSpeed);
+			}
+		}
+	}
 }
