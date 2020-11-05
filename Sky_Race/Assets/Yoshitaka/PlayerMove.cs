@@ -271,17 +271,10 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "Buns")
         {
             transform.Rotate(new Vector3(0, 180, 0));
-           // StartCoroutine("WaitKeyInput");
+           //StartCoroutine("WaitKeyInput");
         }
-	}
 
-	IEnumerator WaitKeyInput()
-    {
-        this.gameObject.GetComponent<PlayerMove>().enabled = false;
-        {
-            yield return new WaitForSeconds(1.0f);
-        }
-        this.gameObject.GetComponent<PlayerMove>().enabled = true;
+
     }
 
 	private void OnCollisionStay(Collision other)
@@ -295,4 +288,29 @@ public class PlayerMove : MonoBehaviour
 			}
 		}
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+		if (other.gameObject.tag == "Jump")
+		{
+			rB.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+			this.gameObject.GetComponent<jump>().enabled = true;
+			StartCoroutine("WaitKeyInput");
+			//StartCoroutine("WaitKeyInput");
+			//Debug.Log(jumpForce);
+		}
+
+	}
+
+	IEnumerator WaitKeyInput()
+    {
+        this.gameObject.GetComponent<PlayerMove>().enabled = false;
+        {
+            yield return new WaitForSeconds(1.0f);
+			//rB.AddForce(0, jumpForce, 0, ForceMode.Force);
+		}
+		this.gameObject.GetComponent<PlayerMove>().enabled = true;
+    }
+
+
 }
