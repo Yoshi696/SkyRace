@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class Crosswind : MonoBehaviour
 {
-    //public GameObject target;
     public float ClossMove = 0.25f;
-    float clossmove=0.1f;
-
-   //public GameObject myObj;
+    private float clossmove=0.1f;
 
     void OnTriggerStay()
     {
         Vector3 myobj = this.transform.position;
-        //Transform myobj = this.transform;
         Vector3 targ = GameObject.Find("Player").transform.position;
         if (myobj.x > targ.x) {
             clossmove = -ClossMove;
