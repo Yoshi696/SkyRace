@@ -271,8 +271,19 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "Buns")
         {
             transform.Rotate(new Vector3(0, 180, 0));
-            StartCoroutine("WaitKeyInput");
+            //StartCoroutine("WaitKeyInput");
         }
+	}
+
+	private void OnTriggerStay(Collider other)
+	{
+		if (other.gameObject.tag == "Jump")
+		{
+			rB.AddForce(0, jumpForce, 0, ForceMode.Force);
+			StartCoroutine("WaitKeyInput");
+			// this.gameObject.GetComponent<PlayerMove>().enabled = false;
+			//Debug.Log(jumpForce);
+		}
 	}
 
 	IEnumerator WaitKeyInput()
