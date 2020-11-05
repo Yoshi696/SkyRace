@@ -104,10 +104,16 @@ public class PlayerMove : MonoBehaviour
 	private bool canTranslate;
 	private bool canRotate;
 
+	private Rigidbody rB;
+
+	public float jumpForce = 20.0f;
+
 	void Start()
 	{
 		canTranslate = CanRotateYaw || CanRotatePitch || CanRotateRoll;
 		canRotate = CanMoveForward || CanMoveBack || CanMoveRight || CanMoveLeft || CanMoveUp || CanMoveDown;
+		rB = GetComponent<Rigidbody>();
+
 	}
 
 	void Update()
@@ -265,10 +271,11 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "Buns")
         {
             transform.Rotate(new Vector3(0, 180, 0));
-            StartCoroutine("WaitKeyInput");
+           // StartCoroutine("WaitKeyInput");
         }
-    }
-    IEnumerator WaitKeyInput()
+	}
+
+	IEnumerator WaitKeyInput()
     {
         this.gameObject.GetComponent<PlayerMove>().enabled = false;
         {
