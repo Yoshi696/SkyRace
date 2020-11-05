@@ -184,7 +184,7 @@ public class PM_test : MonoBehaviour
 			if (MovementSpeed >= 0)
 			{
 				MovementSpeed -= 0.5f;
-//				Debug.Log(MovementSpeed);
+				Debug.Log(MovementSpeed);
 			}
 		}
 	}

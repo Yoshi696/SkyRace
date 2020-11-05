@@ -9,45 +9,44 @@ public class Result : MonoBehaviour
     private int High = 50;
     private int Medium = 20;
     private int Low = 10;
-    private int GoalPoint;
+    private int score;
 
     private void OnTriggerEnter(Collider other)    //ゴールに接触した瞬間に入る
     {
         if (other.gameObject.tag == "High_P")
         {
             Debug.Log("高得点");
-            GoalPoint = High;
+            score = High;
+                
         }
-        else if (other.gameObject.tag == "Medium_P")
+        else if(other.gameObject.tag == "Medium_P")
         {
             Debug.Log("中得点");
-            GoalPoint = Medium;
+            score = Medium;
 
         }
         else if (other.gameObject.tag == "Low_P")
         {
             Debug.Log("低得点");
-            GoalPoint = Low;
+            score = Low;
 
         }
-        Debug.Log(GoalPoint);
+        Debug.Log(score);
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "High_P")
         {
             Debug.Log("出たから中得点");
-            GoalPoint = Medium;
+            score = Medium;
 
         }
         else if (other.gameObject.tag == "Medium_P")
         {
             Debug.Log("出たから低得点");
-            GoalPoint = Low;
+            score = Low;
 
         }
-        Debug.Log(GoalPoint);
-
     }
 
 }
