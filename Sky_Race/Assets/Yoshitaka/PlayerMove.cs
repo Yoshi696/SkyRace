@@ -107,6 +107,8 @@ public class PlayerMove : MonoBehaviour
 	private Rigidbody rB;
 
 	public float jumpForce = 20.0f;
+	private float turboForce = 1f;
+
 
 	void Start()
 	{
@@ -258,11 +260,11 @@ public class PlayerMove : MonoBehaviour
 			}
 			// 実際の動き
 			float curSpeed = numInput > 0 ? MovementSpeed : 0;
-			Vector3 AddPos = input[0] * Vector3.forward + input[2] * Vector3.left + input[4] * Vector3.up
+			Vector3 AddPos = input[0] * turboForce * Vector3.forward + input[2] * Vector3.left + input[4] * Vector3.up
 				+ input[1] * Vector3.back + input[3] * Vector3.right + input[5] * Vector3.down;
 			AddPos = GetComponent<Rigidbody>().rotation * AddPos;
 
-			GetComponent<Rigidbody>().velocity = AddPos * (Time.fixedDeltaTime * curSpeed);
+			GetComponent<Rigidbody>().velocity = AddPos * (Time.fixedDeltaTime * MovementSpeed);
 		}
 	}
 
@@ -275,18 +277,27 @@ public class PlayerMove : MonoBehaviour
         }
 	}
 
-	private void OnTriggerStay(Collider other)
+	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Jump")
 		{
 			rB.AddForce(0, jumpForce, 0, ForceMode.Force);
-			StartCoroutine("WaitKeyInput");
+			StartCoroutine("WaitKeyInput1");
 			// this.gameObject.GetComponent<PlayerMove>().enabled = false;
 			//Debug.Log(jumpForce);
 		}
+		if (other.gameObject.tag == "Turbo")
+		{
+			//	Vector3 vel = rB.velocity;
+			//	rB.AddForce(/*vel.x * turboForce*/0, 0, vel.z * turboForce, ForceMode.Impulse);
+			//turboForce += 5f;
+			StartCoroutine("WaitKeyInput2");
+			//turboForce -= 5f;
+
+		}
 	}
 
-	IEnumerator WaitKeyInput()
+	IEnumerator WaitKeyInput1()
     {
         //this.gameObject.GetComponent<Renderer>().enabled = false;
         //{
@@ -299,6 +310,14 @@ public class PlayerMove : MonoBehaviour
         }
         this.gameObject.GetComponent<PlayerMove>().enabled = true;
     }
+
+	IEnumerator WaitKeyInput2()
+	{
+		turboForce += 5f;
+		yield return new WaitForSeconds(5.0f);
+		turboForce -= 5f;
+
+	}
 
 	private void OnCollisionStay(Collision other)
 	{//ゴールに接触している間徐々にスピードを下げる
