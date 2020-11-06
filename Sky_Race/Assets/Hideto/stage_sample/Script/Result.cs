@@ -9,7 +9,8 @@ public class Result : MonoBehaviour
     private int High = 50;
     private int Medium = 20;
     private int Low = 10;
-    private int GoalPoint;
+    private float pm = 100;
+    public int GoalPoint;
 
     private void OnTriggerEnter(Collider other)    //ゴールに接触した瞬間に入る
     {
@@ -48,5 +49,20 @@ public class Result : MonoBehaviour
 
         }
     }
-
+    private void OnCollisionStay(Collision other)
+    {//ゴールに接触している間徐々にスピードを下げる
+        if (other.gameObject.tag == "Goal")
+        {
+            if (pm >= 0)
+            {
+                pm -= 0.5f;
+                Debug.Log(pm);
+            }
+            else if(pm <= 0)
+            {
+                GameObject gm = GameObject.Find("ResultScore");
+               gm.GetComponent<ResultScore>().AddScore(GoalPoint);
+            }
+        }
+    }
 }
