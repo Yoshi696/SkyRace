@@ -103,6 +103,8 @@ public class PlayerMove : MonoBehaviour
 
 	private bool canTranslate;
 	private bool canRotate;
+	private bool plus = false;
+
 
 	private Rigidbody rB;
 
@@ -135,17 +137,17 @@ public class PlayerMove : MonoBehaviour
 	{
         float gen = Input.GetAxisRaw("Pitch");
         float rot = Input.GetAxisRaw("Horizontal");
+		float ang = Input.GetAxisRaw("Roll");
 
-        //回転
+		//回転
 
-        if (canRotate)
+		if (canRotate)
         {
             Quaternion AddRot = Quaternion.identity;
             float yaw = 0;
             float pitch = 0;
             float roll = 0;
-            float key = 0;
-            Debug.Log(yaw);
+            //Debug.Log(yaw);
 
             //左右方向に回転・これを連動すればカーブいける！
 			if (CanRotateYaw)
@@ -153,35 +155,71 @@ public class PlayerMove : MonoBehaviour
                 yaw = Input.GetAxis("Yaw")/*これで回転しているからキーを変えてみる*/ * (Time.fixedDeltaTime * RotationSpeed);
             }
             //自分が上下に傾く（不必要かも）
-            //if (gen < 0)
-            //{
-            //    //transform.Rotate(45, 0, 0);
-            //    //if (CanRotatePitch)
-            //    //{
-            //    pitch = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
-            //}
-            //else
-            //{
-            //    //if (CanRotatePitch)
-            //    //{
-            //    //	pitch = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
-            //    //}
-            //}
+            if (gen < 0)
+            {
+                //transform.Rotate(45, 0, 0);
+                //if (CanRotatePitch)
+                //{
+                pitch = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
+				plus = true;
+				//plus = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
+			}
+            else if(gen == 0)
+            {
+				//if (CanRotatePitch)
+				//{
+				//	pitch = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
+				//}
+				if(plus == true)
+                {
+					AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
+					GetComponent<Rigidbody>().rotation *= AddRot;
+				}
+
+     //           if (transform.localEulerAngles.x > 0 /*&& transform.localEulerAngles.x <= 1*/)
+     //           {
+					//plus = false;
+     //           }
+            }
 
             //自分が横に傾く（傾くと変な動きするから傾きは別作った方がいいかも？）
+            //if (CanRotateRoll)
+            //{
+            //    roll = Input.GetAxis("Roll") * (Time.fixedDeltaTime * RotationSpeed);
+            //}
+
             if (CanRotateRoll)
             {
-                roll = Input.GetAxis("Roll") * (Time.fixedDeltaTime * RotationSpeed);
+				if(ang > 0)
+                {
+
+                }else if(ang < 0)
+                {
+
+                }
             }
 
             //実際傾く所
-            AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
-            Debug.Log(AddRot);
-            if (AddRot.y <= 45)
+            //AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
+            //GetComponent<Rigidbody>().rotation *= AddRot;
+            float debug = transform.localEulerAngles.x;
+            Debug.Log(plus);
+			Debug.Log(gen);
+			if (transform.localEulerAngles.x <= 15)
             {
+                AddRot.eulerAngles = new Vector3(-pitch, yaw, 0);
                 GetComponent<Rigidbody>().rotation *= AddRot;
             }
-        }
+            else
+            {
+				AddRot.eulerAngles = new Vector3(0, yaw, -roll);
+				GetComponent<Rigidbody>().rotation *= AddRot;
+                if (transform.localEulerAngles.x < 0 /*&& transform.localEulerAngles.x <= 1*/)
+                {
+                    plus = false;
+                }
+            }
+		}
 
         // 移動
         if (canTranslate)
@@ -326,7 +364,7 @@ public class PlayerMove : MonoBehaviour
 			if (MovementSpeed >= 0)
 			{
 				MovementSpeed -= 5f;
-				Debug.Log(MovementSpeed);
+				//Debug.Log(MovementSpeed);
 			}
 		}
 	}
