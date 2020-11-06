@@ -1683,7 +1683,7 @@ MonoBehaviour:
   MovementSpeed: 500
   RotationSpeed: 100
   karbspeed: 2
-  jumpForce: 100
+  jumpForce: 150
 --- !u!54 &277750430
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1798,12 +1798,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277750428}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 168a186f656b5164aba6c97f607cba99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 1000
+  jumpForce: 150
 --- !u!114 &277750437
 MonoBehaviour:
   m_ObjectHideFlags: 0

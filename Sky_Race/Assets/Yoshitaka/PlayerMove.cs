@@ -281,7 +281,6 @@ public class PlayerMove : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Jump")
 		{
-			rB.AddForce(0, jumpForce, 0, ForceMode.Force);
 			StartCoroutine("WaitKeyInput1");
 			// this.gameObject.GetComponent<PlayerMove>().enabled = false;
 			//Debug.Log(jumpForce);
@@ -299,11 +298,12 @@ public class PlayerMove : MonoBehaviour
 
 	IEnumerator WaitKeyInput1()
     {
-        //this.gameObject.GetComponent<Renderer>().enabled = false;
-        //{
-        //    yield return new WaitForSeconds(1.0f);
-        //}
-        //this.gameObject.GetComponent<Renderer>().enabled = true;
+		//this.gameObject.GetComponent<Renderer>().enabled = false;
+		//{
+		//    yield return new WaitForSeconds(1.0f);
+		//}
+		//this.gameObject.GetComponent<Renderer>().enabled = true;
+		rB.AddForce(0, jumpForce, 0, ForceMode.Force);
 		this.gameObject.GetComponent<PlayerMove>().enabled = false;
         {
             yield return new WaitForSeconds(1.0f);
