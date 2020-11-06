@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Result : MonoBehaviour
 {
 
@@ -10,7 +11,32 @@ public class Result : MonoBehaviour
     private int Medium = 20;
     private int Low = 10;
     private float pm = 100;
-    public int GoalPoint;
+    private int GoalPoint;
+    //Goalの文字テキスト
+    public Text GoalText;
+
+    void Strat()
+    {
+        GoalText.enabled = false;
+    }
+
+    public void onClick()
+    {
+
+        // シーン切り替え
+//        SceneManager.LoadScene("GameResult");
+    }
+    private void GameResultLoaded(Scene next, LoadSceneMode mode)
+    {
+        // シーン切り替え後のスクリプトを取得
+        var gameManager = GameObject.FindWithTag("ResultScore").GetComponent<ResultScore>();
+
+        // データを渡す処理
+        gameManager.GoalPoint = GoalPoint;
+
+        // イベントから削除
+        SceneManager.sceneLoaded -= GameResultLoaded;
+    }
 
     private void OnTriggerEnter(Collider other)    //ゴールに接触した瞬間に入る
     {
@@ -60,9 +86,18 @@ public class Result : MonoBehaviour
             }
             else if(pm <= 0)
             {
-                GameObject gm = GameObject.Find("ResultScore");
-               gm.GetComponent<ResultScore>().AddScore(GoalPoint);
+                GoalText.enabled = true;
+                //              GameObject gm = GameObject.Find("ResultScore");
+                //            gm.GetComponent<ResultScore>().AddScore(GoalPoint);
+
+                // イベントに登録
+                SceneManager.sceneLoaded += GameResultLoaded; 
+                Invoke("LoadScene", 1f);
             }
         }
+    }
+    void LoadScene()
+    {
+        SceneManager.LoadScene("GameResult");
     }
 }

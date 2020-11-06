@@ -8,14 +8,15 @@ public class ResultScore : MonoBehaviour
     private Text GoalScore;
     private Text distanceScore;
     private Text TotalScore;
-    private int GoalPoint;
+    public int GoalPoint;
+
 
     void Start()
     {
         GoalScore = GameObject.Find("goalpoint").GetComponent<Text>();
         distanceScore = GameObject.Find("kyori").GetComponent<Text>();
         TotalScore = GameObject.Find("totalscore").GetComponent<Text>();
-        GoalPoint = 0;
+ //       GoalPoint = 0;
         SetScoreText(GoalPoint);
     }
 

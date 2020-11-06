@@ -11,6 +11,11 @@ TagManager:
   - Turbo
   - jump
   - Jump
+  - Goal
+  - Low_P
+  - High_P
+  - Medium_P
+  - ResultScore
   layers:
   - Default
   - TransparentFX
