@@ -314,7 +314,7 @@ public class PlayerMove : MonoBehaviour
 	IEnumerator WaitKeyInput2()
 	{
 		turboForce += 5f;
-		yield return new WaitForSeconds(5.0f);
+		yield return new WaitForSeconds(1.2f);
 		turboForce -= 5f;
 
 	}
