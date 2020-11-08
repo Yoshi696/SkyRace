@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &70964485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -677,6 +677,7 @@ MonoBehaviour:
   MovementSpeed: 500
   RotationSpeed: 100
   karbspeed: 2
+  jumpForce: 20
 --- !u!54 &277750430
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2397,6 +2398,7 @@ MonoBehaviour:
   MovementSpeed: 100
   RotationSpeed: 100
   karbspeed: 2
+  jumpForce: 20
 --- !u!54 &1833468485
 Rigidbody:
   m_ObjectHideFlags: 0
