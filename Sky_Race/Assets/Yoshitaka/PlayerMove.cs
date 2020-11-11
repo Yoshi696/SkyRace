@@ -149,6 +149,9 @@ public class PlayerMove : MonoBehaviour
 
         //回転
 
+        //現在は座標で直接計算しているが、変数を使ってできないか？（例えば変数に１足していって１５になったら回転やめるとか）
+        //要検討
+
         if (canRotate)
         {
             Quaternion AddRot = Quaternion.identity;
@@ -175,31 +178,69 @@ public class PlayerMove : MonoBehaviour
                 }
             }
 
+
+
+
             //下方向に向く　gen=0は押されていない　gen=1は上　gen=-1は↓
             if (gen == -1)
             {
-                if (sita == true)
+                //if (sita == true)
+                //{
+                //    //pitch = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
+                //    AddRot.eulerAngles = new Vector3(0.1f, 0, 0);
+                //    GetComponent<Rigidbody>().rotation *= AddRot;
+                //    plus = true;
+                //}
+
+                if (transform.localEulerAngles.x <= 30 && transform.localEulerAngles.x >= 25 /*&& transform.localEulerAngles.z >= 0*/)
                 {
-                    pitch = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
-                    plus = true;
+                    AddRot.eulerAngles = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    AddRot.eulerAngles = new Vector3(0.5f, 0, 0);
+                    GetComponent<Rigidbody>().rotation *= AddRot;
                 }
 
+            }
+            if(gen == 1)
+            {
+                //if (transform.localEulerAngles.x == 0 && transform.localEulerAngles.x <= 360 || transform.localEulerAngles.x >= 265 /*&& transform.localEulerAngles.x <= 1*/)
+                //{
+                //    plus = false;
+                //}
 
+                //if (plus == true)
+                //{
+                //    sita = false;
+                //    AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
+                //    GetComponent<Rigidbody>().rotation *= AddRot;
+                //}
+
+                if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
+                {
+                    AddRot.eulerAngles = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    AddRot.eulerAngles = new Vector3(-0.5f, 0, 0);
+                    GetComponent<Rigidbody>().rotation *= AddRot;
+                }
             }
             /*else */
             if (gen == 0)
             {
-                if (transform.localEulerAngles.x == 0 && transform.localEulerAngles.x <= 360 || transform.localEulerAngles.x >= 265 /*&& transform.localEulerAngles.x <= 1*/)
-                {
-                    plus = false;
-                }
+                //if (transform.localEulerAngles.x == 0 && transform.localEulerAngles.x <= 360 || transform.localEulerAngles.x >= 265 /*&& transform.localEulerAngles.x <= 1*/)
+                //{
+                //    plus = false;
+                //}
 
-                if (plus == true)
-                {
-                    sita = false;
-                    AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
-                    GetComponent<Rigidbody>().rotation *= AddRot;
-                }
+                //if (plus == true)
+                //{
+                //    sita = false;
+                //    AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
+                //    GetComponent<Rigidbody>().rotation *= AddRot;
+                //}
             }
 
             //自分が横に傾く（傾くと変な動きするから傾きは別作った方がいいかも？）
@@ -253,9 +294,9 @@ public class PlayerMove : MonoBehaviour
             //実際傾く所
             //AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
             //GetComponent<Rigidbody>().rotation *= AddRot;
-            float debug = transform.localEulerAngles.z;
+            float debug = transform.localEulerAngles.x;
             //Debug.Log(plus);
-            //Debug.Log(debug1);
+            //Debug.Log(debug);
             //Debug.Log(transform.localEulerAngles.z);
             //
             //if (sita == true)
