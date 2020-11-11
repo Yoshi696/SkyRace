@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-    public class SelectScene : MonoBehaviour
+    public class GameScene : MonoBehaviour
     {
-    public void StartGame()
+
+        public void StartGame()
         {
             SceneManager.LoadScene("MakeDebug");
         }
