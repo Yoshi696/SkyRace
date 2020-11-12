@@ -5,6 +5,18 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Result : MonoBehaviour
 {
+    //距離を表示しないならここから
+    [SerializeField]
+    private Transform targetObj;
+    [SerializeField]
+    private Text PPUI;
+    [SerializeField]
+    private Text SPUI;
+    [SerializeField]
+    private Text DSUI;
+    //ここまではコメントアウトする
+
+    private float colliderOffset;
 
     //Point取得用の変数を用意
     private int High = 50;
@@ -12,12 +24,39 @@ public class Result : MonoBehaviour
     private int Low = 10;
     private float pm = 100;
     private int GoalPoint;
+    private double distance;
     //Goalの文字テキスト
     public Text GoalText;
 
     void Strat()
     {
+        colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
         GoalText.enabled = false;
+    }
+    void Update()
+    {
+        //スタート座標とプレイヤー座標の取得
+        Vector3 v = transform.position;//プレイヤーの座標
+        Vector3 v2 = targetObj.position;//スタート座標
+        distance = (v.z - v2.z) - colliderOffset;//距離計算
+
+        if (PPUI != null)
+        {
+            //プレイヤーのz座標を表示
+            PPUI.text = v.z.ToString("0.00m");
+            //スタートのz座標を表示
+            SPUI.text = v2.z.ToString("0.00m");
+            //プレイヤーとスタートのz軸の距離を表示(スコアに使うのはこっちかな)
+            DSUI.text = distance.ToString("0.00m");
+
+        }
+        else
+        {//上の条件に当てはまらない時のデバック表示
+            Debug.Log(v.z.ToString("0.00m"));
+            Debug.Log(v2.z.ToString("0.00m"));
+            Debug.Log(distance.ToString("0.00m"));
+        }
+
     }
 
     public void onClick()
@@ -33,6 +72,7 @@ public class Result : MonoBehaviour
 
         // データを渡す処理
         gameManager.GoalPoint = GoalPoint;
+        gameManager.Distance = distance;
 
         // イベントから削除
         SceneManager.sceneLoaded -= GameResultLoaded;
@@ -98,6 +138,7 @@ public class Result : MonoBehaviour
     }
     void LoadScene()
     {
+        //Result画面を読み込む
         SceneManager.LoadScene("GameResult");
     }
 }
