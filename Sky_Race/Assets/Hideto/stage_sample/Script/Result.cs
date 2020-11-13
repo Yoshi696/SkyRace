@@ -25,6 +25,10 @@ public class Result : MonoBehaviour
     private float pm = 100;
     private int GoalPoint;
     private double distance;
+
+    //デバック用の変数
+    private bool Log = true;//デバック表示true 非表示false
+
     //Goalの文字テキスト
     public Text GoalText;
 
@@ -50,7 +54,7 @@ public class Result : MonoBehaviour
             DSUI.text = distance.ToString("0.00m");
 
         }
-        else
+        else if(Log == true)
         {//上の条件に当てはまらない時のデバック表示
             Debug.Log(v.z.ToString("0.00m"));
             Debug.Log(v2.z.ToString("0.00m"));
