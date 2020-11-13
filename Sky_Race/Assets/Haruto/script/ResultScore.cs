@@ -28,7 +28,7 @@ public class ResultScore : MonoBehaviour
     private void SetScoreText(int Score)
     {
         GoalScore.text = "GoalPoint:" + Score.ToString();
-        distanceScore.text = "Distabce:" + Distance.ToString("0.00m");
+        distanceScore.text = "Distance:" + Distance.ToString("0.00m");
         //トータルスコアの表示　今は整数に直したものを表示する
         TotalScore.text = "TotalScore:" + Total.ToString("0");
 
