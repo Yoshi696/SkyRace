@@ -8,7 +8,6 @@ public class SelectStart : MonoBehaviour
 {
     Selectable Retry;　//リトライボタン
     Selectable Title;   //タイトルボタン
-    bool RetryFlg = false;
 
     void Start()
     {
