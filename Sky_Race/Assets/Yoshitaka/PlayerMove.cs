@@ -115,6 +115,8 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce = 20.0f;
     private float turboForce = 1f;
 
+    private ParticleSystem Wind;
+
     int debug1;
 
 
@@ -124,6 +126,7 @@ public class PlayerMove : MonoBehaviour
         canRotate = CanMoveForward || CanMoveBack || CanMoveRight || CanMoveLeft || CanMoveUp || CanMoveDown;
         rB = GetComponent<Rigidbody>();
 
+        Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -203,7 +206,7 @@ public class PlayerMove : MonoBehaviour
                 }
 
             }
-            if(gen == 1)
+            if (gen == 1)
             {
                 //if (transform.localEulerAngles.x == 0 && transform.localEulerAngles.x <= 360 || transform.localEulerAngles.x >= 265 /*&& transform.localEulerAngles.x <= 1*/)
                 //{
@@ -235,12 +238,16 @@ public class PlayerMove : MonoBehaviour
                 //    plus = false;
                 //}
 
-                //if (plus == true)
-                //{
-                //    sita = false;
-                //    AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
-                //    GetComponent<Rigidbody>().rotation *= AddRot;
-                //}
+                if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
+                {
+
+                }
+                else
+                {
+                    sita = false;
+                    AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
+                    GetComponent<Rigidbody>().rotation *= AddRot;
+                }
             }
 
             //自分が横に傾く（傾くと変な動きするから傾きは別作った方がいいかも？）
@@ -482,6 +489,7 @@ public class PlayerMove : MonoBehaviour
                 MovementSpeed -= 5f;
                 //Debug.Log(MovementSpeed);
             }
+            Wind.Stop();
         }
     }
 }
