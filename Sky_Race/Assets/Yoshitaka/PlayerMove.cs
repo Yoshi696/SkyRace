@@ -99,8 +99,10 @@ public class PlayerMove : MonoBehaviour
     public bool CanRotatePitch = true;
     public bool CanRotateRoll = true;
 
-    public float MovementSpeed = 100f;
+    private float MovementSpeed;
+    public float ControlSpeed = 500f;
     public float RotationSpeed = 100f;
+    public StartRun startrun;
     public int karbspeed = 2;
 
     private bool canTranslate;
@@ -117,7 +119,7 @@ public class PlayerMove : MonoBehaviour
 
     private ParticleSystem Wind;
 
-    int debug1;
+    //int debug1;
 
 
     void Start()
@@ -125,8 +127,10 @@ public class PlayerMove : MonoBehaviour
         canTranslate = CanRotateYaw || CanRotatePitch || CanRotateRoll;
         canRotate = CanMoveForward || CanMoveBack || CanMoveRight || CanMoveLeft || CanMoveUp || CanMoveDown;
         rB = GetComponent<Rigidbody>();
-
+        MovementSpeed = startrun.GetSpeedValue();
+        MovementSpeed = MovementSpeed * ControlSpeed;
         Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
+        Wind.Play();
     }
 
     void Update()

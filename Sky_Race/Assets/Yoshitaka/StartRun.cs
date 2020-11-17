@@ -11,16 +11,19 @@ public class StartRun : MonoBehaviour
     public float plus = 0.0001f;
     public float jumpForce = 40f;
     private bool Button = false;
-    private bool JumoB = false;
-    Vector3 jump1 = new Vector3(0, 0, 0);
-    Vector3 jump2 = new Vector3(0, 0, 0);
+   // private bool JumoB = false;
+    //Vector3 jump1 = new Vector3(0, 0, 0);
+    //Vector3 jump2 = new Vector3(0, 0, 0);
+
+    private ParticleSystem Wind;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-
+        Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
+        Wind.Stop();
     }
 
     private void OnTriggerExit(Collider other)
