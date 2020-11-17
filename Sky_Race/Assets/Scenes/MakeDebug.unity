@@ -2473,7 +2473,6 @@ GameObject:
   - component: {fileID: 427052829}
   - component: {fileID: 427052828}
   - component: {fileID: 427052827}
-  - component: {fileID: 427052826}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -2495,19 +2494,6 @@ Transform:
   m_Father: {fileID: 1477354890}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &427052826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427052824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &427052827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2529,7 +2515,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427052824}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -3190,7 +3176,6 @@ GameObject:
   - component: {fileID: 547847814}
   - component: {fileID: 547847813}
   - component: {fileID: 547847812}
-  - component: {fileID: 547847811}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -3212,19 +3197,6 @@ Transform:
   m_Father: {fileID: 734068231}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &547847811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547847809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &547847812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3246,7 +3218,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547847809}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -5388,7 +5360,6 @@ GameObject:
   - component: {fileID: 827506646}
   - component: {fileID: 827506645}
   - component: {fileID: 827506644}
-  - component: {fileID: 827506643}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -5410,19 +5381,6 @@ Transform:
   m_Father: {fileID: 1294573033}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &827506643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827506641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &827506644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5444,7 +5402,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827506641}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -6528,7 +6486,6 @@ GameObject:
   - component: {fileID: 1046179053}
   - component: {fileID: 1046179052}
   - component: {fileID: 1046179051}
-  - component: {fileID: 1046179050}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -6550,19 +6507,6 @@ Transform:
   m_Father: {fileID: 489179225}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1046179050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046179048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &1046179051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6584,7 +6528,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046179048}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -6978,7 +6922,6 @@ GameObject:
   - component: {fileID: 1096786977}
   - component: {fileID: 1096786976}
   - component: {fileID: 1096786975}
-  - component: {fileID: 1096786974}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -7000,19 +6943,6 @@ Transform:
   m_Father: {fileID: 1442509712}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1096786974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1096786972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &1096786975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7034,7 +6964,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096786972}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -7099,7 +7029,6 @@ GameObject:
   - component: {fileID: 1110749937}
   - component: {fileID: 1110749936}
   - component: {fileID: 1110749935}
-  - component: {fileID: 1110749934}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -7121,19 +7050,6 @@ Transform:
   m_Father: {fileID: 884317231}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1110749934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110749932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &1110749935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7155,7 +7071,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110749932}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -8888,7 +8804,6 @@ GameObject:
   - component: {fileID: 1384832224}
   - component: {fileID: 1384832223}
   - component: {fileID: 1384832222}
-  - component: {fileID: 1384832221}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -8910,19 +8825,6 @@ Transform:
   m_Father: {fileID: 1594392376}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1384832221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384832219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &1384832222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8944,7 +8846,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384832219}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -9009,7 +8911,6 @@ GameObject:
   - component: {fileID: 1431062562}
   - component: {fileID: 1431062561}
   - component: {fileID: 1431062560}
-  - component: {fileID: 1431062559}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -9031,19 +8932,6 @@ Transform:
   m_Father: {fileID: 802638382}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1431062559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431062557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &1431062560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9065,7 +8953,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431062557}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -9444,7 +9332,6 @@ GameObject:
   - component: {fileID: 1486493556}
   - component: {fileID: 1486493555}
   - component: {fileID: 1486493554}
-  - component: {fileID: 1486493553}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -9466,19 +9353,6 @@ Transform:
   m_Father: {fileID: 1870284282}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1486493553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486493551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &1486493554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9500,7 +9374,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486493551}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -10127,7 +10001,6 @@ GameObject:
   - component: {fileID: 1574669358}
   - component: {fileID: 1574669357}
   - component: {fileID: 1574669356}
-  - component: {fileID: 1574669355}
   m_Layer: 0
   m_Name: HansyaAtari
   m_TagString: Buns
@@ -10149,19 +10022,6 @@ Transform:
   m_Father: {fileID: 1829522165}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1574669355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574669353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27b65850d821b4db527be1845894d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounce: 10
 --- !u!114 &1574669356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10183,7 +10043,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574669353}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
