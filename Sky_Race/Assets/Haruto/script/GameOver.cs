@@ -21,9 +21,9 @@ public class GameOver : MonoBehaviour
         mainCamera.SetActive(true);
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Over")
+        if(other.gameObject.tag == "Over")
         {
             mainCamera.SetActive(false);
             subCamera.SetActive(true);
