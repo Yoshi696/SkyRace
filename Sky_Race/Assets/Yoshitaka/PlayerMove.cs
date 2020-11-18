@@ -470,9 +470,11 @@ public class PlayerMove : MonoBehaviour
         //this.gameObject.GetComponent<Renderer>().enabled = true;
         rB.AddForce(0, jumpForce, 0, ForceMode.Force);
         this.gameObject.GetComponent<PlayerMove>().enabled = false;
+        this.gameObject.GetComponent<Gravity>().enabled = false;
         {
             yield return new WaitForSeconds(1.0f);
         }
+        this.gameObject.GetComponent<Gravity>().enabled = true;
         this.gameObject.GetComponent<PlayerMove>().enabled = true;
     }
 
