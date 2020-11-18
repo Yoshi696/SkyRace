@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSource;
 
     public AudioClip sound01;
+    public AudioClip sound02;
+    public AudioClip sound03;
 
     void Start()
     {
@@ -18,6 +20,14 @@ public class AudioManager : MonoBehaviour
         if (other.gameObject.tag == "Jump")
         {
             audioSource.PlayOneShot(sound01);
+        }
+        if(other.gameObject.tag == "Take of")
+        {
+            audioSource.PlayOneShot(sound02);
+        }
+        if(other.gameObject.tag == "Turbo")
+        {
+            audioSource.PlayOneShot(sound03);
         }
     }
 }

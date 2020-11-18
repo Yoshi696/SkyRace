@@ -17,6 +17,7 @@ TagManager:
   - Medium_P
   - ResultScore
   - Over
+  - Take of
   layers:
   - Default
   - TransparentFX
