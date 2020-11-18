@@ -38,7 +38,8 @@ public class StartRun : MonoBehaviour
             //JumoB = true;
             GetComponent<StartRun>().enabled = false;
             GetComponent<PlayerMove>().enabled = true;
-            }
+            GetComponent<Gravity>().enabled = false;
+        }
         //}
     }
 

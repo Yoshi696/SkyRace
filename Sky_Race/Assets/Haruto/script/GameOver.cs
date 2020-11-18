@@ -11,11 +11,15 @@ public class GameOver : MonoBehaviour
 
     public Text OverText;
 
+    private ParticleSystem Wind;
+
     void Start()
     {
         mainCamera = GameObject.Find("Camera");
         subCamera = GameObject.Find("SubCamera");
         OverText.enabled = false;
+
+        Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
 
         subCamera.SetActive(false);
         mainCamera.SetActive(true);
@@ -25,6 +29,7 @@ public class GameOver : MonoBehaviour
     {
         if(other.gameObject.tag == "Over")
         {
+            Wind.Stop();
             mainCamera.SetActive(false);
             subCamera.SetActive(true);
             OverText.enabled = true;
