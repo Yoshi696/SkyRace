@@ -426,20 +426,6 @@ public class PlayerMove : MonoBehaviour
             transform.Rotate(new Vector3(0, 180, 0));
             //StartCoroutine("WaitKeyInput");
         }
-
-        if (other.gameObject.tag == "Over")
-        {
-            CanMove = false;
-            CanMoveForward = false;
-            CanMoveBack = false;
-            CanMoveLeft = false;
-            CanMoveRight = false;
-            CanMoveUp = false;
-            CanMoveDown = false;
-            CanRotateYaw = false;
-            CanRotatePitch = false;
-            CanRotateRoll = false;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -459,6 +445,21 @@ public class PlayerMove : MonoBehaviour
             //turboForce -= 5f;
 
         }
+
+        if (other.gameObject.tag == "Over")
+        {
+            CanMove = false;
+            CanMoveForward = false;
+            CanMoveBack = false;
+            CanMoveLeft = false;
+            CanMoveRight = false;
+            CanMoveUp = false;
+            CanMoveDown = false;
+            CanRotateYaw = false;
+            CanRotatePitch = false;
+            CanRotateRoll = false;
+        }
+
     }
 
     IEnumerator WaitKeyInput1()
