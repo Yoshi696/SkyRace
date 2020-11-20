@@ -16,6 +16,9 @@ public class StartRun : MonoBehaviour
     //Vector3 jump2 = new Vector3(0, 0, 0);
 
     private ParticleSystem Wind;
+    private ParticleSystem Wind2;
+    private ParticleSystem Wind3;
+
 
 
     // Start is called before the first frame update
@@ -23,7 +26,11 @@ public class StartRun : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
+        Wind2 = GameObject.Find("windspeed").GetComponent<ParticleSystem>();
+        Wind3 = GameObject.Find("wind (up)").GetComponent<ParticleSystem>();
         Wind.Stop();
+        Wind2.Stop();
+        Wind3.Stop();
     }
 
     private void OnTriggerExit(Collider other)
