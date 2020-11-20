@@ -120,19 +120,26 @@ public class PlayerMove : MonoBehaviour
     private int angCout1;
 
     private ParticleSystem Wind;
-
-    //int debug1;
-
+    private ParticleSystem Wind2;
+    private ParticleSystem Wind3;
 
     void Start()
     {
+        //動きに関しての情報
         canTranslate = CanRotateYaw || CanRotatePitch || CanRotateRoll;
         canRotate = CanMoveForward || CanMoveBack || CanMoveRight || CanMoveLeft || CanMoveUp || CanMoveDown;
+        //重力取得
         rB = GetComponent<Rigidbody>();
+        //助走から速度を持ってくる
         MovementSpeed = startrun.GetSpeedValue();
         MovementSpeed = MovementSpeed * ControlSpeed;
+        //風のエフェクト取得
         Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
+        Wind2 = GameObject.Find("windspeed").GetComponent<ParticleSystem>();
+        Wind3 = GameObject.Find("wind (up)").GetComponent<ParticleSystem>();
         Wind.Play();
+        Wind2.Stop();
+        Wind3.Stop();
     }
 
     void Update()
@@ -451,17 +458,10 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "Jump")
         {
             StartCoroutine("WaitKeyInput1");
-            // this.gameObject.GetComponent<PlayerMove>().enabled = false;
-            //Debug.Log(jumpForce);
         }
         if (other.gameObject.tag == "Turbo")
         {
-            //	Vector3 vel = rB.velocity;
-            //	rB.AddForce(/*vel.x * turboForce*/0, 0, vel.z * turboForce, ForceMode.Impulse);
-            //turboForce += 5f;
             StartCoroutine("WaitKeyInput2");
-            //turboForce -= 5f;
-
         }
     }
 
@@ -472,6 +472,8 @@ public class PlayerMove : MonoBehaviour
         //    yield return new WaitForSeconds(1.0f);
         //}
         //this.gameObject.GetComponent<Renderer>().enabled = true;
+        Wind.Stop();
+        Wind3.Play();
         rB.AddForce(0, jumpForce, 0, ForceMode.Force);
         this.gameObject.GetComponent<PlayerMove>().enabled = false;
         this.gameObject.GetComponent<Gravity>().enabled = false;
@@ -480,13 +482,19 @@ public class PlayerMove : MonoBehaviour
         }
         this.gameObject.GetComponent<Gravity>().enabled = true;
         this.gameObject.GetComponent<PlayerMove>().enabled = true;
+        Wind3.Stop();
+        Wind.Play();
     }
 
     IEnumerator WaitKeyInput2()
     {
+        Wind.Stop();
+        Wind2.Play();
         turboForce += 5f;
         yield return new WaitForSeconds(1.2f);
         turboForce -= 5f;
+        Wind2.Stop();
+        Wind.Play();
 
     }
 
