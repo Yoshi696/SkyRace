@@ -117,6 +117,8 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce = 20.0f;
     private float turboForce = 1f;
 
+    private int angCout1;
+
     private ParticleSystem Wind;
 
     //int debug1;
@@ -185,9 +187,6 @@ public class PlayerMove : MonoBehaviour
                 }
             }
 
-
-
-
             //下方向に向く　gen=0は押されていない　gen=1は上　gen=-1は↓
             if (gen == -1)
             {
@@ -199,14 +198,16 @@ public class PlayerMove : MonoBehaviour
                 //    plus = true;
                 //}
 
-                if (transform.localEulerAngles.x <= 30 && transform.localEulerAngles.x >= 25 /*&& transform.localEulerAngles.z >= 0*/)
+                if (angCout1 >= 55 || transform.localEulerAngles.x <= 90 && transform.localEulerAngles.x >= 85/*transform.localEulerAngles.x <= 30 && transform.localEulerAngles.x >= 25*/)
                 {
                     AddRot.eulerAngles = new Vector3(0, 0, 0);
+                   // angCout1 = 0;
                 }
                 else
                 {
                     AddRot.eulerAngles = new Vector3(0.5f, 0, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
+                    angCout1++;
                 }
 
             }
@@ -227,11 +228,13 @@ public class PlayerMove : MonoBehaviour
                 if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
                 {
                     AddRot.eulerAngles = new Vector3(0, 0, 0);
+                    //angCout1 = 0;
                 }
                 else
                 {
                     AddRot.eulerAngles = new Vector3(-0.5f, 0, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
+                    angCout1--;
                 }
             }
             /*else */
@@ -244,13 +247,14 @@ public class PlayerMove : MonoBehaviour
 
                 if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
                 {
-
+                    angCout1 = 0;
                 }
                 else
                 {
                     sita = false;
                     AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
+                    angCout1--;
                 }
             }
 
@@ -412,7 +416,7 @@ public class PlayerMove : MonoBehaviour
             // 実際の動き
             float curSpeed = numInput > 0 ? MovementSpeed : 0;
             Vector3 AddPos = input[0] * turboForce * Vector3.forward + input[2] * Vector3.left + input[4] * Vector3.up
-                + input[1] * Vector3.back + input[3] * Vector3.right + input[5] * Vector3.down;
+                + input[1] * Vector3.back + input[3] * Vector3.right /*+ input[5] * Vector3.down*/;
             AddPos = GetComponent<Rigidbody>().rotation * AddPos;
 
             GetComponent<Rigidbody>().velocity = AddPos * (Time.fixedDeltaTime * MovementSpeed);

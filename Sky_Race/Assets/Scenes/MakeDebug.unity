@@ -2347,8 +2347,8 @@ MonoBehaviour:
   targetObj: {fileID: 1684786631}
   PPUI: {fileID: 0}
   SPUI: {fileID: 0}
-  DSUI: {fileID: 0}
-  Log: 2
+  SUMUI: {fileID: 0}
+  PDUI: {fileID: 0}
   GoalText: {fileID: 2125086455}
 --- !u!114 &277750440
 MonoBehaviour:
