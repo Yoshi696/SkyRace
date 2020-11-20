@@ -19,7 +19,7 @@ public class ResultScore : MonoBehaviour
         distanceScore = GameObject.Find("kyori").GetComponent<Text>();
         TotalScore = GameObject.Find("totalscore").GetComponent<Text>();
       //トータルスコアの計算　今は距離を整数にしてから計算している
-        Total = (double)GoalPoint + ((Distance*100)/2);
+        Total = (double)GoalPoint + ((Distance*100)/10);
         
         SetScoreText(GoalPoint);
 
