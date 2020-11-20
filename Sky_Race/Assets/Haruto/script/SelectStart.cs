@@ -11,6 +11,11 @@ public class SelectStart : MonoBehaviour
 
     void Start()
     {
+        //マウスポインタ消すやつ
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Screen.lockCursor = false;
+
         Retry = GameObject.Find("Canvas/Retry").GetComponent<Selectable>();
         Title = GameObject.Find("Canvas/Title").GetComponent<Selectable>();
         Retry.Select();

@@ -1664,6 +1664,22 @@ PrefabInstance:
       propertyPath: InitialModule.startRotationY.minMaxState
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 19800004, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -1683,6 +1699,22 @@ PrefabInstance:
     - target: {fileID: 19800004, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19800008, guid: e843ab1e28ce94a479ab6ab2df6cd8a3, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
