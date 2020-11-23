@@ -62,11 +62,11 @@ public class StartRun : MonoBehaviour
         this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + run);//助走（前進）
 
         //↓助走中
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetButtonDown("Action") == true)
         {
             Button = true;
         }
-        if (Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetButtonUp("Action") == true)
         {
             Button = false;
         }

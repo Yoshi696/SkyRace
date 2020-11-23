@@ -12,9 +12,9 @@ public class Menu : MonoBehaviour
     void Start()
 	{
 		//マウスポインタ消すやつ
-		Cursor.visible = true;
+		//Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.Locked;
-		Screen.lockCursor = false;
+		//Screen.lockCursor = false;
 
 		// ボタンコンポーネントの取得
 		start = GameObject.Find("/Canvas/Start").GetComponent<Button>();

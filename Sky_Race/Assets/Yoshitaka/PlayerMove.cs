@@ -157,7 +157,7 @@ public class PlayerMove : MonoBehaviour
 
     void UpdatePosition()
     {
-        float gen = Input.GetAxisRaw("Pitch");
+        float gen = Input.GetAxisRaw("Vertical");
         float rot = Input.GetAxisRaw("Horizontal");
         float ang = Input.GetAxisRaw("Horizontal");
         /*Roll*/
