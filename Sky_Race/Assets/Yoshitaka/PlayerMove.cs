@@ -144,7 +144,20 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2) && Cursor.lockState == CursorLockMode.Locked)
+        {
+            OnClick();  //クリックされた時の処理
+        }
+    }
 
+    void OnClick()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+
+        //if (Cursor.lockState == CursorLockMode.Locked)
+        //{
+        //    return;  //lockStateがLockedじゃなかったら以後の処理をしない
+        //}
     }
 
     void FixedUpdate()
