@@ -18,6 +18,7 @@ TagManager:
   - ResultScore
   - Over
   - Take of
+  - move
   layers:
   - Default
   - TransparentFX
