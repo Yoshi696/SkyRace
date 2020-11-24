@@ -518,6 +518,8 @@ public class PlayerMove : MonoBehaviour
             if (MovementSpeed >= 0)
             {
                 MovementSpeed -= 5f;
+                GetComponent<ChangeCamera>().enabled = true;
+               // GetComponent<PlayerMove>().enabled = false;
                 //Debug.Log(MovementSpeed);
             }
             Wind.Stop();
