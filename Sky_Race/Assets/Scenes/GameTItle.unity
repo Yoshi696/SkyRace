@@ -218,6 +218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71b73d3dcbbffe4bbd05e0feef2c153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound01: {fileID: 8300000, guid: f7092b2037056664bb828d5a95ebb094, type: 3}
+  sound02: {fileID: 8300000, guid: 32244c77b7a95d74089c960832939154, type: 3}
+  sound03: {fileID: 0}
 --- !u!82 &213477988
 AudioSource:
   m_ObjectHideFlags: 0
@@ -230,9 +233,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 28369dca0e2c19f4195a31c16fb0f6ab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.396
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -415,7 +418,7 @@ GameObject:
   - component: {fileID: 520418124}
   m_Layer: 5
   m_Name: Start
-  m_TagString: Untagged
+  m_TagString: Start
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1309,7 +1312,7 @@ GameObject:
   - component: {fileID: 1761152638}
   m_Layer: 5
   m_Name: End
-  m_TagString: Untagged
+  m_TagString: End
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1544,7 +1547,7 @@ GameObject:
   - component: {fileID: 2129488151}
   m_Layer: 5
   m_Name: Help
-  m_TagString: Untagged
+  m_TagString: Help
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
