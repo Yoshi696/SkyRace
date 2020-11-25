@@ -79,6 +79,7 @@ public class Result : MonoBehaviour
         //    Debug.Log(distance.ToString("0.00m"));
         //
 
+
     }
 
 
@@ -86,19 +87,19 @@ public class Result : MonoBehaviour
     {
         if (other.gameObject.tag == "High_P")
         {
-            Debug.Log("高得点");
+//            Debug.Log("高得点");
             GoalPoint = High;
                 
         }
         else if(other.gameObject.tag == "Medium_P")
         {
-            Debug.Log("中得点");
+//            Debug.Log("中得点");
             GoalPoint = Medium;
 
         }
         else if (other.gameObject.tag == "Low_P")
         {
-            Debug.Log("低得点");
+//            Debug.Log("低得点");
             GoalPoint = Low;
 
         }
@@ -120,23 +121,31 @@ public class Result : MonoBehaviour
     {//トリガーから出たとき
         if (other.gameObject.tag == "High_P")
         {
-            Debug.Log("出たから中得点");
+ //           Debug.Log("出たから中得点");
             GoalPoint = Medium;
 
         }
         else if (other.gameObject.tag == "Medium_P")
         {
-            Debug.Log("出たから低得点");
+//            Debug.Log("出たから低得点");
             GoalPoint = Low;
 
         }
-        if (other.gameObject.tag == "JosouJ")
+        else if (other.gameObject.tag == "Low_P")
         {
-            sum = 0;//歩行距離合計の初期化
-            v2 = targetObj.transform.position; //最初のプレイヤーの位置を保存
+ //           Debug.Log("点数ナシ");
+            GoalPoint = 0;
+
         }
+        if (other.gameObject.tag == "MoveOn")
+        {
+
+            GetComponent<PlayerMove>().enabled = true;
+            //GetComponent<PM_test>().enabled = true;
+        }
+
     }
-    private void OnCollisionStay(Collision other)
+    private void OnTriggerStay(Collider other)
     {//ゴールに接触している間徐々にスピードを下げる
         if (other.gameObject.tag == "Goal")
         {
@@ -177,4 +186,17 @@ public class Result : MonoBehaviour
         // イベントから削除
         SceneManager.sceneLoaded -= GameResultLoaded;
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Goal")
+        {
+            GetComponent<PlayerMove>().enabled = false;
+            //GetComponent<PM_test>().enabled = false;
+        }
+    }
+    private void OnCollisionExit(Collision other)
+    {
+    }
+
+    
 }

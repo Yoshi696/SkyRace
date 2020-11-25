@@ -19,6 +19,7 @@ TagManager:
   - Over
   - Take of
   - move
+  - MoveOn
   layers:
   - Default
   - TransparentFX

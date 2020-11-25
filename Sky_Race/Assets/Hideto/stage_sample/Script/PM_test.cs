@@ -33,7 +33,7 @@ public class PM_test : MonoBehaviour
     public float jumpForce = 20.0f;
     private float turboForce = 1f;
 
-    int debug1;
+ //   int debug1;
 
 
     void Start()
@@ -94,7 +94,7 @@ public class PM_test : MonoBehaviour
             }
 
             //下方向に向く　gen=0は押されていない　gen=1は上　gen=-1は↓
-            if (gen == -1)
+            if (gen == -1 && transform.gameObject.tag == "Goal")
             {
                 if (sita == true)
                 {
@@ -292,6 +292,8 @@ public class PM_test : MonoBehaviour
             transform.Rotate(new Vector3(0, 180, 0));
             //StartCoroutine("WaitKeyInput");
         }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -336,14 +338,14 @@ public class PM_test : MonoBehaviour
 
     }
 
-    private void OnCollisionStay(Collision other)
+    private void OnTriggerStay(Collider other)
     {//ゴールに接触している間徐々にスピードを下げる
         if (other.gameObject.tag == "Goal")
         {
             if (MovementSpeed >= 0)
             {
                 MovementSpeed -= 5f;
-                //Debug.Log(MovementSpeed);
+                Debug.Log(MovementSpeed);
             }
         }
     }
