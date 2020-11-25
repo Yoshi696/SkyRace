@@ -39,13 +39,14 @@ public class StartRun : MonoBehaviour
         //Vector3 _this = this.gameObject.transform.position;
         //if (Input.GetKeyUp(KeyCode.Z))
         //{
-            if (other.gameObject.tag == "JosouJ")
-            {
+        if (other.gameObject.tag == "JosouJ")
+        {
             //rb.velocity = Vector3.up * jumpForce;
             //JumoB = true;
             GetComponent<StartRun>().enabled = false;
             GetComponent<PlayerMove>().enabled = true;
             GetComponent<Gravity>().enabled = false;
+            GetComponent<Result>().enabled = true;
         }
         //}
     }
