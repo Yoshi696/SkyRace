@@ -19,27 +19,38 @@ public class StartRun : MonoBehaviour
     private ParticleSystem Wind2;
     private ParticleSystem Wind3;
 
+    private ParticleSystem Hanabi1;
+    private ParticleSystem Hanabi2;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        for(int i=0;i<12;)
+
         rb = this.GetComponent<Rigidbody>();
         Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
         Wind2 = GameObject.Find("windspeed").GetComponent<ParticleSystem>();
         Wind3 = GameObject.Find("wind (up)").GetComponent<ParticleSystem>();
+        Hanabi1 = GameObject.Find("Hanabi1").GetComponent<ParticleSystem>();
+        Hanabi2 = GameObject.Find("Hanabi2").GetComponent<ParticleSystem>();
+
+
         Wind.Stop();
         Wind2.Stop();
         Wind3.Stop();
+        Hanabi1.Play();
+        Hanabi2.Play();
     }
 
     private void OnTriggerExit(Collider other)
     {
+
         ////↓ジャンプ
         //Vector3 _this = this.gameObject.transform.position;
         //if (Input.GetKeyUp(KeyCode.Z))
         //{
-            if (other.gameObject.tag == "JosouJ")
+        if (other.gameObject.tag == "JosouJ")
             {
             //rb.velocity = Vector3.up * jumpForce;
             //JumoB = true;
