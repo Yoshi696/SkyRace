@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class item : MonoBehaviour
 {
@@ -99,18 +100,25 @@ public class item : MonoBehaviour
     public bool CanRotatePitch = true;
     public bool CanRotateRoll = true;
 
-    public float MovementSpeed = 100f;
+    private float MovementSpeed;
+    public float ControlSpeed = 500f;
     public float RotationSpeed = 100f;
+    public StartRun startrun;
     public int karbspeed = 2;
-    public int Item = 3;
+    public int Item;
     public GameObject ItemPrefab;
     public Vector3 offset = new Vector3();
+
 
     private bool canTranslate;
     private bool canRotate;
 
     private bool plus = false;
     private bool sita = false;
+    private bool isSETHI = true;
+    private Text textitem;
+    
+
 
 
     private Rigidbody rB;
@@ -118,48 +126,69 @@ public class item : MonoBehaviour
     public float jumpForce = 20.0f;
     private float turboForce = 1f;
 
-    int debug1;
+    private int angCout1;
 
+    private ParticleSystem Wind;
+    private ParticleSystem Wind2;
+    private ParticleSystem Wind3;
 
     void Start()
     {
+        //動きに関しての情報
         canTranslate = CanRotateYaw || CanRotatePitch || CanRotateRoll;
         canRotate = CanMoveForward || CanMoveBack || CanMoveRight || CanMoveLeft || CanMoveUp || CanMoveDown;
+        //重力取得
         rB = GetComponent<Rigidbody>();
+        //助走から速度を持ってくる
+        MovementSpeed = startrun.GetSpeedValue();
+        MovementSpeed = MovementSpeed * ControlSpeed;
+        //風のエフェクト取得
+        Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
+        Wind2 = GameObject.Find("windspeed").GetComponent<ParticleSystem>();
+        Wind3 = GameObject.Find("wind (up)").GetComponent<ParticleSystem>();
+        Wind.Play();
+        Wind2.Stop();
+        Wind3.Stop();
         Item = 3;
-
+        textitem = GameObject.Find("Itemsu").GetComponent<Text>();
+        SetItemText(Item);
+        StartCoroutine("Sleep");
     }
 
     void Update()
     {
-        GameObject ItemObj = GameObject.Find("Jamp");
-        if (Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2) && Cursor.lockState == CursorLockMode.Locked)
         {
-            //Debug.Log("押した");
+            OnClick();  //クリックされた時の処理
+        }
+        GameObject ItemObj = GameObject.Find("Jamp");
+        SetItemText(Item);
+        if (Input.GetButtonUp("Action") && isSETHI)
+        {
+           
+           
+            Debug.Log("押した");
             if (Item > 0)
             {
                 Itemsei();
                 --Item;
                 Debug.Log("数が減った");
+
             }
             else
             {
                 Item = 0;
             }
         }
+    }
 
-        //for (int i = 3; i > 0; i--)
+    void OnClick()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+
+        //if (Cursor.lockState == CursorLockMode.Locked)
         //{
-        //    if (Input.GetKeyUp(KeyCode.Space))
-        //    {
-
-        //        Debug.Log("投げた");
-        //    }
-        //    else
-        //    {
-        //        //transform.position = new Vector3(0f, transform.position.y - 0.1f, 0f);
-        //    }
-
+        //    return;  //lockStateがLockedじゃなかったら以後の処理をしない
         //}
     }
 
@@ -173,7 +202,7 @@ public class item : MonoBehaviour
 
     void UpdatePosition()
     {
-        float gen = Input.GetAxisRaw("Pitch");
+        float gen = Input.GetAxisRaw("Vertical");
         float rot = Input.GetAxisRaw("Horizontal");
         float ang = Input.GetAxisRaw("Horizontal");
         /*Roll*/
@@ -210,9 +239,6 @@ public class item : MonoBehaviour
                 }
             }
 
-
-
-
             //下方向に向く　gen=0は押されていない　gen=1は上　gen=-1は↓
             if (gen == -1)
             {
@@ -224,14 +250,16 @@ public class item : MonoBehaviour
                 //    plus = true;
                 //}
 
-                if (transform.localEulerAngles.x <= 30 && transform.localEulerAngles.x >= 25 /*&& transform.localEulerAngles.z >= 0*/)
+                if (angCout1 >= 55 || transform.localEulerAngles.x <= 90 && transform.localEulerAngles.x >= 85/*transform.localEulerAngles.x <= 30 && transform.localEulerAngles.x >= 25*/)
                 {
                     AddRot.eulerAngles = new Vector3(0, 0, 0);
+                    // angCout1 = 0;
                 }
                 else
                 {
                     AddRot.eulerAngles = new Vector3(0.5f, 0, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
+                    angCout1++;
                 }
 
             }
@@ -252,11 +280,13 @@ public class item : MonoBehaviour
                 if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
                 {
                     AddRot.eulerAngles = new Vector3(0, 0, 0);
+                    //angCout1 = 0;
                 }
                 else
                 {
                     AddRot.eulerAngles = new Vector3(-0.5f, 0, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
+                    angCout1--;
                 }
             }
             /*else */
@@ -267,12 +297,17 @@ public class item : MonoBehaviour
                 //    plus = false;
                 //}
 
-                //if (plus == true)
-                //{
-                //    sita = false;
-                //    AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
-                //    GetComponent<Rigidbody>().rotation *= AddRot;
-                //}
+                if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
+                {
+                    angCout1 = 0;
+                }
+                else
+                {
+                    sita = false;
+                    AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
+                    GetComponent<Rigidbody>().rotation *= AddRot;
+                    angCout1--;
+                }
             }
 
             //自分が横に傾く（傾くと変な動きするから傾きは別作った方がいいかも？）
@@ -433,7 +468,7 @@ public class item : MonoBehaviour
             // 実際の動き
             float curSpeed = numInput > 0 ? MovementSpeed : 0;
             Vector3 AddPos = input[0] * turboForce * Vector3.forward + input[2] * Vector3.left + input[4] * Vector3.up
-                + input[1] * Vector3.back + input[3] * Vector3.right + input[5] * Vector3.down;
+                + input[1] * Vector3.back + input[3] * Vector3.right /*+ input[5] * Vector3.down*/;
             AddPos = GetComponent<Rigidbody>().rotation * AddPos;
 
             GetComponent<Rigidbody>().velocity = AddPos * (Time.fixedDeltaTime * MovementSpeed);
@@ -447,6 +482,20 @@ public class item : MonoBehaviour
             transform.Rotate(new Vector3(0, 180, 0));
             //StartCoroutine("WaitKeyInput");
         }
+
+        if (other.gameObject.tag == "Over")
+        {
+            CanMove = false;
+            CanMoveForward = false;
+            CanMoveBack = false;
+            CanMoveLeft = false;
+            CanMoveRight = false;
+            CanMoveUp = false;
+            CanMoveDown = false;
+            CanRotateYaw = false;
+            CanRotatePitch = false;
+            CanRotateRoll = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -454,17 +503,10 @@ public class item : MonoBehaviour
         if (other.gameObject.tag == "Jump")
         {
             StartCoroutine("WaitKeyInput1");
-            // this.gameObject.GetComponent<PlayerMove>().enabled = false;
-            //Debug.Log(jumpForce);
         }
         if (other.gameObject.tag == "Turbo")
         {
-            //	Vector3 vel = rB.velocity;
-            //	rB.AddForce(/*vel.x * turboForce*/0, 0, vel.z * turboForce, ForceMode.Impulse);
-            //turboForce += 5f;
             StartCoroutine("WaitKeyInput2");
-            //turboForce -= 5f;
-
         }
     }
 
@@ -475,44 +517,74 @@ public class item : MonoBehaviour
         //    yield return new WaitForSeconds(1.0f);
         //}
         //this.gameObject.GetComponent<Renderer>().enabled = true;
+        Wind.Stop();
+        Wind3.Play();
         rB.AddForce(0, jumpForce, 0, ForceMode.Force);
+        CanMoveDown = false;
         this.gameObject.GetComponent<item>().enabled = false;
+        this.gameObject.GetComponent<Gravity>().enabled = false;
         {
             yield return new WaitForSeconds(1.0f);
         }
+        this.gameObject.GetComponent<Gravity>().enabled = true;
         this.gameObject.GetComponent<item>().enabled = true;
+        CanMoveDown = true;
+        Wind3.Stop();
+        Wind.Play();
     }
 
     IEnumerator WaitKeyInput2()
     {
+        Wind.Stop();
+        Wind2.Play();
         turboForce += 5f;
         yield return new WaitForSeconds(1.2f);
         turboForce -= 5f;
+        Wind2.Stop();
+        Wind.Play();
 
     }
 
-    private void OnCollisionStay(Collision other)
+    private void OnTriggerStay(Collider other)
     {//ゴールに接触している間徐々にスピードを下げる
         if (other.gameObject.tag == "Goal")
         {
             if (MovementSpeed >= 0)
             {
                 MovementSpeed -= 5f;
+                GetComponent<ChangeCamera>().enabled = true;
+                // GetComponent<PlayerMove>().enabled = false;
                 //Debug.Log(MovementSpeed);
             }
+            Wind.Stop();
         }
     }
     void Itemsei()
     {
+         
         Vector3 position = transform.position +
               transform.up * offset.y +
               transform.right * offset.x +
-              transform.forward * offset.z;
+              transform.forward * offset.z * 5;
         // 生成しています。回転はいじってません。
         Instantiate(ItemPrefab, position, transform.rotation);
         Debug.Log("動いた");
+        
+        StartCoroutine("Sleep");
+
 
     }
 
-
+    void SetItemText(int Item)
+    {
+        textitem.text = "アイテム:" + Item.ToString();
+    }
+    IEnumerator Sleep()
+    {
+        Debug.Log("開始");
+        isSETHI = false;
+        yield return new WaitForSeconds(5);
+        Debug.Log("終わり");
+        isSETHI = true;
+    }
 }
