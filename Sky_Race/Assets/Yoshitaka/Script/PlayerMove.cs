@@ -108,8 +108,7 @@ public class PlayerMove : MonoBehaviour
     private bool canTranslate;
     private bool canRotate;
 
-    private bool plus = false;
-    private bool sita = false;
+
 
 
     private Rigidbody rB;
@@ -152,7 +151,7 @@ public class PlayerMove : MonoBehaviour
 
     void OnClick()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
 
         //if (Cursor.lockState == CursorLockMode.Locked)
         //{
@@ -174,7 +173,6 @@ public class PlayerMove : MonoBehaviour
         float rot = Input.GetAxisRaw("Horizontal");
         float ang = Input.GetAxisRaw("Horizontal");
         /*Roll*/
-        sita = true;
 
         //回転
 
@@ -210,13 +208,6 @@ public class PlayerMove : MonoBehaviour
             //下方向に向く　gen=0は押されていない　gen=1は上　gen=-1は↓
             if (gen == -1)
             {
-                //if (sita == true)
-                //{
-                //    //pitch = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
-                //    AddRot.eulerAngles = new Vector3(0.1f, 0, 0);
-                //    GetComponent<Rigidbody>().rotation *= AddRot;
-                //    plus = true;
-                //}
 
                 if (angCout1 >= 55 || transform.localEulerAngles.x <= 90 && transform.localEulerAngles.x >= 85/*transform.localEulerAngles.x <= 30 && transform.localEulerAngles.x >= 25*/)
                 {
@@ -233,17 +224,6 @@ public class PlayerMove : MonoBehaviour
             }
             if (gen == 1)
             {
-                //if (transform.localEulerAngles.x == 0 && transform.localEulerAngles.x <= 360 || transform.localEulerAngles.x >= 265 /*&& transform.localEulerAngles.x <= 1*/)
-                //{
-                //    plus = false;
-                //}
-
-                //if (plus == true)
-                //{
-                //    sita = false;
-                //    AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
-                //    GetComponent<Rigidbody>().rotation *= AddRot;
-                //}
 
                 if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
                 {
@@ -260,10 +240,6 @@ public class PlayerMove : MonoBehaviour
             /*else */
             if (gen == 0)
             {
-                //if (transform.localEulerAngles.x == 0 && transform.localEulerAngles.x <= 360 || transform.localEulerAngles.x >= 265 /*&& transform.localEulerAngles.x <= 1*/)
-                //{
-                //    plus = false;
-                //}
 
                 if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
                 {
@@ -271,7 +247,6 @@ public class PlayerMove : MonoBehaviour
                 }
                 else
                 {
-                    sita = false;
                     AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                     angCout1--;
@@ -329,33 +304,16 @@ public class PlayerMove : MonoBehaviour
             //実際傾く所
             //AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
             //GetComponent<Rigidbody>().rotation *= AddRot;
-            float debug = transform.localEulerAngles.x;
-            //Debug.Log(plus);
-            //Debug.Log(debug);
-            //Debug.Log(transform.localEulerAngles.z);
-            //
-            //if (sita == true)
-            //{
             if (transform.localEulerAngles.x <= 15)
             {
                 AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
                 GetComponent<Rigidbody>().rotation *= AddRot;
-                sita = true;
             }
             else if (transform.localEulerAngles.x >= 350)
             {
                 AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
                 GetComponent<Rigidbody>().rotation *= AddRot;
-                sita = true;
             }
-
-            //         else
-            //         {
-            //	AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
-            //	GetComponent<Rigidbody>().rotation *= AddRot;
-            //	sita = true;
-            //}
-            //}
         }
 
         // 移動

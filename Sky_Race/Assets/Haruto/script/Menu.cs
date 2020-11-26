@@ -69,11 +69,11 @@ public class Menu : MonoBehaviour
     //クリックされた時にOnClickを呼び出すようにしておく
     void OnClick()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEditor.EditorApplication.isPlaying = false;
 
-        //if (Cursor.lockState == CursorLockMode.Locked)
-        //{
-        //    return;  //lockStateがLockedじゃなかったら以後の処理をしない
-        //}
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            return;  //lockStateがLockedじゃなかったら以後の処理をしない
+        }
     }
 }

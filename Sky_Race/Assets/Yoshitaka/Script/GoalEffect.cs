@@ -16,39 +16,40 @@ public class GoalEffect : MonoBehaviour
         //Hanabi2 = GameObject.Find("Hanabi2").GetComponent<ParticleSystem>();
         //Hanabi3 = GameObject.Find("Hanabi3").GetComponent<ParticleSystem>();
         _Hanabi1.Stop();
+        //_Hanabi1.Play();
         //Hanabi2.Stop();
         //Hanabi3.Stop();
     }
 
     private void Update()
     {
-        //Hanabi1.Play();
+       // _Hanabi1.Play();
         //Hanabi2.Play();
         //Hanabi3.Play();
     }
 
-    //private void OnTriggerEnter(Collider other)    //ゴールに接触した瞬間に入る
-    //{
-    //    if (other.gameObject.tag == "High_P")
-    //    {
-    //        Hanabi1.Play();
-    //        //Hanabi2.Play();
-    //        //Hanabi3.Play();
+    private void OnTriggerEnter(Collider other)    //ゴールに接触した瞬間に入る
+    {
+        if (other.gameObject.tag == "High_P")
+        {
+            _Hanabi1.Play();
+            //Hanabi2.Play();
+            //Hanabi3.Play();
 
-    //    }
-    //    else if (other.gameObject.tag == "Medium_P")
-    //    {
-    //        Hanabi1.Play();
-    //        //Hanabi2.Play();
-    //        //Hanabi3.Play();
+        }
+        else if (other.gameObject.tag == "Medium_P")
+        {
+            _Hanabi1.Play();
+            //Hanabi2.Play();
+            //Hanabi3.Play();
 
-    //    }
-    //    else if (other.gameObject.tag == "Low_P")
-    //    {
-    //        Hanabi1.Play();
-    //        //Hanabi2.Play();
-    //        //Hanabi3.Play();
+        }
+        else if (other.gameObject.tag == "Low_P")
+        {
+            _Hanabi1.Play();
+            //Hanabi2.Play();
+            //Hanabi3.Play();
 
-    //    }
-    //}
+        }
+    }
 }

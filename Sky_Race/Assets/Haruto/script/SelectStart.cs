@@ -38,7 +38,7 @@ public class SelectStart : MonoBehaviour
     //クリックされた時にOnClickを呼び出すようにしておく
     void OnClick()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
 
         //if (Cursor.lockState == CursorLockMode.Locked)
         //{
