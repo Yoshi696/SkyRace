@@ -7,6 +7,6 @@ using UnityEngine.SceneManagement;
     {
     public void StartGame()
         {
-            SceneManager.LoadScene("MakeDebug");
+            SceneManager.LoadScene("GameSelect");
         }
     }

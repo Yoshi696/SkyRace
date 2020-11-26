@@ -7,7 +7,7 @@ public class turbo : MonoBehaviour
     private Rigidbody rB;
     private Vector3 rbVelo;
 
-    public float turboForce = 20.0f;
+    public float turboForce = 10.0f;
     // Start is called before the first frame update
     void Start()
     {

@@ -33,10 +33,12 @@ public class Result : MonoBehaviour
     //Goalの文字テキスト
     public Text GoalText;
 
-    void Strat()
+
+    void Start()
     {
         colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
         GoalText.enabled = false;
+
     }
     private void OnEnable()
     {
@@ -87,19 +89,28 @@ public class Result : MonoBehaviour
     {
         if (other.gameObject.tag == "High_P")
         {
-//            Debug.Log("高得点");
+            //Hanabi1.Play();
+            //Hanabi2.Play();
+            //Hanabi3.Play();
+            //            Debug.Log("高得点");
             GoalPoint = High;
                 
         }
         else if(other.gameObject.tag == "Medium_P")
         {
-//            Debug.Log("中得点");
+            //Hanabi1.Play();
+            //Hanabi2.Play();
+            //Hanabi3.Play();
+            //            Debug.Log("中得点");
             GoalPoint = Medium;
 
         }
         else if (other.gameObject.tag == "Low_P")
         {
-//            Debug.Log("低得点");
+            //Hanabi1.Play();
+            //Hanabi2.Play();
+            //Hanabi3.Play();
+            //            Debug.Log("低得点");
             GoalPoint = Low;
 
         }
@@ -121,19 +132,19 @@ public class Result : MonoBehaviour
     {//トリガーから出たとき
         if (other.gameObject.tag == "High_P")
         {
- //           Debug.Log("出たから中得点");
+            //           Debug.Log("出たから中得点");
             GoalPoint = Medium;
 
         }
         else if (other.gameObject.tag == "Medium_P")
         {
-//            Debug.Log("出たから低得点");
+            //            Debug.Log("出たから低得点");
             GoalPoint = Low;
 
         }
         else if (other.gameObject.tag == "Low_P")
         {
- //           Debug.Log("点数ナシ");
+            //           Debug.Log("点数ナシ");
             GoalPoint = 0;
 
         }
@@ -149,6 +160,7 @@ public class Result : MonoBehaviour
     {//ゴールに接触している間徐々にスピードを下げる
         if (other.gameObject.tag == "Goal")
         {
+
             if (pm >= 0)
             {
                 pm -= 0.5f;
@@ -158,7 +170,6 @@ public class Result : MonoBehaviour
             {
                 sum += distance;
                 v2 = transform.position;//プレイヤー座標
-
                 GoalText.enabled = true;
                 //              GameObject gm = GameObject.Find("ResultScore");
                 //            gm.GetComponent<ResultScore>().AddScore(GoalPoint);
