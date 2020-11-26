@@ -21,11 +21,11 @@ public class Manual : MonoBehaviour
         if (other.gameObject.tag == "move")
         {
             Bbutton.enabled = false;
+            ManualText.enabled = false;
         }
 
         if (other.gameObject.tag == "Take of")
         {
-            ManualText.enabled = false;
             backScreen.enabled = false;
         }
     }
