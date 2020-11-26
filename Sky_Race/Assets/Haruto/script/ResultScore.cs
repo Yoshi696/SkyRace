@@ -18,9 +18,18 @@ public class ResultScore : MonoBehaviour
         GoalScore = GameObject.Find("goalpoint").GetComponent<Text>();
         distanceScore = GameObject.Find("kyori").GetComponent<Text>();
         TotalScore = GameObject.Find("totalscore").GetComponent<Text>();
-      //トータルスコアの計算　今は距離を整数にしてから計算している
-        Total = (double)GoalPoint + ((Distance*100)/10);
-        
+        //トータルスコアの計算　今は距離を整数にしてから計算している
+
+        if (GoalPoint > 0)
+        {
+            Debug.Log("ゴールシチャッタ");
+            Total = (double)GoalPoint + ((Distance * 100)/10);
+        }
+        else
+        {
+            Debug.Log("オチチャッタ");
+            Total = (((Distance * 100)/10)/2);//Goalしていないので点数を半分にする
+        }
         SetScoreText(GoalPoint);
 
     }
