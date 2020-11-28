@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35914937, g: 0.44121403, b: 0.57820815, a: 1}
+  m_IndirectSpecularColor: {r: 0.38149974, g: 0.46815968, b: 0.6131704, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2160,6 +2160,7 @@ MonoBehaviour:
   sound01: {fileID: 8300000, guid: 8e24074b38c5e764bba187bc5578d7b2, type: 3}
   sound02: {fileID: 8300000, guid: 325b066caeabd2440997e6cad3dbc956, type: 3}
   sound03: {fileID: 8300000, guid: e870183870b203b4abdaaa44497b0b85, type: 3}
+  sound04: {fileID: 8300000, guid: ce4ac6e7b901dfa48a2bd7a06e23b326, type: 3}
 --- !u!114 &277750442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2189,6 +2190,7 @@ MonoBehaviour:
   ManualText: {fileID: 1232344985}
   backScreen: {fileID: 1558819575}
   Bbutton: {fileID: 272034562}
+  Wind: {fileID: 0}
 --- !u!114 &277750444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14682,7 +14684,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d557d98070525d24bb6a0adfdae58a34, type: 2}
+  - {fileID: 2100000, guid: dc325ec54ff3bf34f8c2395426503cf3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15443,7 +15445,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a8bf309309720549a88cf97aa9f6444, type: 2}
+  - {fileID: 2100000, guid: a2d7da60a61be8c4a92527d1a7391903, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22150,7 +22152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 814b6badd1cd18341b12ca604e6b129d, type: 2}
+  - {fileID: 2100000, guid: a2d7da60a61be8c4a92527d1a7391903, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
