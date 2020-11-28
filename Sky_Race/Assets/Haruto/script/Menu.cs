@@ -20,9 +20,12 @@ public class Menu : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
 
         //マウスポインタ消すやつ
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
         //Screen.lockCursor = false;
+
+
+        
 
         // ボタンコンポーネントの取得
         start = GameObject.Find("/Canvas/Start").GetComponent<Button>();
@@ -38,7 +41,7 @@ public class Menu : MonoBehaviour
         //クリックされた時 かつ lockStateがLockedではない時だけ実行
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2) && Cursor.lockState == CursorLockMode.Locked)
         {
-            OnClick();  //クリックされた時の処理
+             OnClick();  //クリックされた時の処理
         }
 
         if (Input.GetButton("Submit"))
@@ -73,6 +76,8 @@ public class Menu : MonoBehaviour
 
         if (Cursor.lockState == CursorLockMode.Locked)
         {
+            //Debug.Log("yes");
+
             return;  //lockStateがLockedじゃなかったら以後の処理をしない
         }
     }
