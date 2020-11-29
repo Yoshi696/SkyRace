@@ -122,6 +122,8 @@ public class PlayerMove : MonoBehaviour
     private ParticleSystem Wind2;
     private ParticleSystem Wind3;
 
+    private ParticleSystem Hokori;
+
     void Start()
     {
         //動きに関しての情報
@@ -136,6 +138,7 @@ public class PlayerMove : MonoBehaviour
         Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
         Wind2 = GameObject.Find("windspeed").GetComponent<ParticleSystem>();
         Wind3 = GameObject.Find("wind (up)").GetComponent<ParticleSystem>();
+        Hokori = GameObject.Find("Dust").GetComponent<ParticleSystem>();
         Wind.Play();
         Wind2.Stop();
         Wind3.Stop();
@@ -473,10 +476,15 @@ public class PlayerMove : MonoBehaviour
     {//ゴールに接触している間徐々にスピードを下げる
         if (other.gameObject.tag == "Goal")
         {
+            //Hokori.Play();
             if (MovementSpeed >= 0)
             {
                 MovementSpeed -= 5f;
                 GetComponent<ChangeCamera>().enabled = true;
+                if(MovementSpeed <= 200)
+                {
+                    Hokori.Stop();
+                }
                // GetComponent<PlayerMove>().enabled = false;
                 //Debug.Log(MovementSpeed);
             }
