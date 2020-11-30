@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35914937, g: 0.44121403, b: 0.57820815, a: 1}
+  m_IndirectSpecularColor: {r: 0.38149974, g: 0.46815968, b: 0.6131704, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2437,7 +2437,7 @@ MonoBehaviour:
   sound01: {fileID: 8300000, guid: 8e24074b38c5e764bba187bc5578d7b2, type: 3}
   sound02: {fileID: 8300000, guid: 325b066caeabd2440997e6cad3dbc956, type: 3}
   sound03: {fileID: 8300000, guid: e870183870b203b4abdaaa44497b0b85, type: 3}
-  sound04: {fileID: 8300000, guid: ce4ac6e7b901dfa48a2bd7a06e23b326, type: 3}
+  sound04: {fileID: 8300000, guid: d60e6fe13ca812b44bd56ec59e449299, type: 3}
 --- !u!114 &277750442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14902,12 +14902,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942646832}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4bedb499dd5d52b419082abda79ea997, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.23
   m_Pitch: 1
   Loop: 0
   Mute: 0
