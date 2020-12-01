@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StopRot : MonoBehaviour
+public class StopRotThird : MonoBehaviour
 {
     Vector3 def;
     Vector3 _parent;
@@ -11,7 +11,9 @@ public class StopRot : MonoBehaviour
     {
         def = transform.localRotation.eulerAngles;
         _parent = transform.parent.transform.localRotation.eulerAngles;
-        _parent.x += 90f;
+        _parent.x += 19.315f;
+        _parent.y -= 49.397f;
+        _parent.z += 13.848f;
     }
 
     void Update()

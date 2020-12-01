@@ -38,13 +38,13 @@ public class GoalEffect : MonoBehaviour
         //Ha3 = GameObject.Find("Ha3").GetComponent<ParticleSystem>();
 
         //一度花火を止める
-        Hanabi1.Stop();
-        Hanabi2.Stop();
-        Hanabi3.Stop();
+        //Hanabi1.Stop();
+        //Hanabi2.Stop();
+        //Hanabi3.Stop();
 
-        Hana1.Stop();
-        Hana2.Stop();
-        Hana3.Stop();
+        //Hana1.Stop();
+        //Hana2.Stop();
+        //Hana3.Stop();
 
         //Ha1.Stop();
         //Ha2.Stop();
@@ -53,15 +53,17 @@ public class GoalEffect : MonoBehaviour
 
     private void Update()
     {
-       // _Hanabi1.Play();
+        // _Hanabi1.Play();
         //Hanabi2.Play();
         //Hanabi3.Play();
     }
 
-    private void OnTriggerEnter(Collider other)    //ゴールに接触した瞬間に入る
+    private void OnTriggerStay(Collider other)    //ゴールに接触した瞬間に入る
     {
         if (other.gameObject.tag == "High_P")
         {
+            Debug.Log("yes");
+
             Hana1.Stop();
             Hana2.Stop();
             Hana3.Stop();
