@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Result : MonoBehaviour
 {
     //数値の表示用↓
-    [SerializeField]
-    private Transform targetObj = null;
+//    [SerializeField]
+//    private Transform targetObj = null;
     [SerializeField]
     private Text PPUI = null;
     [SerializeField]
@@ -30,32 +30,37 @@ public class Result : MonoBehaviour
     private Vector3 v2;
     private double sum = 0.0f;
 
+    // 落とした後に使う
+    private float j = 40;
+
+    // ゴールしたかどうか
+    private int Goal = 0; //0:GameOver 1:Goal
     //Goalの文字テキスト
     public Text GoalText;
 
 
     void Start()
     {
-        colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
+ //       colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
         GoalText.enabled = false;
 
     }
     private void OnEnable()
     {
-        v2 = targetObj.transform.position; //最初のプレイヤーの位置を保存
+        v2 = transform.position; //最初のプレイヤーの位置を保存
 
+    }
+    private void FixedUpdate()
+    {
+
+        sum += distance;//飛行距離を合計する
+        v2 = transform.position;//キーが押されたときの座標取得
     }
     void Update()
     {
         //スタート座標とプレイヤー座標の取得
         Vector3 v = transform.position;//プレイヤーの座標
 
-        if (Input.anyKeyDown )//何らかのキー又はマウスが押されたとき
-        {
-            sum += distance;//飛行距離を合計する
-            v2 = transform.position;//キーが押されたときの座標取得
-
-        }
         distance = Vector3.Distance(v,v2) - colliderOffset;// 今の距離とその前の距離の計算キーが押されたら更新する
 
         //  distance = (v.z - v2.z) - colliderOffset;//Z距離計算
@@ -80,6 +85,8 @@ public class Result : MonoBehaviour
         //    Debug.Log(v2.z.ToString("0.00m"));
         //    Debug.Log(distance.ToString("0.00m"));
         //
+
+
 
 
     }
@@ -151,11 +158,15 @@ public class Result : MonoBehaviour
         if (other.gameObject.tag == "MoveOn")
         {
 
-            GetComponent<PlayerMove>().enabled = true;
-            //GetComponent<PM_test>().enabled = true;
+            //GetComponent<PlayerMove>().enabled = true;
+      //      GetComponent<PM_test>().enabled = true;
+       //     GetComponent<sampleRotation>().enabled = false;
+
         }
 
+
     }
+
     private void OnTriggerStay(Collider other)
     {//ゴールに接触している間徐々にスピードを下げる
         if (other.gameObject.tag == "Goal")
@@ -166,8 +177,9 @@ public class Result : MonoBehaviour
                 pm -= 0.5f;
                 Debug.Log(pm);
             }
-            else if(pm <= 0)
+            else if (pm <= 0)
             {
+                Goal = 1;// ゴールした
                 sum += distance;
                 v2 = transform.position;//プレイヤー座標
                 GoalText.enabled = true;
@@ -175,10 +187,11 @@ public class Result : MonoBehaviour
                 //            gm.GetComponent<ResultScore>().AddScore(GoalPoint);
 
                 // イベントに登録
-                SceneManager.sceneLoaded += GameResultLoaded; 
+                SceneManager.sceneLoaded += GameResultLoaded;
                 Invoke("LoadScene", 1f);
             }
         }
+
     }
     void LoadScene()
     {
@@ -193,6 +206,8 @@ public class Result : MonoBehaviour
         // データを渡す処理
         gameManager.GoalPoint = GoalPoint;
         gameManager.Distance = sum;
+        gameManager.Goal = Goal;
+
 
         // イベントから削除
         SceneManager.sceneLoaded -= GameResultLoaded;
@@ -202,12 +217,13 @@ public class Result : MonoBehaviour
         if(other.gameObject.tag == "Goal")
         {
             GetComponent<PlayerMove>().enabled = false;
-            //GetComponent<PM_test>().enabled = false;
+           // GetComponent<PM_test>().enabled = false;
+            //GetComponent<sampleRotation>().enabled = true;
+            GetComponent<Rotation>().enabled = true;
+            //GetComponent<sampleRotation>().enabled = true;
+            GetComponent<Gravity>().enabled = false;
+
         }
     }
-    private void OnCollisionExit(Collision other)
-    {
-    }
-
     
 }
