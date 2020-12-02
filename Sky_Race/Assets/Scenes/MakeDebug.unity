@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35914937, g: 0.44121403, b: 0.57820815, a: 1}
+  m_IndirectSpecularColor: {r: 0.38149974, g: 0.46815968, b: 0.6131704, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2592,7 +2592,7 @@ MonoBehaviour:
   PDUI: {fileID: 0}
   GoalText: {fileID: 2125086455}
   sound01: {fileID: 8300000, guid: cf3588b785a9c2045a5f0a5ee50f063c, type: 3}
-  sound02: {fileID: 8300000, guid: a9dcb40e8fd4ed74e82e0f5a85ff77d4, type: 3}
+  sound02: {fileID: 8300000, guid: 6d1d3a23362b7df45b69928228b152e5, type: 3}
 --- !u!114 &277750440
 MonoBehaviour:
   m_ObjectHideFlags: 0
