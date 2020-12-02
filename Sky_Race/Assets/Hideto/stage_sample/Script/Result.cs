@@ -68,6 +68,12 @@ public class Result : MonoBehaviour
     }
     void Update()
     {
+        if(pm == 0)
+        {
+                // ゴールした時にならすSE
+                audiosource.PlayOneShot(sound01);
+                audiosource.PlayOneShot(sound02);
+        }
         //スタート座標とプレイヤー座標の取得
         Vector3 v = transform.position;//プレイヤーの座標
 
