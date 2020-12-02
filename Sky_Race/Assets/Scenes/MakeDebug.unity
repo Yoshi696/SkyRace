@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35914937, g: 0.44121403, b: 0.57820815, a: 1}
+  m_IndirectSpecularColor: {r: 0.38149974, g: 0.46815968, b: 0.6131704, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2501,6 +2501,8 @@ MonoBehaviour:
   SUMUI: {fileID: 0}
   PDUI: {fileID: 0}
   GoalText: {fileID: 2125086455}
+  sound01: {fileID: 8300000, guid: cf3588b785a9c2045a5f0a5ee50f063c, type: 3}
+  sound02: {fileID: 8300000, guid: a9dcb40e8fd4ed74e82e0f5a85ff77d4, type: 3}
 --- !u!114 &277750440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2531,8 +2533,6 @@ MonoBehaviour:
   sound03: {fileID: 8300000, guid: e870183870b203b4abdaaa44497b0b85, type: 3}
   sound04: {fileID: 8300000, guid: d60e6fe13ca812b44bd56ec59e449299, type: 3}
   sound05: {fileID: 8300000, guid: f93d9da0c1342af4cb3f493b4887a105, type: 3}
-  sound06: {fileID: 8300000, guid: cf3588b785a9c2045a5f0a5ee50f063c, type: 3}
-  sound07: {fileID: 8300000, guid: a9dcb40e8fd4ed74e82e0f5a85ff77d4, type: 3}
 --- !u!114 &277750442
 MonoBehaviour:
   m_ObjectHideFlags: 0

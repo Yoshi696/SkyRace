@@ -38,11 +38,21 @@ public class Result : MonoBehaviour
     //Goalの文字テキスト
     public Text GoalText;
 
+    // 音設定
+    private AudioSource audiosource;
+
+    // 音の種類
+    public AudioClip sound01;
+    public AudioClip sound02;
+
 
     void Start()
     {
  //       colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
         GoalText.enabled = false;
+
+        // 音の追加
+        audiosource = gameObject.AddComponent<AudioSource>();
 
     }
     private void OnEnable()
@@ -188,7 +198,7 @@ public class Result : MonoBehaviour
 
                 // イベントに登録
                 SceneManager.sceneLoaded += GameResultLoaded;
-                Invoke("LoadScene", 1f);
+                Invoke("LoadScene",5f);
             }
         }
 

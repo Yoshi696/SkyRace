@@ -12,8 +12,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip sound03;
     public AudioClip sound04;
     public AudioClip sound05;
-    public AudioClip sound06;
-    public AudioClip sound07;
 
     void Start()
     {
@@ -45,14 +43,6 @@ public class AudioManager : MonoBehaviour
         }
         if(other.gameObject.tag == "Goal"){
             audioSource.PlayOneShot(sound05);
-        }
-        if (other.gameObject.tag == "Goal")
-        {
-            audioSource.PlayOneShot(sound06);
-        }
-        if (other.gameObject.tag == "Goal")
-        {
-            audioSource.PlayOneShot(sound07);
         }
     }
 }
