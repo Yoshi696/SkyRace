@@ -11,6 +11,7 @@ public class ResultScore : MonoBehaviour
     public int GoalPoint;
     public double Distance;
     public double Total;
+    public int Goal;
 
 
     void Start()
@@ -20,7 +21,7 @@ public class ResultScore : MonoBehaviour
         TotalScore = GameObject.Find("totalscore").GetComponent<Text>();
         //トータルスコアの計算　今は距離を整数にしてから計算している
 
-        if (GoalPoint > 0)
+        if (Goal != 0)
         {
             Debug.Log("ゴールシチャッタ");
             Total = (double)GoalPoint + ((Distance * 100)/10);
