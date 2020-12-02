@@ -539,6 +539,7 @@ MonoBehaviour:
   GoalPoint: 0
   Distance: 0
   Total: 0
+  Goal: 0
 --- !u!4 &799516160
 Transform:
   m_ObjectHideFlags: 0
@@ -966,6 +967,8 @@ GameObject:
   - component: {fileID: 1425629734}
   - component: {fileID: 1425629733}
   - component: {fileID: 1425629736}
+  - component: {fileID: 1425629738}
+  - component: {fileID: 1425629737}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1050,6 +1053,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a70a7a76cf8ff843a033fada8a259ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1425629737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425629732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fec4570cad44345b4271f2e8bf4d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1425629738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425629732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &1912474449
 GameObject:
   m_ObjectHideFlags: 0
