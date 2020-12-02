@@ -491,4 +491,9 @@ public class PlayerMove : MonoBehaviour
             Wind.Stop();
         }
     }
+
+    public float GetSpeed()
+    {
+        return MovementSpeed;
+    }
 }
