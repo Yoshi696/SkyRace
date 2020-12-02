@@ -7,18 +7,19 @@ public class CreatPrefab : MonoBehaviour
     public GameObject cloud;
 
     private int CreatTime;
-    private int intvalTime = 60;
+    private int intvalTime = 300;
 
     // Update is called once per frame
     void Update()
     {
-        CreatTime += 1;
 
         if (CreatTime % intvalTime == 0)
         {
             CreatCloud();
             CreatTime = 1;
         }
+        CreatTime += 1;
+
     }
 
     public void CreatCloud()
@@ -33,6 +34,6 @@ public class CreatPrefab : MonoBehaviour
         newCloud.GetComponent<Rigidbody>().AddForce(dir * -30f, ForceMode.Impulse);
 
         newCloud.name = cloud.name;
-        //Destroy(newCloud, 1.0f);
+        Destroy(newCloud, 20.0f);
     }
 }
