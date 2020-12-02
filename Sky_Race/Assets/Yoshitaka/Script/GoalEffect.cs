@@ -58,7 +58,7 @@ public class GoalEffect : MonoBehaviour
         //Hanabi3.Play();
     }
 
-    private void OnTriggerStay(Collider other)    //ゴールに接触した瞬間に入る
+    private void OnTriggerEnter(Collider other)    //ゴールに接触した瞬間に入る
     {
         if (other.gameObject.tag == "High_P")
         {

@@ -24,7 +24,7 @@ public class CreatPrefab : MonoBehaviour
 
     public void CreatCloud()
     {
-        Debug.Log("yers");
+       // Debug.Log("yers");
         GameObject newCloud = Instantiate(cloud, transform.position, transform.rotation);
 
         //Vector3 dir = cloud.transform.position;

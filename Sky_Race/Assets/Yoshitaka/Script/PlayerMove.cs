@@ -469,13 +469,13 @@ public class PlayerMove : MonoBehaviour
         turboForce -= 5f;
         Wind2.Stop();
         Wind.Play();
-
     }
 
     private void OnTriggerStay(Collider other)
     {//ゴールに接触している間徐々にスピードを下げる
         if (other.gameObject.tag == "Goal")
         {
+            GetComponent<GoalEffect>().enabled = true;
             //Hokori.Play();
             if (MovementSpeed >= 0)
             {
@@ -485,7 +485,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     Hokori.Stop();
                 }
-               // GetComponent<PlayerMove>().enabled = false;
+                //GetComponent<PlayerMove>().enabled = false;
                 //Debug.Log(MovementSpeed);
             }
             Wind.Stop();
