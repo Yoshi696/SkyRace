@@ -18,8 +18,7 @@ public class StartRun : MonoBehaviour
     private ParticleSystem Wind;
     private ParticleSystem Wind2;
     private ParticleSystem Wind3;
-    //private Animator anirunkey;
-    //private Animator anijumpkey;
+
 
 
 
@@ -75,7 +74,7 @@ public class StartRun : MonoBehaviour
         }
         if(Button == true)
         {
-            //anirunkey.SetBool("RunSet",true);
+
             run = run + plus;
         }
 
