@@ -38,21 +38,10 @@ public class Result : MonoBehaviour
     //Goalの文字テキスト
     public Text GoalText;
 
-    // 音設定
-    private AudioSource audiosource;
-
-    // 音の種類
-    public AudioClip sound01;
-    public AudioClip sound02;
-
-
     void Start()
     {
  //       colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
         GoalText.enabled = false;
-
-        // 音の追加
-        audiosource = gameObject.AddComponent<AudioSource>();
 
     }
     private void OnEnable()
@@ -68,12 +57,6 @@ public class Result : MonoBehaviour
     }
     void Update()
     {
-        if(pm == 0)
-        {
-                // ゴールした時にならすSE
-                audiosource.PlayOneShot(sound01);
-                audiosource.PlayOneShot(sound02);
-        }
         //スタート座標とプレイヤー座標の取得
         Vector3 v = transform.position;//プレイヤーの座標
 
