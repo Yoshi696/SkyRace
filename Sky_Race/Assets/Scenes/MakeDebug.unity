@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35914937, g: 0.44121403, b: 0.57820815, a: 1}
+  m_IndirectSpecularColor: {r: 0.38149974, g: 0.46815968, b: 0.6131704, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2506,8 +2506,6 @@ MonoBehaviour:
   SUMUI: {fileID: 517399228}
   PDUI: {fileID: 0}
   GoalText: {fileID: 2125086455}
-  sound01: {fileID: 8300000, guid: cf3588b785a9c2045a5f0a5ee50f063c, type: 3}
-  sound02: {fileID: 8300000, guid: 6d1d3a23362b7df45b69928228b152e5, type: 3}
 --- !u!114 &277750440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2593,6 +2591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8d3d3721d6a5045aa5814032240bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound01: {fileID: 8300000, guid: 89859764e96400e48af85a322d4a4933, type: 3}
 --- !u!114 &277750446
 MonoBehaviour:
   m_ObjectHideFlags: 0
