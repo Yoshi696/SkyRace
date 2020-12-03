@@ -2328,6 +2328,10 @@ MonoBehaviour:
   RotationSpeed: 100
   startrun: {fileID: 277750438}
   karbspeed: 2
+  Item: 0
+  ItemPrefab: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  onset: {x: 0, y: 0, z: 0, w: 0}
   jumpForce: 70
 --- !u!54 &277750430
 Rigidbody:
@@ -2502,8 +2506,6 @@ MonoBehaviour:
   SUMUI: {fileID: 517399228}
   PDUI: {fileID: 0}
   GoalText: {fileID: 2125086455}
-  sound01: {fileID: 8300000, guid: cf3588b785a9c2045a5f0a5ee50f063c, type: 3}
-  sound02: {fileID: 8300000, guid: 6d1d3a23362b7df45b69928228b152e5, type: 3}
 --- !u!114 &277750440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2589,6 +2591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8d3d3721d6a5045aa5814032240bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound01: {fileID: 0}
 --- !u!114 &277750446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15144,6 +15147,8 @@ GameObject:
   - component: {fileID: 942646833}
   - component: {fileID: 942646836}
   - component: {fileID: 942646837}
+  - component: {fileID: 942646839}
+  - component: {fileID: 942646838}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15325,6 +15330,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sky1: {fileID: 2100000, guid: d07d2172e76d3fa429e80a14d2ae3616, type: 2}
+  sky0: {fileID: 2100000, guid: 7416536dbe0334cfd888dd1beb75a9fb, type: 2}
+--- !u!114 &942646838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942646832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fec4570cad44345b4271f2e8bf4d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &942646839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942646832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &949595257
 GameObject:
   m_ObjectHideFlags: 0
