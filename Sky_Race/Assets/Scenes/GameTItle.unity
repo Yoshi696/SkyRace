@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 520418123}
   - component: {fileID: 520418125}
   - component: {fileID: 520418124}
+  - component: {fileID: 520418126}
   m_Layer: 5
   m_Name: Start
   m_TagString: Start
@@ -616,6 +617,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!65 &520418126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520418118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &527692235
 GameObject:
   m_ObjectHideFlags: 0
