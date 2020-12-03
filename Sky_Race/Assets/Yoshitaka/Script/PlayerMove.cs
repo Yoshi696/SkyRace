@@ -173,6 +173,7 @@ public class PlayerMove : MonoBehaviour
                 Debug.Log("数が減った");
 
             }
+            
             else
             {
                 Item = 0;
@@ -503,6 +504,7 @@ public class PlayerMove : MonoBehaviour
     {//ゴールに接触している間徐々にスピードを下げる
         if (other.gameObject.tag == "Goal")
         {
+            Item = 0;
             GetComponent<GoalEffect>().enabled = true;
             //Hokori.Play();
             if (MovementSpeed >= 0)
