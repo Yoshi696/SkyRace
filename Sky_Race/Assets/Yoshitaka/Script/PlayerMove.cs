@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -104,9 +105,15 @@ public class PlayerMove : MonoBehaviour
     public float RotationSpeed = 100f;
     public StartRun startrun;
     public int karbspeed = 2;
+    public int Item;                            //
+    public GameObject ItemPrefab;               //アイテム化に必要なもの
+    public Vector3 offset = new Vector3();      //
+    public Quaternion onset = new Quaternion();
 
     private bool canTranslate;
     private bool canRotate;
+    private bool isSETHI = true;    //アイテム化に必要なもの
+    private Text textitem;
 
 
 
@@ -142,6 +149,10 @@ public class PlayerMove : MonoBehaviour
         Wind.Play();
         Wind2.Stop();
         Wind3.Stop();
+        Item = 3;                   //アイテム化に必要なもの
+        textitem = GameObject.Find("Itemsu").GetComponent<Text>();
+        SetItemText(Item);
+        StartCoroutine("Sleep");
     }
 
     void Update()
@@ -149,6 +160,23 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2) && Cursor.lockState == CursorLockMode.Locked)
         {
             OnClick();  //クリックされた時の処理
+        }
+        GameObject ItemObj = GameObject.Find("Jamp");
+        SetItemText(Item);
+        if (Input.GetButtonUp("Action") && isSETHI)
+        {
+            //Debug.Log("押した");
+            if (Item > 0)
+            {
+                Itemsei();
+                --Item;
+                Debug.Log("数が減った");
+
+            }
+            else
+            {
+                Item = 0;
+            }
         }
     }
 
@@ -490,6 +518,40 @@ public class PlayerMove : MonoBehaviour
             }
             Wind.Stop();
         }
+    }
+    void Itemsei()
+    {
+        Vector3 position = transform.position +
+              transform.up * offset.y +
+              transform.right * offset.x +
+              transform.forward * offset.z * 5;
+
+        //回転調整
+        Quaternion myTrans = this.transform.localRotation;
+
+        Vector3 yes = this.transform.localEulerAngles;
+        yes.y = 180.0f;
+        yes.z = 90.0f;
+        myTrans.eulerAngles = yes;
+
+        // 生成しています。回転はいじってません。
+        Instantiate(ItemPrefab, position, myTrans);
+        //Debug.Log("動いた");
+        StartCoroutine("Sleep");
+
+
+    }
+    void SetItemText(int Item)
+    {
+        textitem.text = "アイテム:" + Item.ToString();
+    }
+    IEnumerator Sleep()
+    {
+        Debug.Log("開始");
+        isSETHI = false;
+        yield return new WaitForSeconds(5);
+        Debug.Log("終わり");
+        isSETHI = true;
     }
 
     public float GetSpeed()
