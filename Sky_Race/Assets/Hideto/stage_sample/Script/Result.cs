@@ -82,6 +82,8 @@ public class Result : MonoBehaviour
         //  distance = (v.z - v2.z) - colliderOffset;//Z距離計算
         Debug.Log(sum.ToString("0.00m"));
         //数値の表示
+
+        SUMUI.text = "距離合計" + sum.ToString("0.00m");
         if (PPUI != null)
         {
             //プレイヤーのz座標を表示
@@ -89,7 +91,7 @@ public class Result : MonoBehaviour
             //スタートのz座標を表示
             SPUI.text = "スタート座標"+v2.z.ToString("0.00m");
             //プレイヤーの飛行距離を表示(スコアに使うのはこっちかな)
-            SUMUI.text = "距離合計"+ sum.ToString("0.00m");
+            SUMUI.text = "飛行距離:"+ sum.ToString("0.00m");
 
             PDUI.text = "座標:" + distance.ToString("0.00m");
 

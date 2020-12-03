@@ -6,12 +6,14 @@ public class Rotation : MonoBehaviour
 {
     private float i = 10;
     private float j = 0;
+    private Vector3 a;
 
-    [SerializeField] private Vector3 localGravity;
+
+ //   [SerializeField] private Vector3 localGravity;
     private Rigidbody rBody;
     private void Start()
     {
-
+       a = gameObject.transform.localEulerAngles;
         rBody = this.GetComponent<Rigidbody>();
         rBody.useGravity = true; //最初にrigidBodyの重力を付ける
     }
@@ -63,7 +65,7 @@ public class Rotation : MonoBehaviour
     private void Update()
     {
         StartCoroutine("Roto1");
-        transform.rotation = Quaternion.Euler(j, 0, i);
+        transform.rotation = Quaternion.Euler(j, a.y, i);
     }
 
 
@@ -85,6 +87,7 @@ public class Rotation : MonoBehaviour
                 yield return new WaitForSeconds(0.00001f);
             }
         }
+        i = 0;
 
 
  //       yield return new WaitForSeconds(0.000000001f);
