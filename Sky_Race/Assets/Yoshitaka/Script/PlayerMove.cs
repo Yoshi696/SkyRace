@@ -494,7 +494,7 @@ public class PlayerMove : MonoBehaviour
         Wind.Stop();
         Wind2.Play();
         turboForce += 5f;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.8f);
         turboForce -= 5f;
         Wind2.Stop();
         Wind.Play();

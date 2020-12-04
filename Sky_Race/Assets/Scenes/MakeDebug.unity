@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38149974, g: 0.46815968, b: 0.6131704, a: 1}
+  m_IndirectSpecularColor: {r: 0.35914937, g: 0.44121403, b: 0.57820815, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10548,9 +10548,9 @@ GameObject:
   - component: {fileID: 643758730}
   - component: {fileID: 643758729}
   - component: {fileID: 643758728}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: JougenZ
-  m_TagString: Untagged
+  m_TagString: Over
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10586,7 +10586,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 802c8bd01c852fe45b5546396c5a351d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16935,9 +16935,9 @@ GameObject:
   - component: {fileID: 811984518}
   - component: {fileID: 811984517}
   - component: {fileID: 811984516}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: JougenL
-  m_TagString: Untagged
+  m_TagString: Over
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16973,7 +16973,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 802c8bd01c852fe45b5546396c5a351d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19137,7 +19137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2540a64ea6356444e96c0b513476a95e, type: 2}
+  - {fileID: 2100000, guid: 802c8bd01c852fe45b5546396c5a351d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28841,9 +28841,9 @@ GameObject:
   - component: {fileID: 1656515962}
   - component: {fileID: 1656515961}
   - component: {fileID: 1656515960}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: JougenR
-  m_TagString: Untagged
+  m_TagString: Over
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28879,7 +28879,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 802c8bd01c852fe45b5546396c5a351d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
