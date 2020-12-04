@@ -20,6 +20,10 @@ TagManager:
   - Take of
   - move
   - MoveOn
+  - Start
+  - End
+  - Help
+  - wind
   layers:
   - Default
   - TransparentFX

@@ -89,7 +89,7 @@ public class GoalEffect : MonoBehaviour
             Hanabi3.Play();
 
         }
-        else if (other.gameObject.tag == "Medium_P")
+        else if (other.gameObject.tag == "Medium_P ")
         {
 
             fireFlowerSE2.PlayOneShot(sound01);

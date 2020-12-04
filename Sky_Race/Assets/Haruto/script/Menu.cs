@@ -62,10 +62,6 @@ public class Menu : MonoBehaviour
         befor_button = click;
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
     IEnumerable _corsol()
     {
         audioSource.PlayOneShot(sound02);
