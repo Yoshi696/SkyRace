@@ -10,10 +10,11 @@ public class ChangeSky : MonoBehaviour
     public Material sky0;
     public Material sky1;
     public Material sky2;
+    public Material sky3;
+    public Material sky4;
 
     //変数取得
-    private SelectStageg sky;
-    SelectStageg Stage;
+    InportSky Stage;
     //public int skyselect;
     private int skyselect;
 
@@ -24,8 +25,8 @@ public class ChangeSky : MonoBehaviour
     void Start()
     {
         GameObject debug = GameObject.Find("SceneInport");
-        Stage = debug.GetComponent<SelectStageg>();
-        skyselect = Stage.GetSky();
+        Stage = debug.GetComponent<InportSky>();
+        skyselect = Stage.GetSkyInport();
         audios = GetComponent<AudioSource>();
     }
 
@@ -51,7 +52,6 @@ public class ChangeSky : MonoBehaviour
             // Skyboxを変更する
             RenderSettings.skybox = sky0;
         }
-
         if (skyselect == 1)
         {
             // Skyboxを変更する
@@ -61,6 +61,16 @@ public class ChangeSky : MonoBehaviour
         {
             // Skyboxを変更する
             RenderSettings.skybox = sky2;
+        }
+        if (skyselect == 3)
+        {
+            // Skyboxを変更する
+            RenderSettings.skybox = sky3;
+        }
+        if (skyselect == 4)
+        {
+            // Skyboxを変更する
+            RenderSettings.skybox = sky4;
         }
     }
 }

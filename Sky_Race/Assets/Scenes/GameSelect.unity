@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 93d43b027dc267444af7412b8e607dbd, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 13fde35df00f2384598d84d32a7bacd8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8016131, g: 0.8978529, b: 0.9572665, a: 1}
+  m_IndirectSpecularColor: {r: 0.2308611, g: 0.17832157, b: 0.14421204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 294779710}
   - component: {fileID: 294779713}
   - component: {fileID: 294779714}
+  - component: {fileID: 294779715}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -314,6 +315,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08194c72be854d48b08b9ab36379769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &294779715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294779709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4127617294cb7b944a64af0976d39452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sky0: {fileID: 2100000, guid: 7416536dbe0334cfd888dd1beb75a9fb, type: 2}
+  sky1: {fileID: 2100000, guid: e9705e00f62f62849b89fc9fd55aa0e3, type: 2}
+  sky2: {fileID: 2100000, guid: d07d2172e76d3fa429e80a14d2ae3616, type: 2}
+  sky3: {fileID: 2100000, guid: 93d43b027dc267444af7412b8e607dbd, type: 2}
+  sky4: {fileID: 2100000, guid: 13fde35df00f2384598d84d32a7bacd8, type: 2}
+  text: {fileID: 799260294}
 --- !u!1 &730623753
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,15 +522,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 907463221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4127617294cb7b944a64af0976d39452, type: 3}
+  m_Script: {fileID: 11500000, guid: 211e47789e3f22942ac610c6a38ff3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sky0: {fileID: 2100000, guid: 7416536dbe0334cfd888dd1beb75a9fb, type: 2}
-  sky1: {fileID: 2100000, guid: e9705e00f62f62849b89fc9fd55aa0e3, type: 2}
-  sky2: {fileID: 2100000, guid: d07d2172e76d3fa429e80a14d2ae3616, type: 2}
-  sky3: {fileID: 2100000, guid: 7400269f7d341bc41b1f21adeccb2a5f, type: 2}
-  sky4: {fileID: 2100000, guid: 93d43b027dc267444af7412b8e607dbd, type: 2}
-  text: {fileID: 799260294}
+  sky: {fileID: 294779715}
 --- !u!4 &907463223
 Transform:
   m_ObjectHideFlags: 0

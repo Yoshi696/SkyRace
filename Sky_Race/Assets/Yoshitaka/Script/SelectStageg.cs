@@ -24,18 +24,14 @@ public class SelectStageg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(no);
-
-
         float sayu = Input.GetAxisRaw("Horizontal");
-
+        Debug.Log(sayu);
         if (clickone == true && no != 5)
         {
             no++;
@@ -60,12 +56,12 @@ public class SelectStageg : MonoBehaviour
         if (no == 4)
         {
             RenderSettings.skybox = sky4;
-            text.text = "光";
+            text.text = "砂漠";
         }
         if (no == 3)
         {
             RenderSettings.skybox = sky3;
-            text.text = "砂漠";
+            text.text = "光";
         }
         if (no == 2)
         {
