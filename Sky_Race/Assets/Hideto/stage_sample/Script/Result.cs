@@ -63,7 +63,7 @@ public class Result : MonoBehaviour
         distance = Vector3.Distance(v,v2) - colliderOffset;// 今の距離とその前の距離の計算キーが押されたら更新する
 
         //  distance = (v.z - v2.z) - colliderOffset;//Z距離計算
-        Debug.Log(sum.ToString("0.00m"));
+       // Debug.Log(sum.ToString("0.00m"));
         //数値の表示
 
         SUMUI.text = "距離合計" + sum.ToString("0.00m");
@@ -122,7 +122,7 @@ public class Result : MonoBehaviour
             GoalPoint = Low;
 
         }
-        Debug.Log(GoalPoint);
+        //Debug.Log(GoalPoint);
         //ゲームオーバーになった時の処理
         if(other.gameObject.tag == "Over")
         {

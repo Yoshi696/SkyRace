@@ -33,7 +33,7 @@ public class ChangeSky : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(skyselect);
+        //Debug.Log(skyselect);
         //audios.loop = sound1;
 
         if (Input.GetKey(KeyCode.C))
