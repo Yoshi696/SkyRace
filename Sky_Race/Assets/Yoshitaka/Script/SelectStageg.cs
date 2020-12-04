@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SelectStageg : MonoBehaviour
 {
@@ -33,18 +32,11 @@ public class SelectStageg : MonoBehaviour
     void Update()
     {
         Debug.Log(no);
-        if (Input.GetButtonDown("Action") == true)
-        {
-           // SceneManager.sceneLoaded += GameSceneLoaded;
-            SceneManager.LoadSceneAsync("SkyDebug");
-            //var SkyPoint = GameObject.FindWithTag("ChangeSky").GetComponent<ChangeSky>();
-            //SkyPoint.skyselect = no;
-            //SceneManager.sceneLoaded
-        }
+
 
         float sayu = Input.GetAxisRaw("Horizontal");
 
-        if (clickone == true && no != 3)
+        if (clickone == true && no != 5)
         {
             no++;
             clickone = false;
@@ -56,15 +48,25 @@ public class SelectStageg : MonoBehaviour
             clickone = false;
             clicktwo = false;
         }
-        if(no >= 3)
+        if(no >= 5)
         {
-            no = 2;
+            no = 4;
         }
         if (no <= 0)
         {
             no = 0;
         }
 
+        if (no == 4)
+        {
+            RenderSettings.skybox = sky4;
+            text.text = "光";
+        }
+        if (no == 3)
+        {
+            RenderSettings.skybox = sky3;
+            text.text = "砂漠";
+        }
         if (no == 2)
         {
             RenderSettings.skybox = sky2;

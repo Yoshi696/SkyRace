@@ -12,8 +12,8 @@ public class SelectStart : MonoBehaviour
     void Start()
     {
         //マウスポインタ消すやつ
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.Locked;
         //Screen.lockCursor = false;
 
         Retry = GameObject.Find("Canvas/Retry").GetComponent<Selectable>();
@@ -38,11 +38,13 @@ public class SelectStart : MonoBehaviour
     //クリックされた時にOnClickを呼び出すようにしておく
     void OnClick()
     {
-        //UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEditor.EditorApplication.isPlaying = false;
 
-        //if (Cursor.lockState == CursorLockMode.Locked)
-        //{
-        //    return;  //lockStateがLockedじゃなかったら以後の処理をしない
-        //}
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            //Debug.Log("yes");
+
+            return;  //lockStateがLockedじゃなかったら以後の処理をしない
+        }
     }
 }

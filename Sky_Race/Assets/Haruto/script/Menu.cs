@@ -84,11 +84,6 @@ public class Menu : MonoBehaviour
 
     //}
 
-    IEnumerator _WaitStart()
-    {
-        yield return new WaitForSeconds(1.0f);
-    }
-
     //クリックされた時にOnClickを呼び出すようにしておく
     void OnClick()
     {
