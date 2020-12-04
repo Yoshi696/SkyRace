@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameResult.unity
     guid: 35f66b908fd4a4840b0e15fe95e04ea9
+  - enabled: 1
+    path: Assets/Scenes 1/SkyDebug.unity
+    guid: 16c63e2227e40c546bdd48d78a741b08
   m_configObjects: {}

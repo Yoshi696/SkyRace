@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SelectStageg : MonoBehaviour
 {
+    // Skyboxのマテリアル
+    public Material sky0;
+    public Material sky1;
+    public Material sky2;
+    public Material sky3;
+    public Material sky4;
+
+
     private float befor_button;
     public Text text;
 
@@ -16,12 +25,23 @@ public class SelectStageg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this);
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(no);
+        if (Input.GetButtonDown("Action") == true)
+        {
+           // SceneManager.sceneLoaded += GameSceneLoaded;
+            SceneManager.LoadSceneAsync("SkyDebug");
+            //var SkyPoint = GameObject.FindWithTag("ChangeSky").GetComponent<ChangeSky>();
+            //SkyPoint.skyselect = no;
+            //SceneManager.sceneLoaded
+        }
+
         float sayu = Input.GetAxisRaw("Horizontal");
 
         if (clickone == true && no != 3)
@@ -36,17 +56,28 @@ public class SelectStageg : MonoBehaviour
             clickone = false;
             clicktwo = false;
         }
+        if(no >= 3)
+        {
+            no = 2;
+        }
+        if (no <= 0)
+        {
+            no = 0;
+        }
 
         if (no == 2)
         {
+            RenderSettings.skybox = sky2;
             text.text = "夜";
         }
         if (no == 1)
         {
+            RenderSettings.skybox = sky1;
             text.text = "昼";
         }
         if (no == 0)
         {
+            RenderSettings.skybox = sky0;
             text.text = "朝";
         }
 
@@ -71,9 +102,18 @@ public class SelectStageg : MonoBehaviour
         befor_button = sayu;
     }
 
-    public int GetChangeSky()
+    public int GetSky()
     {
         return no;
     }
+
+    //private void GameSceneLoaded(Scene next,LoadSceneMode mode)
+    //{
+    //    var SkyPoint = GameObject.FindWithTag("ChangeSky").GetComponent<ChangeSky>();
+    //    SkyPoint.skyselect = no;
+
+    //    SceneManager.sceneLoaded -= GameSceneLoaded;
+    //    //return no;
+    //}
 }
 
