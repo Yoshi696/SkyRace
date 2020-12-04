@@ -5,88 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
-    // private Rigidbody rb;
-    // public float speed = 15f;
-    // public float yoko = 0.5f;
-    // public float zen = 0.05f;
-    // //private Vector3 playerpos;
-
-    //// public StartRun startrun;
-
-    // private void Start()
-    // {
-    //     //    playerpos = transform.position;
-    //     rb = GetComponent<Rigidbody>();
-
-
-
-    // }
-
-    // private void Update()
-    // {
-    //     //キーボード
-    //     float velox = speed * Input.GetAxisRaw("Horizontal");
-    //     float nox = speed * Input.GetAxisRaw("Vertical");
-
-    //     float ang = 0.005f * Input.GetAxisRaw("Horizontal");
-
-    //     float gen = Input.GetAxisRaw("Vertical");
-    //     float rot = Input.GetAxisRaw("Horizontal");
-
-    //     //↓前進
-    //     Vector3 pos = this.gameObject.transform.localPosition;
-    //     this.transform.localPosition = new Vector3(pos.x, pos.y, pos.z+zen);
-
-    //     //↓前進
-    //     //Rigidbody rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
-    //     //Vector3 go = rb.position;
-    //     //go += new Vector3(0, 0, 0.05f);
-    //     //rb.position = go;
-
-    //     //↓左右キーで回転
-    //     if (rot == 1)
-    //     {
-    //         transform.Rotate(0, -50 * -ang, 0);
-    //         this.transform.localPosition = new Vector3(pos.x+zen, pos.y, pos.z+zen);
-    //     }
-    //     else if (rot < 0)
-    //     {
-    //         transform.Rotate(0, -50 * -ang, 0);
-
-    //     }
-
-    //     //↓下キー入力で落下
-    //     if (gen < 0)
-    //     {
-    //        GetComponent<Rigidbody>().velocity = new Vector3(0, nox, 0f + zen);
-    //     }
-    //     else
-    //     {
-    //         GetComponent<Rigidbody>().velocity = new Vector3(0, 0f, 0f + zen);
-    //     }
-    // }
-    // private void OnCollisionEnter(Collision other)
-    // {
-    //     if (other.gameObject.tag == "Buns")
-    //     {
-    //         transform.Rotate(new Vector3(0, 180, 0));
-    //         StartCoroutine("WaitKeyInput");
-    //     }
-    // }
-    // IEnumerator WaitKeyInput()
-    // {
-    //     this.gameObject.GetComponent<PlayerMove>().enabled = false;
-    //     {
-    //         yield return new WaitForSeconds(1.0f);
-    //     }
-    //     this.gameObject.GetComponent<PlayerMove>().enabled = true;
-    // }
-
-    // private void FixedUpdate()
-    // {
-
-    // }
-
     //参考にしたサイト：https://htsuda.net/archives/1662
 
     public bool CanMove = true;
@@ -115,7 +33,9 @@ public class PlayerMove : MonoBehaviour
     private bool isSETHI = true;    //アイテム化に必要なもの
     private Text textitem;
 
+    //うずに入った時に回転
     private bool keyTurboRot=false;
+    private bool keyJumpRor = false;
     private float i = 10;
     private float j = 0;
     private Vector3 rotate_my;
@@ -135,8 +55,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        //自身の傾き取得
-        rotate_my = gameObject.transform.localEulerAngles;
+
 
         //動きに関しての情報
         canTranslate = CanRotateYaw || CanRotatePitch || CanRotateRoll;
@@ -183,7 +102,8 @@ public class PlayerMove : MonoBehaviour
                 Item = 0;
             }
 
-
+            //自身の傾き取得
+            rotate_my = gameObject.transform.localEulerAngles;
         }
     }
 
@@ -265,7 +185,8 @@ public class PlayerMove : MonoBehaviour
 
                 if (transform.localEulerAngles.x <= 359 && transform.localEulerAngles.x >= 340)
                 {
-                    AddRot.eulerAngles = new Vector3(0, 0, 0);
+                    AddRot.eulerAngles = new Vector3(0.5f, 0, 0);
+                    GetComponent<Rigidbody>().rotation *= AddRot;
                     //angCout1 = 0;
                 }
                 else
@@ -335,7 +256,6 @@ public class PlayerMove : MonoBehaviour
                         AddRot.eulerAngles = new Vector3(0, 0, 0.5f);
                         GetComponent<Rigidbody>().rotation *= AddRot;
                     }
-
                 }
             }
 
@@ -442,11 +362,14 @@ public class PlayerMove : MonoBehaviour
         if (keyTurboRot == true)
         {
             StartCoroutine("RotateTurbo");
-            //if (rotate_my.z >= 355)
-            //{
-                keyTurboRot = false;
-            //}
+            keyTurboRot = false;
         }
+        if(keyJumpRor == true)
+        {
+            StartCoroutine("RotateJump");
+            keyJumpRor = false;
+        }
+
         Debug.Log(keyTurboRot);
     }
 
@@ -497,6 +420,7 @@ public class PlayerMove : MonoBehaviour
         Wind.Stop();
         Wind3.Play();
         rB.AddForce(0, jumpForce, 0, ForceMode.Force);
+        StartCoroutine("RotateJump");
         this.gameObject.GetComponent<PlayerMove>().enabled = false;
         this.gameObject.GetComponent<Gravity>().enabled = false;
         {
@@ -527,6 +451,18 @@ public class PlayerMove : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
         }
     }
+
+    IEnumerator RotateJump()
+    {
+        for (i = 0; i < 25; i = i + 15)
+        {
+            transform.rotation = Quaternion.Euler(rotate_my.x - i, rotate_my.y, rotate_my.z);
+            yield return new WaitForSeconds(0.001f);
+        }
+       // transform.rotation = Quaternion.Euler(rotate_my.x, rotate_my.y, rotate_my.z);
+
+    }
+
 
     private void OnTriggerStay(Collider other)
     {//ゴールに接触している間徐々にスピードを下げる
