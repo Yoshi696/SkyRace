@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6367772041532507377}
   m_Layer: 0
   m_Name: Goal side
-  m_TagString: Goal
+  m_TagString: drop down
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367772041532507383}
   m_LocalRotation: {x: -1, y: 0, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.94, z: 0}
-  m_LocalScale: {x: 2.307692, y: 0.1, z: 2.307692}
+  m_LocalPosition: {x: 0, y: -0.788, z: 0}
+  m_LocalScale: {x: 2.307692, y: 0.2, z: 2.307692}
   m_Children: []
   m_Father: {fileID: 6367772041583939024}
   m_RootOrder: 5
@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367772041532507383}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -88,10 +88,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367772041532507383}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6367772041583939031

@@ -66,17 +66,17 @@ public class Rotation : MonoBehaviour
     {
         StartCoroutine("Roto1");
         transform.rotation = Quaternion.Euler(j, a.y, i);
+        StartCoroutine("Roto2");
     }
 
 
-    private void OnTriggerExit(Collider other)
-    {//トリガーから出たとき
-        if (other.gameObject.tag == "MoveOn")
-        {
-            StartCoroutine("Roto2");
+    //private void OnTriggerExit(Collider other)
+    //{//トリガーから出たとき
+    //    if (other.gameObject.tag == "MoveOn")
+    //    {
 
-        }
-    }
+    //    }
+    //}
     IEnumerator Roto2()
     {
         if (j <= 15)

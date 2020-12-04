@@ -192,6 +192,16 @@ public class Result : MonoBehaviour
                 Invoke("LoadScene",5f);
             }
         }
+        if (other.gameObject.tag == "drop down")
+        {
+            GetComponent<PlayerMove>().enabled = false;
+            // GetComponent<PM_test>().enabled = false;
+            //GetComponent<sampleRotation>().enabled = true;
+            GetComponent<Rotation>().enabled = true;
+            //GetComponent<sampleRotation>().enabled = true;
+            GetComponent<Gravity>().enabled = false;
+
+        }
 
     }
     void LoadScene()
