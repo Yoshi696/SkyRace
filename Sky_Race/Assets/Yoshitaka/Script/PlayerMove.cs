@@ -115,8 +115,10 @@ public class PlayerMove : MonoBehaviour
     private bool isSETHI = true;    //アイテム化に必要なもの
     private Text textitem;
 
-
-
+    private bool keyTurboRot=false;
+    private float i = 10;
+    private float j = 0;
+    private Vector3 rotate_my;
 
     private Rigidbody rB;
 
@@ -133,6 +135,9 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        //自身の傾き取得
+        rotate_my = gameObject.transform.localEulerAngles;
+
         //動きに関しての情報
         canTranslate = CanRotateYaw || CanRotatePitch || CanRotateRoll;
         canRotate = CanMoveForward || CanMoveBack || CanMoveRight || CanMoveLeft || CanMoveUp || CanMoveDown;
@@ -173,11 +178,12 @@ public class PlayerMove : MonoBehaviour
                 Debug.Log("数が減った");
 
             }
-            
             else
             {
                 Item = 0;
             }
+
+
         }
     }
 
@@ -431,6 +437,17 @@ public class PlayerMove : MonoBehaviour
 
             GetComponent<Rigidbody>().velocity = AddPos * (Time.fixedDeltaTime * MovementSpeed);
         }
+
+        //ターボ中回転させる
+        if (keyTurboRot == true)
+        {
+            StartCoroutine("RotateTurbo");
+            //if (rotate_my.z >= 355)
+            //{
+                keyTurboRot = false;
+            //}
+        }
+        Debug.Log(keyTurboRot);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -464,7 +481,9 @@ public class PlayerMove : MonoBehaviour
         }
         if (other.gameObject.tag == "Turbo")
         {
+            keyTurboRot = true;
             StartCoroutine("WaitKeyInput2");
+
         }
     }
 
@@ -498,6 +517,15 @@ public class PlayerMove : MonoBehaviour
         turboForce -= 5f;
         Wind2.Stop();
         Wind.Play();
+    }
+
+    IEnumerator RotateTurbo()
+    {
+        for (i = 0; i < 360; i =i+15)
+        {
+            transform.rotation = Quaternion.Euler(rotate_my.x, rotate_my.y, rotate_my.z + i);
+            yield return new WaitForSeconds(0.001f);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -549,10 +577,10 @@ public class PlayerMove : MonoBehaviour
     }
     IEnumerator Sleep()
     {
-        Debug.Log("開始");
+        //Debug.Log("開始");
         isSETHI = false;
         yield return new WaitForSeconds(5);
-        Debug.Log("終わり");
+        //Debug.Log("終わり");
         isSETHI = true;
     }
 
