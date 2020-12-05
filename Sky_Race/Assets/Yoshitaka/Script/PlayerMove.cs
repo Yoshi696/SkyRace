@@ -32,6 +32,8 @@ public class PlayerMove : MonoBehaviour
     private bool canRotate;
     private bool isSETHI = true;    //アイテム化に必要なもの
     private Text textitem;
+    public Image Button;
+    public Image ButtonPush;
 
     //うずに入った時に回転
     private bool keyTurboRot=false;
@@ -57,9 +59,14 @@ public class PlayerMove : MonoBehaviour
 
     public AudioClip sound01;
 
+    float time = 3f;
+
     void Start()
     {
         Mahou = gameObject.AddComponent<AudioSource>();
+
+        Button.enabled = false;
+        ButtonPush.enabled = false;
 
         //動きに関しての情報
         canTranslate = CanRotateYaw || CanRotatePitch || CanRotateRoll;
@@ -79,6 +86,8 @@ public class PlayerMove : MonoBehaviour
         Wind3.Stop();
         Item = 3;                   //アイテム化に必要なもの
         textitem = GameObject.Find("Itemsu").GetComponent<Text>();
+        Button = GameObject.Find("ItemButton").GetComponent<Image>();
+        ButtonPush = GameObject.Find("ItemButtonPush").GetComponent<Image>();
         SetItemText(Item);
         StartCoroutine("Sleep");
     }
@@ -405,6 +414,7 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "Jump")
         {
             StartCoroutine("WaitKeyInput1");
+            Button.enabled = true;
         }
         if (other.gameObject.tag == "Turbo")
         {
@@ -493,6 +503,7 @@ public class PlayerMove : MonoBehaviour
     }
     void Itemsei()
     {
+        time = 3f;
         Vector3 position = transform.position +
               transform.up * offset.y +
               transform.right * offset.x +
@@ -514,6 +525,15 @@ public class PlayerMove : MonoBehaviour
         if(Instantiate(ItemPrefab, position, myTrans))
         {
             Mahou.PlayOneShot(sound01);
+            Button.enabled = false;
+            ButtonPush.enabled = true;
+            time--;
+            if (time < 0)
+            {
+                ButtonPush.enabled = false;
+                Button.enabled = true;
+                time = 3;
+            }
         }
 
 
