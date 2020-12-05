@@ -34,7 +34,7 @@ public class Result : MonoBehaviour
     private float j = 40;
 
     // ゴールしたかどうか
-    private int Goal = 0; //0:GameOver 1:Goal
+    private int Goal = 2; //0:GameOver 1:Goal
     //Goalの文字テキスト
     public Text GoalText;
 
@@ -51,9 +51,12 @@ public class Result : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (Goal == 2 )
+        {
 
-        sum += distance;//飛行距離を合計する
-        v2 = transform.position;//キーが押されたときの座標取得
+            sum += distance;//飛行距離を合計する
+            v2 = transform.position;//キーが押されたときの座標取得
+        }
     }
     void Update()
     {
@@ -126,9 +129,9 @@ public class Result : MonoBehaviour
         //ゲームオーバーになった時の処理
         if(other.gameObject.tag == "Over")
         {
-            sum += distance;
-            v2 = transform.position;//プレイヤー座標
-
+            //sum += distance;
+            //v2 = transform.position;//プレイヤー座標
+            Goal = 0;
             // イベントに登録
             SceneManager.sceneLoaded += GameResultLoaded;
             Invoke("LoadScene", 1f);
@@ -173,24 +176,24 @@ public class Result : MonoBehaviour
         if (other.gameObject.tag == "Goal")
         {
 
-            if (pm >= 0)
-            {
-                pm -= 0.5f;
-                Debug.Log(pm);
-            }
-            else if (pm <= 0)
-            {
-                Goal = 1;// ゴールした
-                sum += distance;
-                v2 = transform.position;//プレイヤー座標
-                GoalText.enabled = true;
-                //              GameObject gm = GameObject.Find("ResultScore");
-                //            gm.GetComponent<ResultScore>().AddScore(GoalPoint);
+            //if (pm >= 0)
+            //{
+           //pm -= 0.5f;
+            Debug.Log(pm);
+            //}
+            //else if (pm <= 0)
+            //{
+            Goal = 1;// ゴールした
+            //sum += distance;
+            //v2 = transform.position;//プレイヤー座標
+            GoalText.enabled = true;
+            //              GameObject gm = GameObject.Find("ResultScore");
+            //            gm.GetComponent<ResultScore>().AddScore(GoalPoint);
 
-                // イベントに登録
-                SceneManager.sceneLoaded += GameResultLoaded;
-                Invoke("LoadScene",5f);
-            }
+            // イベントに登録
+            SceneManager.sceneLoaded += GameResultLoaded;
+            Invoke("LoadScene", 5f);
+            //}
         }
         if (other.gameObject.tag == "drop down")
         {

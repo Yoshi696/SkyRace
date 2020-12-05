@@ -466,6 +466,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {//ゴールに接触している間徐々にスピードを下げる
+        //上の奴をゴールについたらピタッと止まるように変更
         if (other.gameObject.tag == "Goal")
         {
             Item = 0;
@@ -473,7 +474,8 @@ public class PlayerMove : MonoBehaviour
             //Hokori.Play();
             if (MovementSpeed >= 0)
             {
-                MovementSpeed -= 5f;
+                MovementSpeed = 0;//プレイヤーのスピードを0にする
+                MovementSpeed -= 5f;// プレイヤーのsぷーどを徐々に下げる
                 GetComponent<ChangeCamera>().enabled = true;
                 if(MovementSpeed <= 200)
                 {

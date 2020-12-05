@@ -79,6 +79,7 @@ public class Rotation : MonoBehaviour
     //}
     IEnumerator Roto2()
     {
+        yield return new WaitForSeconds(1f);
         if (j <= 15)
         {
             //               yield return new WaitForSeconds(0.3f);
