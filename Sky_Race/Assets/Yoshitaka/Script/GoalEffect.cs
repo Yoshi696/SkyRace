@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class GoalEffect : MonoBehaviour
 {
-    private AudioSource fireFlowerSE;
-    private AudioSource fireFlowerSE2;
-
-    public AudioClip sound01;
 
     //花火のエフェクト（赤の場合）
     private ParticleSystem Hanabi1;
@@ -27,9 +23,6 @@ public class GoalEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 花火の音
-        fireFlowerSE = gameObject.AddComponent<AudioSource>();
-        fireFlowerSE2 = gameObject.AddComponent<AudioSource>();
 
         //赤半径の花火取得
         Hanabi1 = GameObject.Find("Hanabi1").GetComponent<ParticleSystem>();
@@ -73,12 +66,9 @@ public class GoalEffect : MonoBehaviour
         {
             Debug.Log("yes");
 
-            fireFlowerSE.PlayOneShot(sound01);
-            fireFlowerSE2.Stop();
-
-            Hana1.Stop();
-            Hana2.Stop();
-            Hana3.Stop();
+            //Hana1.Stop();
+            //Hana2.Stop();
+            //Hana3.Stop();
 
             //Ha1.Stop();
             //Ha2.Stop();
@@ -89,11 +79,8 @@ public class GoalEffect : MonoBehaviour
             Hanabi3.Play();
 
         }
-        else if (other.gameObject.tag == "Medium_P ")
+        else if (other.gameObject.tag == "Medium_P")
         {
-
-            fireFlowerSE2.PlayOneShot(sound01);
-            fireFlowerSE.Stop();
 
             //Ha1.Stop();
             //Ha2.Stop();

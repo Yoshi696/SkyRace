@@ -53,9 +53,13 @@ public class PlayerMove : MonoBehaviour
 
     private ParticleSystem Hokori;
 
+    private AudioSource Mahou;
+
+    public AudioClip sound01;
+
     void Start()
     {
-
+        Mahou = gameObject.AddComponent<AudioSource>();
 
         //動きに関しての情報
         canTranslate = CanRotateYaw || CanRotatePitch || CanRotateRoll;
@@ -506,6 +510,11 @@ public class PlayerMove : MonoBehaviour
         Instantiate(ItemPrefab, position, myTrans);
         //Debug.Log("動いた");
         StartCoroutine("Sleep");
+
+        if(Instantiate(ItemPrefab, position, myTrans))
+        {
+            Mahou.PlayOneShot(sound01);
+        }
 
 
     }

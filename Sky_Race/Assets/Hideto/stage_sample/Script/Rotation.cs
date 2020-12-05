@@ -8,20 +8,26 @@ public class Rotation : MonoBehaviour
     private float j = 0;
     private Vector3 a;
 
+    private AudioSource atack;
+
+    public AudioClip sound01;
+
 
  //   [SerializeField] private Vector3 localGravity;
     private Rigidbody rBody;
     private void Start()
     {
+        atack = gameObject.AddComponent<AudioSource>();
        a = gameObject.transform.localEulerAngles;
         rBody = this.GetComponent<Rigidbody>();
         rBody.useGravity = true; //最初にrigidBodyの重力を付ける
     }
 
-    private void FixedUpdate()
+    private void OnEnable()
     {
-
+        atack.PlayOneShot(sound01);
     }
+
     IEnumerator Roto1()
     {
         if (i <= -10)
