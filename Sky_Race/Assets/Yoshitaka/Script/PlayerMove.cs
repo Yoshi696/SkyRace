@@ -273,6 +273,8 @@ public class PlayerMove : MonoBehaviour
                 }
             }
 
+
+
             //実際傾く所
             //AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
             //GetComponent<Rigidbody>().rotation *= AddRot;
@@ -435,7 +437,6 @@ public class PlayerMove : MonoBehaviour
         Wind.Stop();
         Wind3.Play();
         rB.AddForce(0, jumpForce, 0, ForceMode.Force);
-        StartCoroutine("RotateJump");
         this.gameObject.GetComponent<PlayerMove>().enabled = false;
         this.gameObject.GetComponent<Gravity>().enabled = false;
         {
@@ -466,18 +467,6 @@ public class PlayerMove : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
         }
     }
-
-    IEnumerator RotateJump()
-    {
-        for (i = 0; i < 25; i = i + 15)
-        {
-            transform.rotation = Quaternion.Euler(rotate_my.x - i, rotate_my.y, rotate_my.z);
-            yield return new WaitForSeconds(0.1f);
-        }
-       // transform.rotation = Quaternion.Euler(rotate_my.x, rotate_my.y, rotate_my.z);
-
-    }
-
 
     private void OnTriggerStay(Collider other)
     {//ゴールに接触している間徐々にスピードを下げる
