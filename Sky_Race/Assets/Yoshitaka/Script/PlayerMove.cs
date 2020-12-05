@@ -472,7 +472,7 @@ public class PlayerMove : MonoBehaviour
         for (i = 0; i < 25; i = i + 15)
         {
             transform.rotation = Quaternion.Euler(rotate_my.x - i, rotate_my.y, rotate_my.z);
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForSeconds(0.1f);
         }
        // transform.rotation = Quaternion.Euler(rotate_my.x, rotate_my.y, rotate_my.z);
 

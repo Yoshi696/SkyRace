@@ -19,7 +19,14 @@ public class ChangeSky : MonoBehaviour
     private int skyselect;
 
     public AudioClip sound1;
+    public AudioClip sound2;
+    public AudioClip sound3;
+    public AudioClip sound4;
+    public AudioClip sound5;
+
     AudioSource audios;
+
+    private bool cont;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +35,7 @@ public class ChangeSky : MonoBehaviour
         Stage = debug.GetComponent<InportSky>();
         skyselect = Stage.GetSkyInport();
         audios = GetComponent<AudioSource>();
+        cont = true;
     }
 
     // Update is called once per frame
@@ -38,9 +46,7 @@ public class ChangeSky : MonoBehaviour
 
         if (Input.GetKey(KeyCode.C))
         {
-            audios.clip = sound1;
-            audios.Play();
-            skyselect = 1;
+
         }
         if (Input.GetKey(KeyCode.V))
         {
@@ -49,26 +55,56 @@ public class ChangeSky : MonoBehaviour
 
         if (skyselect == 0)
         {
+            if (cont == true)
+            {
+                audios.clip = sound1;
+                audios.Play();
+                cont = false;
+            }
             // Skyboxを変更する
             RenderSettings.skybox = sky0;
         }
         if (skyselect == 1)
         {
+            if (cont == true)
+            {
+                audios.clip = sound2;
+                audios.Play();
+                cont = false;
+            }
             // Skyboxを変更する
             RenderSettings.skybox = sky1;
         }
         if (skyselect == 2)
         {
+            if (cont == true)
+            {
+                audios.clip = sound3;
+                audios.Play();
+                cont = false;
+            }
             // Skyboxを変更する
             RenderSettings.skybox = sky2;
         }
         if (skyselect == 3)
         {
+            if (cont == true)
+            {
+                audios.clip = sound4;
+                audios.Play();
+                cont = false;
+            }
             // Skyboxを変更する
             RenderSettings.skybox = sky3;
         }
         if (skyselect == 4)
         {
+            if (cont == true)
+            {
+                audios.clip = sound5;
+                audios.Play();
+                cont = false;
+            }
             // Skyboxを変更する
             RenderSettings.skybox = sky4;
         }

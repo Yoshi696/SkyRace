@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7416536dbe0334cfd888dd1beb75a9fb, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 93d43b027dc267444af7412b8e607dbd, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38149974, g: 0.46815968, b: 0.6131704, a: 1}
+  m_IndirectSpecularColor: {r: 0.8016131, g: 0.8978529, b: 0.9572665, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2908,6 +2908,7 @@ MonoBehaviour:
   ItemPrefab: {fileID: 1778318030}
   offset: {x: -2, y: -2, z: 5}
   onset: {x: 0, y: 0, z: 0, w: 0}
+  timer: 6
   Button: {fileID: 264764574}
   ButtonPush: {fileID: 901116818}
   jumpForce: 70
@@ -18261,8 +18262,12 @@ MonoBehaviour:
   sky1: {fileID: 2100000, guid: e9705e00f62f62849b89fc9fd55aa0e3, type: 2}
   sky2: {fileID: 2100000, guid: d07d2172e76d3fa429e80a14d2ae3616, type: 2}
   sky3: {fileID: 2100000, guid: 93d43b027dc267444af7412b8e607dbd, type: 2}
-  sky4: {fileID: 2100000, guid: 13fde35df00f2384598d84d32a7bacd8, type: 2}
-  sound1: {fileID: 0}
+  sky4: {fileID: 2100000, guid: 7400269f7d341bc41b1f21adeccb2a5f, type: 2}
+  sound1: {fileID: 8300000, guid: 988d9ccf349beb746aadeb4c30994f2c, type: 3}
+  sound2: {fileID: 8300000, guid: 1e7f265fe376c734ea2db38e98cd3b7d, type: 3}
+  sound3: {fileID: 8300000, guid: f3d4048304baa6b438b906c94d0a6068, type: 3}
+  sound4: {fileID: 8300000, guid: 818d86777b077e749a63e2928e5f9f59, type: 3}
+  sound5: {fileID: 8300000, guid: 196176657e14ecd4eb69af497b69edbb, type: 3}
 --- !u!1 &949595257
 GameObject:
   m_ObjectHideFlags: 0
@@ -26951,7 +26956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1370423102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26983,7 +26988,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 802c8bd01c852fe45b5546396c5a351d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
