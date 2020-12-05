@@ -32,6 +32,7 @@ public class PlayerMove : MonoBehaviour
     private bool canRotate;
     private bool isSETHI = true;    //アイテム化に必要なもの
     private Text textitem;
+    public float timer = 6.0f;
     public Image Button;
     public Image ButtonPush;
 
@@ -483,7 +484,7 @@ public class PlayerMove : MonoBehaviour
         //上の奴をゴールについたらピタッと止まるように変更
         if (other.gameObject.tag == "Goal")
         {
-            Item = 0;
+            
             GetComponent<GoalEffect>().enabled = true;
             //Hokori.Play();
             if (MovementSpeed >= 0)
@@ -491,7 +492,10 @@ public class PlayerMove : MonoBehaviour
                 MovementSpeed = 0;//プレイヤーのスピードを0にする
                 MovementSpeed -= 5f;// プレイヤーのsぷーどを徐々に下げる
                 GetComponent<ChangeCamera>().enabled = true;
-                if(MovementSpeed <= 200)
+                Item = 0;
+                GameObject tatu = GameObject.Find("HiWind(Clone)");
+                Destroy(tatu);
+                if (MovementSpeed <= 200)
                 {
                     Hokori.Stop();
                 }
@@ -549,6 +553,8 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(5);
         //Debug.Log("終わり");
         isSETHI = true;
+        GameObject tatu = GameObject.Find("HiWind(Clone)");
+        Destroy(tatu, timer);
     }
 
     public float GetSpeed()
