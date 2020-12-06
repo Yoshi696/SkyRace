@@ -19,6 +19,8 @@ public class StartRun : MonoBehaviour
     private ParticleSystem Wind2;
     private ParticleSystem Wind3;
 
+    private ParticleSystem Gon;
+
 
 
 
@@ -29,9 +31,11 @@ public class StartRun : MonoBehaviour
         Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
         Wind2 = GameObject.Find("windspeed").GetComponent<ParticleSystem>();
         Wind3 = GameObject.Find("wind (up)").GetComponent<ParticleSystem>();
+        Gon = GameObject.Find("Collide").GetComponent<ParticleSystem>();
         Wind.Stop();
         Wind2.Stop();
         Wind3.Stop();
+        Gon.Stop();
     }
 
     private void OnTriggerExit(Collider other)
