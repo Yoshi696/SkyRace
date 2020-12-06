@@ -30,8 +30,14 @@ public class Result : MonoBehaviour
     private Vector3 v2;
     private double sum = 0.0f;
 
-    // 落とした後に使う
-    private float j = 40;
+
+    private AudioSource atack;
+    private ParticleSystem Gon;
+
+
+    public AudioClip sound01;
+
+
 
     // ゴールしたかどうか
     private int Goal = 2; //0:GameOver 1:Goal
@@ -43,6 +49,11 @@ public class Result : MonoBehaviour
  //       colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
         GoalText.enabled = false;
 
+        Gon = GameObject.Find("Collide").GetComponent<ParticleSystem>();
+
+        Gon.Stop();
+
+        atack = gameObject.AddComponent<AudioSource>();
     }
     private void OnEnable()
     {
@@ -138,6 +149,19 @@ public class Result : MonoBehaviour
 
         }
 
+        if (other.gameObject.tag == "drop down")
+        {
+            atack.PlayOneShot(sound01);
+            Gon.Play();
+            GetComponent<PlayerMove>().enabled = false;
+            // GetComponent<PM_test>().enabled = false;
+            //GetComponent<sampleRotation>().enabled = true;
+            GetComponent<Rotation>().enabled = true;
+            //GetComponent<sampleRotation>().enabled = true;
+            GetComponent<Gravity>().enabled = false;
+
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {//トリガーから出たとき
@@ -195,16 +219,6 @@ public class Result : MonoBehaviour
             Invoke("LoadScene", 5f);
             //}
         }
-        if (other.gameObject.tag == "drop down")
-        {
-            GetComponent<PlayerMove>().enabled = false;
-            // GetComponent<PM_test>().enabled = false;
-            //GetComponent<sampleRotation>().enabled = true;
-            GetComponent<Rotation>().enabled = true;
-            //GetComponent<sampleRotation>().enabled = true;
-            GetComponent<Gravity>().enabled = false;
-
-        }
 
     }
     void LoadScene()
@@ -230,6 +244,8 @@ public class Result : MonoBehaviour
     {
         if(other.gameObject.tag == "Goal")
         {
+            atack.PlayOneShot(sound01);
+            Gon.Play();
             GetComponent<PlayerMove>().enabled = false;
            // GetComponent<PM_test>().enabled = false;
             //GetComponent<sampleRotation>().enabled = true;

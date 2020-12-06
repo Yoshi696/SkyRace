@@ -8,24 +8,25 @@ public class Rotation : MonoBehaviour
     private float j = 0;
     private Vector3 a;
 
-    private AudioSource atack;
-
-    public AudioClip sound01;
 
 
- //   [SerializeField] private Vector3 localGravity;
+
+    private ParticleSystem Gon;
+
+    //   [SerializeField] private Vector3 localGravity;
     private Rigidbody rBody;
     private void Start()
     {
-        atack = gameObject.AddComponent<AudioSource>();
-       a = gameObject.transform.localEulerAngles;
+        Gon = GameObject.Find("Collide").GetComponent<ParticleSystem>();
+
+        Gon.Play();
+        a = gameObject.transform.localEulerAngles;
         rBody = this.GetComponent<Rigidbody>();
         rBody.useGravity = true; //最初にrigidBodyの重力を付ける
     }
 
     private void OnEnable()
     {
-        atack.PlayOneShot(sound01);
     }
 
     IEnumerator Roto1()
@@ -66,6 +67,7 @@ public class Rotation : MonoBehaviour
             }
         }
 
+        yield return new WaitForSeconds(3f);
 
     }
     private void Update()
@@ -85,7 +87,8 @@ public class Rotation : MonoBehaviour
     //}
     IEnumerator Roto2()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
+        Gon.Stop();
         if (j <= 15)
         {
             //               yield return new WaitForSeconds(0.3f);
