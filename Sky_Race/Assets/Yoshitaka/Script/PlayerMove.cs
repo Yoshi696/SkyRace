@@ -397,19 +397,6 @@ public class PlayerMove : MonoBehaviour
             //StartCoroutine("WaitKeyInput");
         }
 
-        if (other.gameObject.tag == "Over")
-        {
-            CanMove = false;
-            CanMoveForward = false;
-            CanMoveBack = false;
-            CanMoveLeft = false;
-            CanMoveRight = false;
-            CanMoveUp = false;
-            CanMoveDown = false;
-            CanRotateYaw = false;
-            CanRotatePitch = false;
-            CanRotateRoll = false;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -424,6 +411,34 @@ public class PlayerMove : MonoBehaviour
             keyTurboRot = true;
             StartCoroutine("WaitKeyInput2");
 
+        }
+
+        if (other.gameObject.tag == "Over")
+        {
+            CanMove = false;
+            CanMoveForward = false;
+            CanMoveBack = false;
+            CanMoveLeft = false;
+            CanMoveRight = false;
+            CanMoveUp = false;
+            CanMoveDown = false;
+            CanRotateYaw = false;
+            CanRotatePitch = false;
+            CanRotateRoll = false;
+        }
+
+        if(other.gameObject.tag == "Goal")
+        {
+            CanMove = false;
+            CanMoveForward = false;
+            CanMoveBack = false;
+            CanMoveLeft = false;
+            CanMoveRight = false;
+            CanMoveUp = false;
+            CanMoveDown = false;
+            CanRotateYaw = false;
+            CanRotatePitch = false;
+            CanRotateRoll = false;
         }
     }
 
