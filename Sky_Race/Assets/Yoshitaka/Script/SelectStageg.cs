@@ -30,7 +30,7 @@ public class SelectStageg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float sayu = Input.GetAxisRaw("Horizontal");
+        float sayu = Input.GetAxisRaw("Trigger");
         Debug.Log(sayu);
         if (clickone == true && no != 5)
         {
