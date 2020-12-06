@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     private AudioSource audioSource;
     private AudioSource audioSource2;
+    private AudioSource audioSource3;
 
     public AudioClip sound01;
     public AudioClip sound02;
@@ -13,11 +14,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip sound04;
     public AudioClip sound05;
     public AudioClip sound06;
+    public AudioClip sound07;
 
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource2 = gameObject.AddComponent<AudioSource>();
+        audioSource3 = gameObject.AddComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,17 +40,27 @@ public class AudioManager : MonoBehaviour
         if(other.gameObject.tag == "Take of")
         {
             audioSource2.PlayOneShot(sound04);
+            audioSource3.Stop();
         }
         if(other.gameObject.tag == "Goal")
         {
             audioSource2.Stop();
         }
-        if(other.gameObject.tag == "Goal"){
+        if (other.gameObject.tag == "High_P")
+        {
             audioSource.PlayOneShot(sound05);
         }
-        if(other.gameObject.tag == "wind")
+        if (other.gameObject.tag == "Medium_P")
+        {
+            audioSource.PlayOneShot(sound05);
+        }
+        if (other.gameObject.tag == "wind")
         {
             audioSource.PlayOneShot(sound06);
+        }
+        if(other.gameObject.tag == "Dash")
+        {
+            audioSource3.PlayOneShot(sound07);
         }
     }
 }

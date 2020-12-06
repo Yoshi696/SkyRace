@@ -21,6 +21,8 @@ TagManager:
   - move
   - MoveOn
   - drop down
+  - wind
+  - Dash
   layers:
   - Default
   - TransparentFX
