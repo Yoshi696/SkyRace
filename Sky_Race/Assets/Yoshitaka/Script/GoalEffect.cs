@@ -15,6 +15,9 @@ public class GoalEffect : MonoBehaviour
     private ParticleSystem Hana2;
     private ParticleSystem Hana3;
 
+    //一回だけ出す
+    private bool oneshot;
+
     //花火のエフェクト（白の場合）
     //private ParticleSystem Ha1;
     //private ParticleSystem Ha2;
@@ -51,6 +54,7 @@ public class GoalEffect : MonoBehaviour
         //Ha1.Stop();
         //Ha2.Stop();
         //Ha3.Stop();
+        oneshot = true;
     }
 
     private void Update()
@@ -60,23 +64,28 @@ public class GoalEffect : MonoBehaviour
         //Hanabi3.Play();
     }
 
-    private void OnTriggerEnter(Collider other)    //ゴールに接触した瞬間に入る
+    private void OnTriggerStay(Collider other)    //ゴールに接触した瞬間に入る
     {
         if (other.gameObject.tag == "High_P")
         {
-            Debug.Log("yes");
+            // Debug.Log("yes");
+            if (oneshot == true)
+            {
+                Hana1.Stop();
+                Hana2.Stop();
+                Hana3.Stop();
 
-            //Hana1.Stop();
-            //Hana2.Stop();
-            //Hana3.Stop();
+                //Ha1.Stop();
+                //Ha2.Stop();
+                //Ha3.Stop();
 
-            //Ha1.Stop();
-            //Ha2.Stop();
-            //Ha3.Stop();
+                // Debug.Log("花火");
+                Hanabi1.Play();
+                Hanabi2.Play();
+                Hanabi3.Play();
 
-            Hanabi1.Play();
-            Hanabi2.Play();
-            Hanabi3.Play();
+                oneshot = false;
+            }
 
         }
         else if (other.gameObject.tag == "Medium_P")
@@ -85,10 +94,13 @@ public class GoalEffect : MonoBehaviour
             //Ha1.Stop();
             //Ha2.Stop();
             //Ha3.Stop();
-
-            Hana1.Play();
-            Hana2.Play();
-            Hana3.Play();
+            if (oneshot == true)
+            {
+                Hana1.Play();
+                Hana2.Play();
+                Hana3.Play();
+                oneshot = false;
+            }
 
         }
         //else if (other.gameObject.tag == "Low_P")

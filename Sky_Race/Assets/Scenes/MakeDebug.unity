@@ -9280,6 +9280,18 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: f7efb0d9df2264096af57128df85dddb, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: f7efb0d9df2264096af57128df85dddb, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: f7efb0d9df2264096af57128df85dddb, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7efb0d9df2264096af57128df85dddb, type: 3}
 --- !u!1001 &481524562
@@ -15571,7 +15583,7 @@ Transform:
   m_GameObject: {fileID: 643758727}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.683333, y: -65.5, z: 5.3200006}
-  m_LocalScale: {x: 20, y: 250, z: 0.033333335}
+  m_LocalScale: {x: 20, y: 300, z: 0.033333335}
   m_Children: []
   m_Father: {fileID: 1218398187}
   m_RootOrder: 5
@@ -21970,7 +21982,7 @@ Transform:
   m_GameObject: {fileID: 811984515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -19.650002, y: -65.5, z: -3.0133336}
-  m_LocalScale: {x: 0.033333335, y: 250, z: 16.666668}
+  m_LocalScale: {x: 0.033333335, y: 300, z: 16.666668}
   m_Children: []
   m_Father: {fileID: 1218398187}
   m_RootOrder: 4
@@ -31819,7 +31831,7 @@ GameObject:
   - component: {fileID: 1370423104}
   - component: {fileID: 1370423103}
   - component: {fileID: 1370423102}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Jougen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31894,7 +31906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370423101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.666667, y: 59, z: -3.0133336}
+  m_LocalPosition: {x: -9.6333, y: 84, z: -3.0133336}
   m_LocalScale: {x: 20, y: 1, z: 16.666668}
   m_Children: []
   m_Father: {fileID: 1218398187}
@@ -33974,7 +33986,7 @@ Transform:
   m_GameObject: {fileID: 1656515959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.33333334, y: -65.5, z: -3.0133336}
-  m_LocalScale: {x: 0.033333335, y: 250, z: 16.666668}
+  m_LocalScale: {x: 0.033333335, y: 300, z: 16.666668}
   m_Children: []
   m_Father: {fileID: 1218398187}
   m_RootOrder: 3

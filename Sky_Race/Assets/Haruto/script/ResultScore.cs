@@ -25,7 +25,7 @@ public class ResultScore : MonoBehaviour
 
         if (Goal != 0)
         {
-            Debug.Log("ゴールシチャッタ");
+            //Debug.Log("ゴールシチャッタ");
             Total = (double)GoalPoint + ((Distance * 100)/10);
         }
         else

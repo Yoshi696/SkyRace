@@ -113,8 +113,8 @@ public class item : MonoBehaviour
     private bool canTranslate;
     private bool canRotate;
 
-    private bool plus = false;
-    private bool sita = false;
+    //private bool plus = false;
+    //private bool sita = false;
     private bool isSETHI = true;
     private Text textitem;
     
@@ -192,7 +192,7 @@ public class item : MonoBehaviour
         float rot = Input.GetAxisRaw("Horizontal");
         float ang = Input.GetAxisRaw("Horizontal");
         /*Roll*/
-        sita = true;
+        //sita = true;
 
         //回転
 
@@ -289,7 +289,7 @@ public class item : MonoBehaviour
                 }
                 else
                 {
-                    sita = false;
+                    //sita = false;
                     AddRot.eulerAngles = new Vector3(-0.1f, 0, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                     angCout1--;
@@ -358,13 +358,13 @@ public class item : MonoBehaviour
             {
                 AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
                 GetComponent<Rigidbody>().rotation *= AddRot;
-                sita = true;
+                //ita = true;
             }
             else if (transform.localEulerAngles.x >= 350)
             {
                 AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
                 GetComponent<Rigidbody>().rotation *= AddRot;
-                sita = true;
+                //sita = true;
             }
 
             //         else

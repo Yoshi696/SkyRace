@@ -203,7 +203,7 @@ public class Result : MonoBehaviour
             //if (pm >= 0)
             //{
            //pm -= 0.5f;
-            Debug.Log(pm);
+            //Debug.Log(pm);
             //}
             //else if (pm <= 0)
             //{

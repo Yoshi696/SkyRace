@@ -40,7 +40,7 @@ public class PlayerMove : MonoBehaviour
     private bool keyTurboRot=false;
     private bool keyJumpRor = false;
     private float i = 10;
-    private float j = 0;
+   // private float j = 0;
     private Vector3 rotate_my;
 
     private Rigidbody rB;
@@ -108,7 +108,7 @@ public class PlayerMove : MonoBehaviour
             {
                 Itemsei();
                 --Item;
-                Debug.Log("数が減った");
+               // Debug.Log("数が減った");
 
             }
             else
@@ -386,7 +386,7 @@ public class PlayerMove : MonoBehaviour
             keyJumpRor = false;
         }
 
-        Debug.Log(keyTurboRot);
+       // Debug.Log(keyTurboRot);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -429,6 +429,8 @@ public class PlayerMove : MonoBehaviour
 
         if(other.gameObject.tag == "Goal")
         {
+            GetComponent<GoalEffect>().enabled = true;
+            GetComponent<ChangeCamera>().enabled = true;
             CanMove = false;
             CanMoveForward = false;
             CanMoveBack = false;
@@ -483,32 +485,32 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {//ゴールに接触している間徐々にスピードを下げる
-        //上の奴をゴールについたらピタッと止まるように変更
-        if (other.gameObject.tag == "Goal")
-        {
+    //private void OnTriggerStay(Collider other)
+    //{//ゴールに接触している間徐々にスピードを下げる
+    //    //上の奴をゴールについたらピタッと止まるように変更
+    //    if (other.gameObject.tag == "Goal")
+    //    {
             
-            GetComponent<GoalEffect>().enabled = true;
-            //Hokori.Play();
-            if (MovementSpeed >= 0)
-            {
-                MovementSpeed = 0;//プレイヤーのスピードを0にする
-                MovementSpeed -= 5f;// プレイヤーのsぷーどを徐々に下げる
-                GetComponent<ChangeCamera>().enabled = true;
-                Item = 0;
-                GameObject tatu = GameObject.Find("HiWind(Clone)");
-                Destroy(tatu);
-                if (MovementSpeed <= 200)
-                {
-                    Hokori.Stop();
-                }
-                //GetComponent<PlayerMove>().enabled = false;
-                //Debug.Log(MovementSpeed);
-            }
-            Wind.Stop();
-        }
-    }
+    //        GetComponent<GoalEffect>().enabled = true;
+    //        //Hokori.Play();
+    //        if (MovementSpeed >= 0)
+    //        {
+    //            MovementSpeed = 0;//プレイヤーのスピードを0にする
+    //            MovementSpeed -= 5f;// プレイヤーのsぷーどを徐々に下げる
+    //            GetComponent<ChangeCamera>().enabled = true;
+    //            Item = 0;
+    //            GameObject tatu = GameObject.Find("HiWind(Clone)");
+    //            Destroy(tatu);
+    //            if (MovementSpeed <= 200)
+    //            {
+    //                Hokori.Stop();
+    //            }
+    //            //GetComponent<PlayerMove>().enabled = false;
+    //            //Debug.Log(MovementSpeed);
+    //        }
+    //        Wind.Stop();
+    //    }
+    //}
     void Itemsei()
     {
         time = 3f;
