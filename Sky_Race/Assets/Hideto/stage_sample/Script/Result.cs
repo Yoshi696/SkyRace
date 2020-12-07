@@ -21,10 +21,10 @@ public class Result : MonoBehaviour
     private float colliderOffset;
 
     //Point取得用の変数を用意
-    private int High = 50;
-    private int Medium = 20;
-    private int Low = 10;
-    private float pm = 100;
+    private int High = 500;
+    private int Medium = 200;
+    private int Low = 100;
+ //   private float pm = 100;
     private int GoalPoint;
     private double distance;
     private Vector3 v2;
