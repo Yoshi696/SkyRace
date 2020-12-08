@@ -429,6 +429,8 @@ public class PlayerMove : MonoBehaviour
 
         if(other.gameObject.tag == "Goal")
         {
+            Quaternion mi = transform.localRotation;
+            transform.Rotate(new Vector3(0, mi.y, mi.z));
             GetComponent<GoalEffect>().enabled = true;
             GetComponent<ChangeCamera>().enabled = true;
             CanMove = false;
@@ -478,7 +480,7 @@ public class PlayerMove : MonoBehaviour
 
     IEnumerator RotateTurbo()
     {
-        for (i = 0; i < 360; i =i+15)
+        for (i = 0; i < 360; i =i+10)
         {
             transform.rotation = Quaternion.Euler(rotate_my.x, rotate_my.y, rotate_my.z + i);
             yield return new WaitForSeconds(0.001f);

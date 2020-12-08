@@ -6712,7 +6712,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277750428}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0794a6a8d62b8db41a58d5eb57e90cc0, type: 3}
   m_Name: 
@@ -19980,7 +19980,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942646832}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &942646834
 Camera:
   m_ObjectHideFlags: 0
@@ -20045,7 +20045,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942646832}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4bedb499dd5d52b419082abda79ea997, type: 3}
