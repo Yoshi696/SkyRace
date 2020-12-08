@@ -10,7 +10,7 @@ public class Menu1 : MonoBehaviour
     void Start()
 	{
         // ボタンコンポーネントの取得
-        title = GameObject.Find("/Canvas/Title").GetComponent<Button>();
+        title = GameObject.Find("/Canvas/back").GetComponent<Button>();
 		title.Select();
 	}
 

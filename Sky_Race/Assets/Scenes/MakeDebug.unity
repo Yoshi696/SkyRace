@@ -6434,7 +6434,7 @@ MonoBehaviour:
   startrun: {fileID: 277750438}
   karbspeed: 2
   Item: 3
-  ItemPrefab: {fileID: 0}
+  ItemPrefab: {fileID: 1254110012}
   offset: {x: -2, y: -2, z: 5}
   onset: {x: 0, y: 0, z: 0, w: 0}
   timer: 6
@@ -20874,6 +20874,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1254110012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8408484020580218367, guid: 4fa0a0a3e2be4ec49aad2ba17892a089,
+    type: 3}
+  m_PrefabInstance: {fileID: 292097191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!199 &1259358950
 ParticleSystemRenderer:
   serializedVersion: 6
