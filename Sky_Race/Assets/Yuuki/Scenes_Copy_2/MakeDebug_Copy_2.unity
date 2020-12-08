@@ -2834,7 +2834,11 @@ MonoBehaviour:
   ItemPrefab: {fileID: 1778318030}
   offset: {x: -2, y: -2, z: 5}
   onset: {x: 0, y: 0, z: 0, w: 0}
+  timer: 6
+  Button: {fileID: 0}
+  ButtonPush: {fileID: 0}
   jumpForce: 70
+  sound01: {fileID: 0}
 --- !u!54 &277750430
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3007,6 +3011,7 @@ MonoBehaviour:
   SPUI: {fileID: 0}
   SUMUI: {fileID: 517399228}
   PDUI: {fileID: 0}
+  sound01: {fileID: 0}
   GoalText: {fileID: 2125086455}
 --- !u!114 &277750440
 MonoBehaviour:
@@ -3039,6 +3044,7 @@ MonoBehaviour:
   sound04: {fileID: 8300000, guid: d60e6fe13ca812b44bd56ec59e449299, type: 3}
   sound05: {fileID: 8300000, guid: 2d07e8fd9ed498348bf05dba469a5fc8, type: 3}
   sound06: {fileID: 8300000, guid: dff89210d6255784aa3ac94e4a4bff6b, type: 3}
+  sound07: {fileID: 0}
 --- !u!114 &277750442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3094,7 +3100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8d3d3721d6a5045aa5814032240bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound01: {fileID: 8300000, guid: 89859764e96400e48af85a322d4a4933, type: 3}
 --- !u!114 &277750446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3429,7 +3434,7 @@ PrefabInstance:
     - target: {fileID: 8408484020580218304, guid: 4fa0a0a3e2be4ec49aad2ba17892a089,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -257.9
+      value: -247
       objectReference: {fileID: 0}
     - target: {fileID: 8408484020580218304, guid: 4fa0a0a3e2be4ec49aad2ba17892a089,
         type: 3}
