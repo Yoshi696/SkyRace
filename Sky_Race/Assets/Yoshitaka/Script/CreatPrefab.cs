@@ -31,7 +31,7 @@ public class CreatPrefab : MonoBehaviour
         //cloud.transform.position = new Vector3(dir.x, dir.y, dir.z + 100);
         Vector3 dir = newCloud.transform.forward;
 
-        newCloud.GetComponent<Rigidbody>().AddForce(dir * -10f, ForceMode.Impulse);
+        newCloud.GetComponent<Rigidbody>().AddForce(dir * -30f, ForceMode.Impulse);
 
         newCloud.name = cloud.name;
         Destroy(newCloud, 20.0f);
