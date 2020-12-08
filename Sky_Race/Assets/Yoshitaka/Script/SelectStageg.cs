@@ -19,12 +19,12 @@ public class SelectStageg : MonoBehaviour
     bool clickone = false;
     bool clicktwo = false;
 
-    private int no = 0;
+    public static int no = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        no = 0;
     }
 
     // Update is called once per frame
@@ -97,7 +97,7 @@ public class SelectStageg : MonoBehaviour
             clicktwo = true;
         }
 
-        befor_button = sayu;
+            befor_button = sayu;
     }
 
     public int GetSky()

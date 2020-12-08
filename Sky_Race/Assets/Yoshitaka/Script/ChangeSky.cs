@@ -14,7 +14,6 @@ public class ChangeSky : MonoBehaviour
     public Material sky4;
 
     //変数取得
-    InportSky Stage;
     //public int skyselect;
     private int skyselect;
 
@@ -31,9 +30,7 @@ public class ChangeSky : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject debug = GameObject.Find("SceneInport");
-        Stage = debug.GetComponent<InportSky>();
-        skyselect = Stage.GetSkyInport();
+        skyselect = SelectStageg.no;
         audios = GetComponent<AudioSource>();
         cont = true;
     }
@@ -43,15 +40,6 @@ public class ChangeSky : MonoBehaviour
     {
         //Debug.Log(skyselect);
         //audios.loop = sound1;
-
-        if (Input.GetKey(KeyCode.C))
-        {
-
-        }
-        if (Input.GetKey(KeyCode.V))
-        {
-            skyselect = 0;
-        }
 
         if (skyselect == 0)
         {
