@@ -15,7 +15,7 @@ public class GameStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Action") == true)
+        if (Input.GetButton("Action") == true)
         {
             // SceneManager.sceneLoaded += GameSceneLoaded;
             SceneManager.LoadSceneAsync("MakeDebug");

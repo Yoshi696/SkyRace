@@ -32,13 +32,13 @@ public class SelectStageg : MonoBehaviour
     {
         float sayu = Input.GetAxisRaw("Trigger");
         Debug.Log(sayu);
-        if (clickone == true && no != 5)
+        if (clickone == true /*&& no != 5*/)
         {
             no++;
             clickone = false;
             clicktwo = false;
         }
-        if (clicktwo == true && no != 0)
+        if (clicktwo == true /*&& no != 0*/)
         {
             no--;
             clickone = false;
@@ -46,11 +46,11 @@ public class SelectStageg : MonoBehaviour
         }
         if(no >= 5)
         {
-            no = 4;
-        }
-        if (no <= 0)
-        {
             no = 0;
+        }
+        if (no < 0)
+        {
+            no = 4;
         }
 
         if (no == 4)

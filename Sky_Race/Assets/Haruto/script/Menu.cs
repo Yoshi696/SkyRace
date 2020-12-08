@@ -23,12 +23,12 @@ public class Menu : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
 
         //マウスポインタ消すやつ
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         //Screen.lockCursor = false;
 
 
-        
+
 
         // ボタンコンポーネントの取得
         start = GameObject.Find("/Canvas/Start").GetComponent<Button>();
