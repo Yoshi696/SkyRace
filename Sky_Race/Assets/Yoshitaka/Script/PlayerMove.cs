@@ -166,13 +166,13 @@ public class PlayerMove : MonoBehaviour
                 if (ang > 0)
                 {
                     //yaw = 1;
-                    AddRot.eulerAngles = new Vector3(0, 0.1f, 0);
+                    AddRot.eulerAngles = new Vector3(0.01f, 0.2f, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                 }
                 else if (ang < 0)
                 {
                     //yaw = -1;
-                    AddRot.eulerAngles = new Vector3(0, -0.1f, 0);
+                    AddRot.eulerAngles = new Vector3(0.01f, -0.2f, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                 }
             }
@@ -313,7 +313,7 @@ public class PlayerMove : MonoBehaviour
                 //↓左折
                 if (CanMoveLeft && Input.GetKey(KeyCode.H))
                 {
-                    input[2] = 0.2f;
+                    input[2] = 0f;
                 }
 
             }
@@ -322,7 +322,7 @@ public class PlayerMove : MonoBehaviour
                 //↓右折
                 if (CanMoveRight && Input.GetKey(KeyCode.K))
                 {
-                    input[3] = 0.2f;
+                    input[3] = 0.8f;
                 }
             }
             ////↓左折
