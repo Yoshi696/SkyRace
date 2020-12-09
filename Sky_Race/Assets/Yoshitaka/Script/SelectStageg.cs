@@ -21,10 +21,14 @@ public class SelectStageg : MonoBehaviour
 
     public static int no = 0;
 
+    AudioSource audio;
+    public AudioClip sound2;
+
     // Start is called before the first frame update
     void Start()
     {
         no = 0;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,12 +38,14 @@ public class SelectStageg : MonoBehaviour
         Debug.Log(sayu);
         if (clickone == true /*&& no != 5*/)
         {
+            audio.PlayOneShot(sound2);
             no++;
             clickone = false;
             clicktwo = false;
         }
         if (clicktwo == true /*&& no != 0*/)
         {
+            audio.PlayOneShot(sound2);
             no--;
             clickone = false;
             clicktwo = false;

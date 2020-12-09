@@ -19,9 +19,9 @@ public class GoalEffect : MonoBehaviour
     private bool oneshot;
 
     //花火のエフェクト（白の場合）
-    //private ParticleSystem Ha1;
-    //private ParticleSystem Ha2;
-    //private ParticleSystem Ha3;
+    private ParticleSystem Ha1;
+    private ParticleSystem Ha2;
+    private ParticleSystem Ha3;
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +38,9 @@ public class GoalEffect : MonoBehaviour
         Hana3 = GameObject.Find("Hana3").GetComponent<ParticleSystem>();
 
         //白半径の花火取得
-        //Ha1 = GameObject.Find("Ha1").GetComponent<ParticleSystem>();
-        //Ha2 = GameObject.Find("Ha2").GetComponent<ParticleSystem>();
-        //Ha3 = GameObject.Find("Ha3").GetComponent<ParticleSystem>();
+        Ha1 = GameObject.Find("Ha1").GetComponent<ParticleSystem>();
+        Ha2 = GameObject.Find("Ha2").GetComponent<ParticleSystem>();
+        Ha3 = GameObject.Find("Ha3").GetComponent<ParticleSystem>();
 
         //一度花火を止める
         //Hanabi1.Stop();
@@ -103,12 +103,16 @@ public class GoalEffect : MonoBehaviour
             }
 
         }
-        //else if (other.gameObject.tag == "Low_P")
-        //{
-        //    Ha1.Play();
-        //    Ha2.Play();
-        //    Ha3.Play();
+        else if (other.gameObject.tag == "Low_P")
+        {
+            if (oneshot == true)
+            {
+                Ha1.Play();
+            Ha2.Play();
+            Ha3.Play();
+                oneshot = false;
+            }
 
-        //}
+        }
     }
 }
