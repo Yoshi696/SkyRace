@@ -433,6 +433,7 @@ public class PlayerMove : MonoBehaviour
 
         if (other.gameObject.tag == "Over")
         {
+            keikoku.enabled = false;
             CanMove = false;
             CanMoveForward = false;
             CanMoveBack = false;
