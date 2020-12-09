@@ -32,12 +32,12 @@ public class Result : MonoBehaviour
 
 
     private AudioSource atack;
-    private ParticleSystem Gon;
 
 
     public AudioClip sound01;
 
 
+    private ParticleSystem Gon;
 
     // ゴールしたかどうか
     private int Goal = 2; //0:GameOver 1:Goal
@@ -46,12 +46,13 @@ public class Result : MonoBehaviour
 
     void Start()
     {
- //       colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
-        GoalText.enabled = false;
+        // colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
 
         Gon = GameObject.Find("Collide").GetComponent<ParticleSystem>();
 
         Gon.Stop();
+
+        GoalText.enabled = false;
 
         atack = gameObject.AddComponent<AudioSource>();
     }
@@ -80,7 +81,7 @@ public class Result : MonoBehaviour
        // Debug.Log(sum.ToString("0.00m"));
         //数値の表示
 
-        SUMUI.text = "距離合計" + sum.ToString("0.00m");
+        SUMUI.text = "飛行距離" + sum.ToString("0.00m");
         if (PPUI != null)
         {
             //プレイヤーのz座標を表示
@@ -151,8 +152,8 @@ public class Result : MonoBehaviour
 
         if (other.gameObject.tag == "drop down")
         {
-            atack.PlayOneShot(sound01);
             Gon.Play();
+            atack.PlayOneShot(sound01);
             GetComponent<PlayerMove>().enabled = false;
             // GetComponent<PM_test>().enabled = false;
             //GetComponent<sampleRotation>().enabled = true;
@@ -200,9 +201,11 @@ public class Result : MonoBehaviour
         if (other.gameObject.tag == "Goal")
         {
 
+            GetComponent<HorizontalRotation>().enabled = true;
+
             //if (pm >= 0)
             //{
-           //pm -= 0.5f;
+            //pm -= 0.5f;
             //Debug.Log(pm);
             //}
             //else if (pm <= 0)
@@ -216,7 +219,7 @@ public class Result : MonoBehaviour
 
             // イベントに登録
             SceneManager.sceneLoaded += GameResultLoaded;
-            Invoke("LoadScene", 5f);
+            Invoke("LoadScene", 4f);
             //}
         }
 
@@ -244,8 +247,8 @@ public class Result : MonoBehaviour
     {
         if(other.gameObject.tag == "Goal")
         {
-            atack.PlayOneShot(sound01);
             Gon.Play();
+            atack.PlayOneShot(sound01);
             GetComponent<PlayerMove>().enabled = false;
            // GetComponent<PM_test>().enabled = false;
             //GetComponent<sampleRotation>().enabled = true;

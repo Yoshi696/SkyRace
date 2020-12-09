@@ -8,9 +8,6 @@ public class Rotation : MonoBehaviour
     private float j = 0;
     private Vector3 a;
 
-
-
-
     private ParticleSystem Gon;
 
     //   [SerializeField] private Vector3 localGravity;
@@ -18,8 +15,6 @@ public class Rotation : MonoBehaviour
     private void Start()
     {
         Gon = GameObject.Find("Collide").GetComponent<ParticleSystem>();
-
-        Gon.Play();
         a = gameObject.transform.localEulerAngles;
         rBody = this.GetComponent<Rigidbody>();
         rBody.useGravity = true; //最初にrigidBodyの重力を付ける
@@ -87,7 +82,7 @@ public class Rotation : MonoBehaviour
     //}
     IEnumerator Roto2()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
         Gon.Stop();
         if (j <= 15)
         {

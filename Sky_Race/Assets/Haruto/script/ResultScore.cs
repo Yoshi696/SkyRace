@@ -26,12 +26,12 @@ public class ResultScore : MonoBehaviour
         if (Goal != 0)
         {
             //Debug.Log("ゴールシチャッタ");
-            Total = (double)GoalPoint + ((Distance * 100)/10);
+            Total = (int)GoalPoint + ((int)Distance * 10);
         }
         else
         {
             Debug.Log("オチチャッタ");
-            Total = (((Distance * 100)/10)/2);//Goalしていないので点数を半分にする
+            Total = (((int)Distance * 10)/2);//Goalしていないので点数を半分にする
         }
         SetScoreText(GoalPoint);
 
@@ -39,18 +39,20 @@ public class ResultScore : MonoBehaviour
 
     private void SetScoreText(int Score)
     {
-        GoalScore.text = "GoalPoint:" + Score.ToString();
-        distanceScore.text = "Distance:" + Distance.ToString("0.00m");
+        GoalScore.text = "ゴールポイント:" + Score.ToString();
+        distanceScore.text = "飛行距離:" + Distance.ToString("0.00m");
         //トータルスコアの表示　今は整数に直したものを表示する
-        TotalScore.text = "TotalScore:" + Total.ToString("0");
-        if (Goal != 0)
-        {
-            TotalCalculation.text = "TotalScore = GoalPoint+((Distance * 100)/10)";
-        }
-        else
-        {
-            TotalCalculation.text = "TotalScore = (((Distance * 100)/10)/2)";
-        }
+        TotalScore.text = "トータルスコア:" + Total.ToString("0");
+
+        TotalCalculation.text = "    ";
+        //if (Goal != 0)
+        //{
+        //    TotalCalculation.text = "TotalScore = GoalPoint+((Distance * 100)/10)";
+        //}
+        //else
+        //{
+        //    TotalCalculation.text = "TotalScore = (((Distance * 100)/10)/2)";
+        //}
     }
 
     public void AddScore(int point)
