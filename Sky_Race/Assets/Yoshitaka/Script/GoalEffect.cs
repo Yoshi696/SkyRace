@@ -106,20 +106,24 @@ public class GoalEffect : MonoBehaviour
                 Hana1.Play();
                 Hana2.Play();
                 Hana3.Play();
-                oneshot = false;
-            }
 
-        }
-        else if (other.gameObject.tag == "Low_P")
-        {
-            if (oneshot == true)
-            {
                 Ha1.Play();
-            Ha2.Play();
-            Ha3.Play();
+                Ha2.Play();
+                Ha3.Play();
                 oneshot = false;
             }
 
         }
+        //else if (other.gameObject.tag == "Low_P")
+        //{
+        //    if (oneshot == true)
+        //    {
+        //        Ha1.Play();
+        //    Ha2.Play();
+        //    Ha3.Play();
+        //        oneshot = false;
+        //    }
+
+        //}
     }
 }
