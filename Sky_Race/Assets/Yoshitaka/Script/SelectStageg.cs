@@ -67,7 +67,7 @@ public class SelectStageg : MonoBehaviour
         if (no == 3)
         {
             RenderSettings.skybox = sky3;
-            text.text = "光";
+            text.text = "晴天";
         }
         if (no == 2)
         {
