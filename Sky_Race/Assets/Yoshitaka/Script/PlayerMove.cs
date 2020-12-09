@@ -32,6 +32,7 @@ public class PlayerMove : MonoBehaviour
     private bool canRotate;
     private bool isSETHI = true;    //アイテム化に必要なもの
     private Text textitem;
+    public Text keikoku;
     public float timer = 6.0f;
     public Image Button;
     public Image ButtonPush;
@@ -57,14 +58,19 @@ public class PlayerMove : MonoBehaviour
     private ParticleSystem Hokori;
 
     private AudioSource Mahou;
+    private AudioSource Kekoku;
 
     public AudioClip sound01;
+    public AudioClip sound02;
 
     float time = 3f;
 
     void Start()
     {
         Mahou = gameObject.AddComponent<AudioSource>();
+        Kekoku = gameObject.AddComponent<AudioSource>();
+
+        keikoku.enabled = false;
 
         Button.enabled = false;
         ButtonPush.enabled = false;
@@ -411,6 +417,18 @@ public class PlayerMove : MonoBehaviour
             keyTurboRot = true;
             StartCoroutine("WaitKeyInput2");
 
+        }
+
+        if(other.gameObject.tag == "kekoku")
+        {
+            keikoku.enabled = true;
+            Kekoku.PlayOneShot(sound02);
+        }
+
+        if(other.gameObject.tag == "New tag")
+        {
+            keikoku.enabled = false;
+            Kekoku.Stop();
         }
 
         if (other.gameObject.tag == "Over")
