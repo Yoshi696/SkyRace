@@ -8,7 +8,7 @@ public class CameraRotation : MonoBehaviour
     public GameObject Player;
 
     //回転させるスピード
-    private float rotateSpeed = 1.0f;
+    private float rotateSpeed = 0.5f;
 
     // Use this for initialization
     void Start()
