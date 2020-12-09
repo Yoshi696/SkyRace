@@ -40,7 +40,7 @@ public class ResultScore : MonoBehaviour
     private void SetScoreText(int Score)
     {
         GoalScore.text = "ゴールポイント:" + Score.ToString();
-        distanceScore.text = "　　飛行距離　:" + Distance.ToString("0.00m");
+        distanceScore.text = "飛行距離　　　:" + Distance.ToString("0.00m");
         //トータルスコアの表示　今は整数に直したものを表示する
         TotalScore.text = "トータルスコア:" + Total.ToString("0");
 
