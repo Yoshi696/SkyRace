@@ -23,6 +23,15 @@ public class ChangeSky : MonoBehaviour
     public AudioClip sound4;
     public AudioClip sound5;
 
+
+    //光取得
+    public Light light1;
+    public Light light2;
+    public Light light3;
+    public Light light4;
+    public Light light5;
+
+
     AudioSource audios;
 
     private bool cont;
@@ -45,6 +54,7 @@ public class ChangeSky : MonoBehaviour
         {
             if (cont == true)
             {
+                light1.enabled = true;
                 audios.clip = sound1;
                 audios.Play();
                 cont = false;
@@ -56,6 +66,7 @@ public class ChangeSky : MonoBehaviour
         {
             if (cont == true)
             {
+                light2.enabled = true;
                 audios.clip = sound2;
                 audios.Play();
                 cont = false;
@@ -67,6 +78,7 @@ public class ChangeSky : MonoBehaviour
         {
             if (cont == true)
             {
+                light3.enabled = true;
                 audios.clip = sound3;
                 audios.Play();
                 cont = false;
@@ -78,6 +90,7 @@ public class ChangeSky : MonoBehaviour
         {
             if (cont == true)
             {
+                light4.enabled = true;
                 audios.clip = sound4;
                 audios.Play();
                 cont = false;
@@ -89,6 +102,7 @@ public class ChangeSky : MonoBehaviour
         {
             if (cont == true)
             {
+                light5.enabled = true;
                 audios.clip = sound5;
                 audios.Play();
                 cont = false;
