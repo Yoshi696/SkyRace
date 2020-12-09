@@ -84,6 +84,13 @@ public class GoalEffect : MonoBehaviour
                 Hanabi2.Play();
                 Hanabi3.Play();
 
+                Hana1.Play();
+                Hana2.Play();
+                Hana3.Play();
+
+                Ha1.Play();
+                Ha2.Play();
+                Ha3.Play();
                 oneshot = false;
             }
 
