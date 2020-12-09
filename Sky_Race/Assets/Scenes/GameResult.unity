@@ -151,11 +151,11 @@ RectTransform:
   m_LocalScale: {x: 1.1854475, y: 1.4719169, z: 0.81755}
   m_Children: []
   m_Father: {fileID: 1912474453}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44, y: 123}
+  m_AnchoredPosition: {x: 0, y: 123}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &46052416
@@ -184,7 +184,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 200
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -385,7 +385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.5, y: -54}
+  m_AnchoredPosition: {x: -135, y: -54}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444839895
@@ -420,7 +420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u4EEE"
+  m_Text: "\u30C8\u30FC\u30BF\u30EB\u30B9\u30B3\u30A2:0000"
 --- !u!222 &444839896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -463,7 +463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 5.5060015}
+  m_AnchoredPosition: {x: -135, y: 5.5060015}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &463217531
@@ -498,7 +498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u30B4\u30FC\u30EB\u30DD\u30A4\u30F3\u30C8:000"
 --- !u!222 &463217532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -541,7 +541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61, y: -95}
+  m_AnchoredPosition: {x: 0, y: -95}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &667795281
@@ -949,11 +949,11 @@ RectTransform:
   m_LocalScale: {x: 1.6370262, y: 1.8213553, z: 1.6370262}
   m_Children: []
   m_Father: {fileID: 1912474453}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.4, y: 69}
+  m_AnchoredPosition: {x: -135, y: 69}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413860909
@@ -988,7 +988,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u4EEE"
+  m_Text: "\u3000\u98DB\u884C\u8DDD\u96E2\u3000\u3000:0000m"
 --- !u!222 &1413860910
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1321,8 +1321,8 @@ RectTransform:
   - {fileID: 1009672549}
   - {fileID: 444839894}
   - {fileID: 463217530}
-  - {fileID: 46052415}
   - {fileID: 1413860908}
+  - {fileID: 46052415}
   - {fileID: 667795280}
   m_Father: {fileID: 0}
   m_RootOrder: 2
