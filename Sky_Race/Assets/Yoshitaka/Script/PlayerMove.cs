@@ -381,16 +381,16 @@ public class PlayerMove : MonoBehaviour
         }
 
         //ターボ中回転させる
-        if (keyTurboRot == true)
-        {
-            StartCoroutine("RotateTurbo");
-            keyTurboRot = false;
-        }
-        if(keyJumpRor == true)
-        {
-            StartCoroutine("RotateJump");
-            keyJumpRor = false;
-        }
+        //if (keyTurboRot == true)
+        //{
+        //    StartCoroutine("RotateTurbo");
+        //    keyTurboRot = false;
+        //}
+        //if(keyJumpRor == true)
+        //{
+        //    StartCoroutine("RotateJump");
+        //    keyJumpRor = false;
+        //}
 
        // Debug.Log(keyTurboRot);
     }
@@ -490,9 +490,10 @@ public class PlayerMove : MonoBehaviour
     {
         Wind.Stop();
         Wind2.Play();
-        turboForce += 5f;
-        yield return new WaitForSeconds(0.8f);
-        turboForce -= 5f;
+        turboForce += 4f;
+        StartCoroutine("RotateTurbo");
+        yield return new WaitForSeconds(0.5f);
+        turboForce -= 4f;
         Wind2.Stop();
         Wind.Play();
     }
