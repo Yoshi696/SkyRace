@@ -25,6 +25,7 @@ TagManager:
   - Dash
   - kekoku
   - New tag
+  - NossingText
   layers:
   - Default
   - TransparentFX

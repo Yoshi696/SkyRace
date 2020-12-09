@@ -425,7 +425,7 @@ public class PlayerMove : MonoBehaviour
             Kekoku.PlayOneShot(sound02);
         }
 
-        if(other.gameObject.tag == "New tag")
+        if(other.gameObject.tag == "NossingText")
         {
             keikoku.enabled = false;
             Kekoku.Stop();
