@@ -5751,7 +5751,6 @@ GameObject:
   - component: {fileID: 184629025}
   - component: {fileID: 184629024}
   - component: {fileID: 184629023}
-  - component: {fileID: 184629022}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Ring
@@ -5773,19 +5772,6 @@ Transform:
   m_Father: {fileID: 1558630223}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &184629022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184629020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f8dc900b5176d4eaad9659da6d8cc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound2: {fileID: 8300000, guid: 4d03206a95fdd1c48966e3befc3abe8e, type: 3}
 --- !u!65 &184629023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12700,7 +12686,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
 --- !u!1001 &549654304
 PrefabInstance:
@@ -24340,7 +24327,6 @@ GameObject:
   - component: {fileID: 867989797}
   - component: {fileID: 867989796}
   - component: {fileID: 867989795}
-  - component: {fileID: 867989794}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Ring
@@ -24362,19 +24348,6 @@ Transform:
   m_Father: {fileID: 585584350}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &867989794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867989792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f8dc900b5176d4eaad9659da6d8cc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound2: {fileID: 8300000, guid: 4d03206a95fdd1c48966e3befc3abe8e, type: 3}
 --- !u!65 &867989795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25254,7 +25227,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
 --- !u!1 &986904401
 GameObject:
@@ -26011,7 +25985,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
 --- !u!1 &1138206960
 GameObject:
@@ -31761,7 +31736,6 @@ GameObject:
   - component: {fileID: 1344781957}
   - component: {fileID: 1344781956}
   - component: {fileID: 1344781955}
-  - component: {fileID: 1344781954}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Ring
@@ -31783,19 +31757,6 @@ Transform:
   m_Father: {fileID: 2126971981}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1344781954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344781952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f8dc900b5176d4eaad9659da6d8cc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound2: {fileID: 8300000, guid: 4d03206a95fdd1c48966e3befc3abe8e, type: 3}
 --- !u!65 &1344781955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37679,7 +37640,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 125
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
 --- !u!1001 &1532383546
 PrefabInstance:
@@ -37748,7 +37710,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
 --- !u!1001 &1532784586
 PrefabInstance:
@@ -44364,7 +44327,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 125
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
 --- !u!1 &1791201331
 GameObject:
@@ -44457,7 +44421,6 @@ GameObject:
   - component: {fileID: 1803103141}
   - component: {fileID: 1803103140}
   - component: {fileID: 1803103139}
-  - component: {fileID: 1803103138}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Ring
@@ -44479,19 +44442,6 @@ Transform:
   m_Father: {fileID: 1376121676}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1803103138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803103136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f8dc900b5176d4eaad9659da6d8cc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound2: {fileID: 8300000, guid: 4d03206a95fdd1c48966e3befc3abe8e, type: 3}
 --- !u!65 &1803103139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44894,7 +44844,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
 --- !u!4 &2020699012 stripped
 Transform:
@@ -44969,7 +44920,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
 --- !u!1001 &2030304360
 PrefabInstance:
@@ -50518,5 +50470,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8406490955208719874, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 409e3073b57a9e7469350cefdf2dcb20, type: 3}
