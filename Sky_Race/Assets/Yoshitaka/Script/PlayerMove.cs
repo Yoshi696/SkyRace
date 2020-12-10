@@ -63,10 +63,15 @@ public class PlayerMove : MonoBehaviour
     public AudioClip sound01;
     public AudioClip sound02;
 
+    AudioSource audio;
+    public AudioClip sound3;
+
     float time = 3f;
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+
         Mahou = gameObject.AddComponent<AudioSource>();
         Kekoku = gameObject.AddComponent<AudioSource>();
 
@@ -462,6 +467,11 @@ public class PlayerMove : MonoBehaviour
             CanRotateYaw = false;
             CanRotatePitch = false;
             CanRotateRoll = false;
+        }
+
+        if (other.gameObject.tag == "Ring")
+        {
+            audio.PlayOneShot(sound3);
         }
     }
 

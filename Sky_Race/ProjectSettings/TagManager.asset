@@ -26,6 +26,7 @@ TagManager:
   - kekoku
   - New tag
   - NossingText
+  - Ring
   layers:
   - Default
   - TransparentFX
