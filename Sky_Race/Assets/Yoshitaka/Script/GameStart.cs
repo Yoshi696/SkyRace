@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour
 {
-
+    private float befor_button;
+    
     public AudioClip sound1;
 
     AudioSource audio;
@@ -20,7 +21,8 @@ public class GameStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Action") == true)
+        float action = Input.GetAxisRaw("Action");
+        if (/*Input.GetButton("Action")*/action == 1 && befor_button == 0.00f)
         {
             audio.PlayOneShot(sound1);
             // SceneManager.sceneLoaded += GameSceneLoaded;
@@ -29,5 +31,6 @@ public class GameStart : MonoBehaviour
             //SkyPoint.skyselect = no;
             //SceneManager.sceneLoaded
         }
+        befor_button = action;
     }
 }
