@@ -449,10 +449,12 @@ public class PlayerMove : MonoBehaviour
             CanRotateYaw = false;
             CanRotatePitch = false;
             CanRotateRoll = false;
+            Item = 0;
         }
 
         if(other.gameObject.tag == "Goal")
         {
+
             Quaternion mi = transform.localRotation;
             transform.Rotate(new Vector3(0, mi.y, mi.z));
             GetComponent<GoalEffect>().enabled = true;
@@ -467,6 +469,9 @@ public class PlayerMove : MonoBehaviour
             CanRotateYaw = false;
             CanRotatePitch = false;
             CanRotateRoll = false;
+            Item = 0;
+            GameObject tatu = GameObject.Find("HiWind (Clone)");
+            Destroy(tatu);
         }
 
         if (other.gameObject.tag == "Ring")
@@ -591,7 +596,7 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(5);
         //Debug.Log("終わり");
         isSETHI = true;
-        GameObject tatu = GameObject.Find("HiWind(Clone)");
+        GameObject tatu = GameObject.Find("HiWind (Clone)");
         Destroy(tatu, timer);
     }
 
