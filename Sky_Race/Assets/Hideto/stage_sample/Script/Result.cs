@@ -8,14 +8,14 @@ public class Result : MonoBehaviour
     //数値の表示用↓
 //    [SerializeField]
 //    private Transform targetObj = null;
-    [SerializeField]
-    private Text PPUI = null;
-    [SerializeField]
-    private Text SPUI = null;
+    //[SerializeField]
+    //private Text PPUI = null;
+    //[SerializeField]
+    //private Text SPUI = null;
     [SerializeField]
     private Text SUMUI = null;
-    [SerializeField]
-    private Text PDUI = null;
+    //[SerializeField]
+    //private Text PDUI = null;
     //数値の表示用↑
 
     private float colliderOffset;
@@ -82,18 +82,18 @@ public class Result : MonoBehaviour
         //数値の表示
 
         SUMUI.text = "飛行距離" + sum.ToString("0.00m");
-        if (PPUI != null)
-        {
-            //プレイヤーのz座標を表示
-            PPUI.text = "プレイヤー座標"+v.z.ToString("0.00m");
-            //スタートのz座標を表示
-            SPUI.text = "スタート座標"+v2.z.ToString("0.00m");
-            //プレイヤーの飛行距離を表示(スコアに使うのはこっちかな)
-            SUMUI.text = "飛行距離:"+ sum.ToString("0.00m");
+        //if (PPUI != null)
+        //{
+        //    //プレイヤーのz座標を表示
+        //    PPUI.text = "プレイヤー座標"+v.z.ToString("0.00m");
+        //    //スタートのz座標を表示
+        //    SPUI.text = "スタート座標"+v2.z.ToString("0.00m");
+        //    //プレイヤーの飛行距離を表示(スコアに使うのはこっちかな)
+        //    SUMUI.text = "飛行距離:"+ sum.ToString("0.00m");
 
-            PDUI.text = "座標:" + distance.ToString("0.00m");
+        //    PDUI.text = "座標:" + distance.ToString("0.00m");
 
-        }
+        //}
 
         ////デバック表示
         //    Debug.Log(FastPos.ToString("0.00m"));

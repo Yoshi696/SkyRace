@@ -11,7 +11,6 @@ public class Menu : MonoBehaviour
 
     public AudioClip sound01;
     public AudioClip sound02;
-    public AudioClip sound03;
 
     Button start;
     Button help;
