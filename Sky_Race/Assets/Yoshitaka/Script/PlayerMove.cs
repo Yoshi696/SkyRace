@@ -65,6 +65,7 @@ public class PlayerMove : MonoBehaviour
 
     AudioSource audio;
     public AudioClip sound3;
+    public AudioClip se_itemerr;
 
     float time = 3f;
 
@@ -129,6 +130,7 @@ public class PlayerMove : MonoBehaviour
             else
             {
                 Item = 0;
+                audio.PlayOneShot(se_itemerr);
             }
 
             //自身の傾き取得
