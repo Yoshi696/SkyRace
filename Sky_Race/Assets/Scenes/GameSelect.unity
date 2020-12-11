@@ -219,7 +219,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8ee4ab4c0802827478158f0fc0e05047, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.177
+  m_Volume: 0.362
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -486,7 +486,6 @@ GameObject:
   - component: {fileID: 799260292}
   - component: {fileID: 799260295}
   - component: {fileID: 799260294}
-  - component: {fileID: 799260293}
   m_Layer: 5
   m_Name: Sky
   m_TagString: Untagged
@@ -513,25 +512,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 199.93518, y: 75.55069}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &799260293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799260291}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4127617294cb7b944a64af0976d39452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sky0: {fileID: 2100000, guid: 7416536dbe0334cfd888dd1beb75a9fb, type: 2}
-  sky1: {fileID: 2100000, guid: e9705e00f62f62849b89fc9fd55aa0e3, type: 2}
-  sky2: {fileID: 2100000, guid: d07d2172e76d3fa429e80a14d2ae3616, type: 2}
-  sky3: {fileID: 0}
-  sky4: {fileID: 0}
-  text: {fileID: 799260294}
-  sound2: {fileID: 0}
 --- !u!114 &799260294
 MonoBehaviour:
   m_ObjectHideFlags: 0

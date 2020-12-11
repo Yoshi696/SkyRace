@@ -27,6 +27,9 @@ public class StartRun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         rb = this.GetComponent<Rigidbody>();
         Wind = GameObject.Find("wind").GetComponent<ParticleSystem>();
         Wind2 = GameObject.Find("windspeed").GetComponent<ParticleSystem>();

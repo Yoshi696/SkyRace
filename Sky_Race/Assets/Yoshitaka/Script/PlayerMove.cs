@@ -70,6 +70,8 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         audio = GetComponent<AudioSource>();
 
         Mahou = gameObject.AddComponent<AudioSource>();

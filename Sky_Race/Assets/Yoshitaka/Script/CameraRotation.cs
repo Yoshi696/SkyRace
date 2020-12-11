@@ -9,6 +9,7 @@ public class CameraRotation : MonoBehaviour
 
     //回転させるスピード
     private float rotateSpeed = 0.5f;
+    public Vector3 yes;
 
     // Use this for initialization
     void Start()
@@ -24,9 +25,9 @@ public class CameraRotation : MonoBehaviour
         float angle = 1 * rotateSpeed;
 
         //プレイヤー位置情報
-        Vector3 playerPos = Player.transform.position;
+        //Vector3 playerPos = Player.transform.position;
 
         //カメラを回転させる
-        transform.RotateAround(playerPos, Vector3.up, angle);
+        transform.RotateAround(Player.transform.position, Vector3.up, angle);
     }
 }
