@@ -163,6 +163,31 @@ public class Result : MonoBehaviour
 
         }
 
+        if (other.gameObject.tag == "Goal")
+        {
+
+            GetComponent<HorizontalRotation>().enabled = true;
+
+            //if (pm >= 0)
+            //{
+            //pm -= 0.5f;
+            //Debug.Log(pm);
+            //}
+            //else if (pm <= 0)
+            //{
+            Goal = 1;// ゴールした
+            //sum += distance;
+            //v2 = transform.position;//プレイヤー座標
+            GoalText.enabled = true;
+            //              GameObject gm = GameObject.Find("ResultScore");
+            //            gm.GetComponent<ResultScore>().AddScore(GoalPoint);
+
+            // イベントに登録
+            SceneManager.sceneLoaded += GameResultLoaded;
+            Invoke("LoadScene", 4f);
+            //}
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {//トリガーから出たとき
@@ -193,35 +218,6 @@ public class Result : MonoBehaviour
 
         }
 
-
-    }
-
-    private void OnTriggerStay(Collider other)
-    {//ゴールに接触している間徐々にスピードを下げる
-        if (other.gameObject.tag == "Goal")
-        {
-
-            GetComponent<HorizontalRotation>().enabled = true;
-
-            //if (pm >= 0)
-            //{
-            //pm -= 0.5f;
-            //Debug.Log(pm);
-            //}
-            //else if (pm <= 0)
-            //{
-            Goal = 1;// ゴールした
-            //sum += distance;
-            //v2 = transform.position;//プレイヤー座標
-            GoalText.enabled = true;
-            //              GameObject gm = GameObject.Find("ResultScore");
-            //            gm.GetComponent<ResultScore>().AddScore(GoalPoint);
-
-            // イベントに登録
-            SceneManager.sceneLoaded += GameResultLoaded;
-            Invoke("LoadScene", 4f);
-            //}
-        }
 
     }
     void LoadScene()
