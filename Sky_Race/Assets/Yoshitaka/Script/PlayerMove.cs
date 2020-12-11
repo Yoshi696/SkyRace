@@ -7,22 +7,22 @@ public class PlayerMove : MonoBehaviour
 {
     //参考にしたサイト：https://htsuda.net/archives/1662
 
-    public bool CanMove = true;
-    public bool CanMoveForward = true;
-    public bool CanMoveBack = true;
-    public bool CanMoveLeft = true;
-    public bool CanMoveRight = true;
-    public bool CanMoveUp = true;
-    public bool CanMoveDown = true;
-    public bool CanRotateYaw = true;
-    public bool CanRotatePitch = true;
-    public bool CanRotateRoll = true;
+    private bool CanMove = true;
+    private bool CanMoveForward = true;
+    private bool CanMoveBack = true;
+    private bool CanMoveLeft = true;
+    private bool CanMoveRight = true;
+    private bool CanMoveUp = true;
+    private bool CanMoveDown = true;
+    private bool CanRotateYaw = true;
+    private bool CanRotatePitch = true;
+    private bool CanRotateRoll = true;
 
     private float MovementSpeed;
     public float ControlSpeed = 500f;
-    public float RotationSpeed = 100f;
+   // public float RotationSpeed = 100f;
     public StartRun startrun;
-    public int karbspeed = 2;
+   // public int karbspeed = 2;
     public int Item;                            //
     public GameObject ItemPrefab;               //アイテム化に必要なもの
     public Vector3 offset = new Vector3();      //
@@ -38,8 +38,8 @@ public class PlayerMove : MonoBehaviour
     public Image ButtonPush;
 
     //うずに入った時に回転
-    private bool keyTurboRot=false;
-    private bool keyJumpRor = false;
+    //private bool keyTurboRot=false;
+    //private bool keyJumpRor = false;
     private float i = 10;
    // private float j = 0;
     private Vector3 rotate_my;
@@ -70,6 +70,8 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         audio = GetComponent<AudioSource>();
@@ -179,13 +181,13 @@ public class PlayerMove : MonoBehaviour
                 if (ang > 0)
                 {
                     //yaw = 1;
-                    AddRot.eulerAngles = new Vector3(0.01f, 0.2f, 0);
+                    AddRot.eulerAngles = new Vector3(0.01f, 0.3f, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                 }
                 else if (ang < 0)
                 {
                     //yaw = -1;
-                    AddRot.eulerAngles = new Vector3(0.01f, -0.2f, 0);
+                    AddRot.eulerAngles = new Vector3(0.01f, -0.3f, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                 }
             }
@@ -421,7 +423,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (other.gameObject.tag == "Turbo")
         {
-            keyTurboRot = true;
+           // keyTurboRot = true;
             StartCoroutine("WaitKeyInput2");
 
         }
