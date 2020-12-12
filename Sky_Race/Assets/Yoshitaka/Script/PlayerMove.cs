@@ -64,7 +64,6 @@ public class PlayerMove : MonoBehaviour
     public AudioClip sound02;
 
     AudioSource audio;
-    public AudioClip sound3;
     public AudioClip se_itemerr;
 
     float time = 3f;
@@ -479,11 +478,6 @@ public class PlayerMove : MonoBehaviour
             GameObject tatu = GameObject.Find("HiWind (Clone)");
             Destroy(tatu);
         }
-
-        if (other.gameObject.tag == "Ring")
-        {
-            audio.PlayOneShot(sound3);
-        }
     }
 
     IEnumerator WaitKeyInput1()
@@ -593,7 +587,7 @@ public class PlayerMove : MonoBehaviour
     }
     void SetItemText(int Item)
     {
-        textitem.text = "アイテム:" + Item.ToString();
+        textitem.text = "アッパー:" + Item.ToString();
     }
     IEnumerator Sleep()
     {

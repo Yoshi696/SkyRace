@@ -21,9 +21,9 @@ public class Result : MonoBehaviour
     private float colliderOffset;
 
     //Point取得用の変数を用意
-    private int High = 500;
-    private int Medium = 200;
-    private int Low = 100;
+    private int High = 1000;
+    private int Medium = 500;
+    private int Low = 250;
  //   private float pm = 100;
     private int GoalPoint;
     private double distance;
@@ -35,6 +35,7 @@ public class Result : MonoBehaviour
 
 
     public AudioClip sound01;
+    public AudioClip sound3;
 
 
     private ParticleSystem Gon;
@@ -55,6 +56,8 @@ public class Result : MonoBehaviour
         GoalText.enabled = false;
 
         atack = gameObject.AddComponent<AudioSource>();
+
+        GoalPoint = 0;
     }
     private void OnEnable()
     {
@@ -188,6 +191,11 @@ public class Result : MonoBehaviour
             //}
         }
 
+        if (other.gameObject.tag == "Ring")
+        {
+            atack.PlayOneShot(sound3);
+            //GoalPoint += 10;
+        }
     }
     private void OnTriggerExit(Collider other)
     {//トリガーから出たとき
