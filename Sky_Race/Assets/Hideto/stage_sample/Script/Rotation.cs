@@ -20,10 +20,6 @@ public class Rotation : MonoBehaviour
         rBody.useGravity = true; //最初にrigidBodyの重力を付ける
     }
 
-    private void OnEnable()
-    {
-    }
-
     IEnumerator Roto1()
     {
         if (i <= -10)

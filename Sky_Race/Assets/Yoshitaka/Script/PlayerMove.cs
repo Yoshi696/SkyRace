@@ -68,6 +68,9 @@ public class PlayerMove : MonoBehaviour
 
     float time = 3f;
 
+
+
+
     void Start()
     {
         Cursor.visible = false;
@@ -78,6 +81,7 @@ public class PlayerMove : MonoBehaviour
 
         Mahou = gameObject.AddComponent<AudioSource>();
         Kekoku = gameObject.AddComponent<AudioSource>();
+
 
         keikoku.enabled = false;
 
@@ -435,12 +439,6 @@ public class PlayerMove : MonoBehaviour
             Kekoku.PlayOneShot(sound02);
         }
 
-        if(other.gameObject.tag == "NossingText")
-        {
-            keikoku.enabled = false;
-            Kekoku.Stop();
-        }
-
         if (other.gameObject.tag == "Over")
         {
             keikoku.enabled = false;
@@ -477,6 +475,13 @@ public class PlayerMove : MonoBehaviour
             Item = 0;
             GameObject tatu = GameObject.Find("HiWind (Clone)");
             Destroy(tatu);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "kekoku") {
+            keikoku.enabled = false;
+            Kekoku.Stop();
         }
     }
 
