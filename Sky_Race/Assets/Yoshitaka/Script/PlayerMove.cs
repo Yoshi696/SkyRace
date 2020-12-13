@@ -592,7 +592,7 @@ public class PlayerMove : MonoBehaviour
     }
     void SetItemText(int Item)
     {
-        textitem.text = "アッパー:" + Item.ToString();
+        textitem.text = "竜巻" + Item.ToString();
     }
     IEnumerator Sleep()
     {
