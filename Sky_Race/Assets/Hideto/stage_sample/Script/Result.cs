@@ -48,6 +48,8 @@ public class Result : MonoBehaviour
     void Start()
     {
         // colliderOffset = GetComponent<CharacterController>().radius + targetObj.GetComponent<CharacterController>().radius;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         Gon = GameObject.Find("Collide").GetComponent<ParticleSystem>();
 
@@ -75,6 +77,9 @@ public class Result : MonoBehaviour
     }
     void Update()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         //スタート座標とプレイヤー座標の取得
         Vector3 v = transform.position;//プレイヤーの座標
 

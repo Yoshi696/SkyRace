@@ -22,8 +22,6 @@ public class SelectStart : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
 
         //マウスポインタ消すやつ
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Locked;
         //Screen.lockCursor = false;
 
         Retry = GameObject.Find("Canvas/Retry").GetComponent<Selectable>();
@@ -33,6 +31,8 @@ public class SelectStart : MonoBehaviour
 
     void Update()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         float click = Input.GetAxisRaw("Horizontal");
 
         //クリックされた時 かつ lockStateがLockedではない時だけ実行
