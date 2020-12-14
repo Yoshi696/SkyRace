@@ -454,6 +454,9 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "Over")
         {
             keikoku.enabled = false;
+            keikoku_1.enabled = false;
+            keikoku_2.enabled = false;
+            keikoku_3.enabled = false;
             CanMove = false;
             CanMoveForward = false;
             CanMoveBack = false;
@@ -493,6 +496,9 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.gameObject.tag == "kekoku") {
             keikoku.enabled = false;
+            keikoku_1.enabled = false;
+            keikoku_2.enabled = false;
+            keikoku_3.enabled = false;
             Kekoku.Stop();
         }
     }
