@@ -8,7 +8,7 @@ public class ResultScore : MonoBehaviour
     private Text GoalScore;
     private Text distanceScore;
     private Text TotalScore;
-    private Text TotalCalculation;
+   // private Text TotalCalculation;
     public int GoalPoint;
     public double Distance;
     public double Total;
@@ -20,7 +20,7 @@ public class ResultScore : MonoBehaviour
         GoalScore = GameObject.Find("goalpoint").GetComponent<Text>();
         distanceScore = GameObject.Find("kyori").GetComponent<Text>();
         TotalScore = GameObject.Find("totalscore").GetComponent<Text>(); 
-        TotalCalculation = GameObject.Find("total").GetComponent<Text>();
+        //TotalCalculation = GameObject.Find("total").GetComponent<Text>();
         //トータルスコアの計算　今は距離を整数にしてから計算している
 
         if (Goal != 0)
@@ -44,7 +44,7 @@ public class ResultScore : MonoBehaviour
         //トータルスコアの表示　今は整数に直したものを表示する
         TotalScore.text = "トータルスコア:" + Total.ToString("0");
 
-        TotalCalculation.text = "    ";
+       // TotalCalculation.text = "    ";
         //if (Goal != 0)
         //{
         //    TotalCalculation.text = "TotalScore = GoalPoint+((Distance * 100)/10)";
