@@ -33,6 +33,10 @@ public class PlayerMove : MonoBehaviour
     private bool isSETHI = true;    //アイテム化に必要なもの
     private Text textitem;
     public Text keikoku;
+    public Image keikoku_1;
+    public Image keikoku_2;
+    public Image keikoku_3;
+
     public float timer = 6.0f;
     public Image Button;
     public Image ButtonPush;
@@ -84,6 +88,10 @@ public class PlayerMove : MonoBehaviour
 
 
         keikoku.enabled = false;
+        keikoku_1.enabled = false;
+        keikoku_2.enabled = false;
+        keikoku_3.enabled = false;
+
 
         Button.enabled = false;
         ButtonPush.enabled = false;
@@ -436,6 +444,10 @@ public class PlayerMove : MonoBehaviour
         if(other.gameObject.tag == "kekoku")
         {
             keikoku.enabled = true;
+            keikoku_1.enabled = true;
+            keikoku_2.enabled = true;
+            keikoku_3.enabled = true;
+
             Kekoku.PlayOneShot(sound02);
         }
 
