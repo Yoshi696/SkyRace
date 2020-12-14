@@ -27,6 +27,10 @@ TagManager:
   - New tag
   - NossingText
   - Ring
+  - WarningR
+  - WarningL
+  - OverR
+  - OverL
   layers:
   - Default
   - TransparentFX
