@@ -199,7 +199,7 @@ public class Result : MonoBehaviour
         if (other.gameObject.tag == "Ring")
         {
             atack.PlayOneShot(sound3);
-            //GoalPoint += 10;
+            GoalPoint += 10;
         }
     }
     private void OnTriggerExit(Collider other)
