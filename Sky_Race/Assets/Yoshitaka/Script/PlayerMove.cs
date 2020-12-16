@@ -35,7 +35,6 @@ public class PlayerMove : MonoBehaviour
     public Text keikoku;
     public Image keikoku_1;
     public Image keikoku_2;
-    public Image keikoku_3;
 
     public float timer = 6.0f;
     public Image Button;
@@ -90,7 +89,6 @@ public class PlayerMove : MonoBehaviour
         keikoku.enabled = false;
         keikoku_1.enabled = false;
         keikoku_2.enabled = false;
-        keikoku_3.enabled = false;
 
 
         Button.enabled = false;
@@ -194,13 +192,13 @@ public class PlayerMove : MonoBehaviour
                 if (ang > 0)
                 {
                     //yaw = 1;
-                    AddRot.eulerAngles = new Vector3(0.01f, 0.3f, 0);
+                    AddRot.eulerAngles = new Vector3(0.01f, 0.2f, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                 }
                 else if (ang < 0)
                 {
                     //yaw = -1;
-                    AddRot.eulerAngles = new Vector3(0.01f, -0.3f, 0);
+                    AddRot.eulerAngles = new Vector3(0.01f, -0.2f, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                 }
             }
@@ -441,12 +439,29 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-        if(other.gameObject.tag == "kekoku")
+        //if (other.gameObject.tag == "kekoku")
+        //{
+        //    Debug.Log("yes");
+
+        //    keikoku.enabled = true;
+        //    keikoku_1.enabled = true;
+        //    keikoku_2.enabled = true;
+
+        //    Kekoku.PlayOneShot(sound02);
+        //}
+        if (other.gameObject.tag == "keikokuU")
         {
             keikoku.enabled = true;
             keikoku_1.enabled = true;
+            //keikoku_2.enabled = true;
+
+            Kekoku.PlayOneShot(sound02);
+        }
+        if (other.gameObject.tag == "keikokuB")
+        {
+            keikoku.enabled = true;
+            //keikoku_1.enabled = true;
             keikoku_2.enabled = true;
-            keikoku_3.enabled = true;
 
             Kekoku.PlayOneShot(sound02);
         }
@@ -456,7 +471,6 @@ public class PlayerMove : MonoBehaviour
             keikoku.enabled = false;
             keikoku_1.enabled = false;
             keikoku_2.enabled = false;
-            keikoku_3.enabled = false;
             CanMove = false;
             CanMoveForward = false;
             CanMoveBack = false;
@@ -494,11 +508,27 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "kekoku") {
+        //if (other.gameObject.tag == "kekoku") {
+        //    keikoku.enabled = false;
+        //    keikoku_1.enabled = false;
+        //    keikoku_2.enabled = false;
+        //   // keikoku_3.enabled = false;
+        //    Kekoku.Stop();
+        //}
+        if (other.gameObject.tag == "keikokuU")
+        {
             keikoku.enabled = false;
             keikoku_1.enabled = false;
+            //keikoku_2.enabled = true;
+
+            Kekoku.Stop();
+        }
+        if (other.gameObject.tag == "keikokuB")
+        {
+            keikoku.enabled = false;
+            //keikoku_1.enabled = true;
             keikoku_2.enabled = false;
-            keikoku_3.enabled = false;
+
             Kekoku.Stop();
         }
     }

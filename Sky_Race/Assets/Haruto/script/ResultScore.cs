@@ -30,7 +30,7 @@ public class ResultScore : MonoBehaviour
         }
         else
         {
-            Debug.Log("オチチャッタ");
+            //Debug.Log("オチチャッタ");
             Total = (((int)Distance * 10)/2);//Goalしていないので点数を半分にする
         }
         SetScoreText(GoalPoint);

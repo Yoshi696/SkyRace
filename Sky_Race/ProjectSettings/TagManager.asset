@@ -31,6 +31,8 @@ TagManager:
   - WarningL
   - OverR
   - OverL
+  - keikokuU
+  - keikokuB
   layers:
   - Default
   - TransparentFX

@@ -77,7 +77,7 @@ public class LRRotetion : MonoBehaviour
         a = gameObject.transform.localEulerAngles;
         myObj = gameObject.transform;
         pos = myObj.transform.position;
-        Debug.Log(cp);
+       // Debug.Log(cp);
 
         if (cp == 0)
         {
