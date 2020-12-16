@@ -29,6 +29,7 @@ public class GameOver : MonoBehaviour
     {
         if(other.gameObject.tag == "Over")
         {
+            GetComponent<Rotation>().enabled = true;
             Wind.Stop();
             mainCamera.SetActive(false);
             subCamera.SetActive(true);
