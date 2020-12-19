@@ -192,13 +192,13 @@ public class PlayerMove : MonoBehaviour
                 if (ang > 0)
                 {
                     //yaw = 1;
-                    AddRot.eulerAngles = new Vector3(0.01f, 0.2f, 0);
+                    AddRot.eulerAngles = new Vector3(0.01f, 0.21f, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                 }
                 else if (ang < 0)
                 {
                     //yaw = -1;
-                    AddRot.eulerAngles = new Vector3(0.01f, -0.2f, 0);
+                    AddRot.eulerAngles = new Vector3(0.01f, -0.21f, 0);
                     GetComponent<Rigidbody>().rotation *= AddRot;
                 }
             }
