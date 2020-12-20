@@ -40,6 +40,8 @@ public class Result : MonoBehaviour
 
     private ParticleSystem Gon;
 
+    public static bool ringT;
+
     // ゴールしたかどうか
     private int Goal = 2; //0:GameOver 1:Goal
     //Goalの文字テキスト
@@ -52,6 +54,8 @@ public class Result : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
 
         Gon = GameObject.Find("Collide").GetComponent<ParticleSystem>();
+
+        ringT = false;
 
         Gon.Stop();
 
@@ -200,6 +204,7 @@ public class Result : MonoBehaviour
         {
             atack.PlayOneShot(sound3);
             GoalPoint += 10;
+            ringT = true;
         }
     }
     private void OnTriggerExit(Collider other)

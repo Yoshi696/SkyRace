@@ -551,7 +551,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667795279}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -618,6 +618,7 @@ MonoBehaviour:
   Distance: 0
   Total: 0
   Goal: 0
+  RingText: {fileID: 667795281}
 --- !u!4 &799516160
 Transform:
   m_ObjectHideFlags: 0

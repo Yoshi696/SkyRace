@@ -62546,7 +62546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89220583, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.6073252, g: 0.6792453, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -72262,6 +72262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RingWind
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262871814794578885, guid: 409e3073b57a9e7469350cefdf2dcb20,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7000634666074451046, guid: 409e3073b57a9e7469350cefdf2dcb20,
         type: 3}

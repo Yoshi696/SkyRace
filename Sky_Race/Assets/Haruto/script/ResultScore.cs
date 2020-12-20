@@ -14,14 +14,19 @@ public class ResultScore : MonoBehaviour
     public double Total;
     public int Goal;
 
+    public Text RingText;
+    private bool rint;
+
 
     void Start()
     {
         GoalScore = GameObject.Find("goalpoint").GetComponent<Text>();
         distanceScore = GameObject.Find("kyori").GetComponent<Text>();
-        TotalScore = GameObject.Find("totalscore").GetComponent<Text>(); 
+        TotalScore = GameObject.Find("totalscore").GetComponent<Text>();
         //TotalCalculation = GameObject.Find("total").GetComponent<Text>();
         //トータルスコアの計算　今は距離を整数にしてから計算している
+        RingText.enabled = false;
+        rint = Result.ringT;
 
         if (Goal != 0)
         {
@@ -43,6 +48,11 @@ public class ResultScore : MonoBehaviour
         distanceScore.text = "飛行距離　　　:" + Distance.ToString("0.00m");
         //トータルスコアの表示　今は整数に直したものを表示する
         TotalScore.text = "トータルスコア:" + Total.ToString("0");
+
+        if(rint == true)
+        {
+            RingText.enabled = true;
+        }
 
        // TotalCalculation.text = "    ";
         //if (Goal != 0)

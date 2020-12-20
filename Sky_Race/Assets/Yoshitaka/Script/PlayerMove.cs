@@ -452,15 +452,15 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "keikokuU")
         {
             keikoku.enabled = true;
-            keikoku_1.enabled = true;
-            //keikoku_2.enabled = true;
+            //keikoku_1.enabled = true;
+            keikoku_2.enabled = true;
 
             Kekoku.PlayOneShot(sound02);
         }
         if (other.gameObject.tag == "keikokuB")
         {
-            keikoku.enabled = true;
-            //keikoku_1.enabled = true;
+            //keikoku.enabled = true;
+            keikoku_1.enabled = true;
             keikoku_2.enabled = true;
 
             Kekoku.PlayOneShot(sound02);
@@ -518,16 +518,16 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "keikokuU")
         {
             keikoku.enabled = false;
-            keikoku_1.enabled = false;
-            //keikoku_2.enabled = true;
+            //keikoku_1.enabled = false;
+            keikoku_2.enabled = true;
 
             Kekoku.Stop();
         }
         if (other.gameObject.tag == "keikokuB")
         {
             keikoku.enabled = false;
-            //keikoku_1.enabled = true;
-            keikoku_2.enabled = false;
+            keikoku_1.enabled = true;
+            //keikoku_2.enabled = false;
 
             Kekoku.Stop();
         }
