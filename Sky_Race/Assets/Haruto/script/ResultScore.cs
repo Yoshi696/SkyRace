@@ -13,7 +13,7 @@ public class ResultScore : MonoBehaviour
     public double Distance;
     public double Total;
     public int Goal;
-    public int RingP;
+//    public int RingP;
 
     public Text RingText;
     private bool rint;
@@ -32,12 +32,12 @@ public class ResultScore : MonoBehaviour
         if (Goal != 0)
         {
             //Debug.Log("ゴールシチャッタ");
-            Total = (int)GoalPoint + ((int)Distance * 10)+ RingP;
+            Total = (int)GoalPoint + ((int)Distance * 10);
         }
         else
         {
             //Debug.Log("オチチャッタ");
-            Total = (((int)Distance * 10)/2) + RingP ;//Goalしていないので点数を半分にする
+            Total = (((int)Distance * 10)/2);//Goalしていないので点数を半分にする
         }
         SetScoreText(GoalPoint);
 
