@@ -26,6 +26,7 @@ public class Result : MonoBehaviour
     private int Low = 250;
  //   private float pm = 100;
     private int GoalPoint;
+    private int RingP;
     private double distance;
     private Vector3 v2;
     private double sum = 0.0f;
@@ -64,6 +65,7 @@ public class Result : MonoBehaviour
         atack = gameObject.AddComponent<AudioSource>();
 
         GoalPoint = 0;
+        RingP = 0;
     }
     private void OnEnable()
     {
@@ -203,7 +205,7 @@ public class Result : MonoBehaviour
         if (other.gameObject.tag == "Ring")
         {
             atack.PlayOneShot(sound3);
-            GoalPoint += 10;
+            RingP += 10;
             ringT = true;
         }
     }
@@ -252,6 +254,7 @@ public class Result : MonoBehaviour
         gameManager.GoalPoint = GoalPoint;
         gameManager.Distance = sum;
         gameManager.Goal = Goal;
+        gameManager.RingP = RingP;
 
 
         // イベントから削除
