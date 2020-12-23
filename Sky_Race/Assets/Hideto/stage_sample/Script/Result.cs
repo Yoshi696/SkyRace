@@ -250,11 +250,12 @@ public class Result : MonoBehaviour
         // シーン切り替え後のスクリプトを取得
         var gameManager = GameObject.FindWithTag("ResultScore").GetComponent<ResultScore>();
 
+        GoalPoint += RingP;
         // データを渡す処理
         gameManager.GoalPoint = GoalPoint;
         gameManager.Distance = sum;
         gameManager.Goal = Goal;
-        gameManager.RingP = RingP;
+     //   gameManager.RingP = RingP;
 
 
         // イベントから削除
